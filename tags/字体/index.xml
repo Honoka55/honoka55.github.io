@@ -12,62 +12,7 @@
         <pubDate>Sat, 22 Oct 2022 00:00:00 +0000</pubDate>
         
         <guid>https://honoka55.github.io/p/cjk-font-fazhan/</guid>
-        <description>&lt;img src="https://p1.meituan.net/dpplatform/a5896969007eda46462f83569a1ed46d24627.png" alt="Featured image of post 关于开源CJK字体发展方向的设想" /&gt;&lt;h2 id=&#34;背景&#34;&gt;背景&lt;/h2&gt;
-&lt;p&gt;众所周知，自从思源黑体、思源宋体两款字体以SIL Open Font License公开以来，围绕它们产生的衍生字体一直层出不穷。思源两套字体开创了先河，但本身的问题并不小（如部分汉字地区字形写法并不合当地规范、备受诟病的行距问题等），有一些衍生项目只是旨在对其进行修复的。另外一些是基于它手动或用程序自动做一些美化类的改造，如源柔ゴシック、異世系列、狮尾系列、江城系列字体等。还有剩下一类衍生项目是比较特别的：因为思源本身只提供G、H、T、J、K五种当地标准的字形，有些可能为了顺应标准而并不美观，又或者标点的位置不合用户习惯，因而产生了一些将思源字体修改为不符合任一地区标准的项目，例如昭源黑体、台北黑体、桦源黑体等，这种项目一般是需要较多人工投入的。笔者受关于桦源黑体的讨论产生了本文的想法。&lt;/p&gt;
-&lt;h2 id=&#34;设想&#34;&gt;设想&lt;/h2&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/lapomme/huayuan&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;桦源黑体&lt;/a&gt;融合了印刷体和手写体的不同特性，笔者由此想到能否开发一款可自由构建不同部件写法的字体，配置方式类似&lt;a class=&#34;link&#34; href=&#34;https://github.com/be5invis/Iosevka&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Iosevka&lt;/a&gt;，并应支持全部的西文设定。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://p0.meituan.net/dpplatform/dae025939a1ec167c9e0b086a8d3bb4254934.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20221022215912043&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;下面是一些具体的设想。以下的画像均为想象图，UI基于Iosevka Customizer。&lt;/p&gt;
-&lt;h3 id=&#34;部件写法自定义&#34;&gt;部件写法自定义&lt;/h3&gt;
-&lt;p&gt;各种部件都应该可以自定义其写法，并提供常用预设方案（不止包含各地标准）可选择。此为demo，某一地区标准下同一构形部件从字理考虑可能对应不同写法，若正式制作此项目应当考虑进去。下图中“走之旁”即依次提供了中国大陆或日本新字体字形、传统或日本未类推部件或韩国或越南字形、港台字形、日本学参字形四种部件变体供选择。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://p1.meituan.net/dpplatform/a5896969007eda46462f83569a1ed46d24627.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20221022222908695&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;h3 id=&#34;避让规则自定义&#34;&gt;避让规则自定义&lt;/h3&gt;
-&lt;p&gt;应该可以自定义部件间的避让规则。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://p1.meituan.net/dpplatform/8004080f29fdd3bed2e6919a2f20249b18774.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;image-20221022223442469&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;h3 id=&#34;以及更多&#34;&gt;以及更多&lt;/h3&gt;
-&lt;p&gt;如标点符号横排可选居左下、中下或正中等。&lt;/p&gt;
-&lt;h2 id=&#34;技术实现&#34;&gt;技术实现&lt;/h2&gt;
-&lt;p&gt;如果对所有汉字都预先处理好所有可能的写法，可能需要预先制作大量的字形。例如，对于“雍”字，假设“亠”有四种变体，“乡”有两种变体，“隹”有三种变体，那么需要事先做好二十四种“雍”字供构建字体。&lt;/p&gt;
-&lt;p&gt;也许采用单独制作部件，构建时再拼合的方法更合理。&lt;/p&gt;
-&lt;h2 id=&#34;进阶计划&#34;&gt;进阶计划&lt;/h2&gt;
-&lt;p&gt;这是一个相当不成熟的想法，如果有空可能考虑进行初步实现。&lt;/p&gt;
-&lt;h2 id=&#34;相关项目&#34;&gt;相关项目&lt;/h2&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/be5invis/Iosevka&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Iosevka&lt;/a&gt;是一款允许高度自定义文字样式的西文字体，通过其&lt;a class=&#34;link&#34; href=&#34;https://typeof.net/Iosevka/customizer&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Customizer&lt;/a&gt;，用户可以自定义字体的基本信息，并为字符选择不同的变体（variant）、自定义要使用的连字（ligation）特性，自行构建符合自己需要的字体。&lt;/p&gt;
-&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/welai/glow-sans&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;未来荧黑&lt;/a&gt;是一款利用&lt;a class=&#34;link&#34; href=&#34;https://welai.github.io/glow-sans&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;可视化调参工具&lt;/a&gt;来确定字体参数的开源中日文字体，基于思源黑体，可定制字体中汉字的中宫、字面率、重心等参数，并可定制附属西文。&lt;/p&gt;
-</description>
+        <description>&lt;img src="https://p1.meituan.net/dpplatform/a5896969007eda46462f83569a1ed46d24627.png" alt="Featured image of post 关于开源CJK字体发展方向的设想" /&gt;背景 众所周知，自从思源黑体、思源宋体两款字体以SIL Open Font License公开以来，围绕它们产生的衍生字体一直层出不穷。思源两套字体开创了先河，</description>
         </item>
         <item>
         <title>女书元素周期表试制</title>
@@ -75,21 +20,7 @@
         <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
         
         <guid>https://honoka55.github.io/p/nyushu-zhouqibiao/</guid>
-        <description>&lt;img src="https://tva1.sinaimg.cn/large/ee229deegy1h4tmckwp7wj21hc0qrhah.jpg" alt="Featured image of post 女书元素周期表试制" /&gt;&lt;p&gt;我制作了用江永女书书写的元素周期表，分享如下：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/Honoka55/IongsewTcyntang/main/res/table.png&#34;
-	
-	
-	
-	loading=&#34;lazy&#34;
-	
-		alt=&#34;女书元素周期表&#34;
-	
-	
-&gt;&lt;/p&gt;
-&lt;p&gt;其中的女书字体为经我增补的字体&lt;a class=&#34;link&#34; href=&#34;https://github.com/Honoka55/IongsewTcyntang&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Iongsew Tcyntang&lt;/a&gt;，使用SIL开源字体许可证1.1共享；西文字体为&lt;a class=&#34;link&#34; href=&#34;https://github.com/Fontself/TypeWithPride&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Gilbert&lt;/a&gt;，使用CC BY-SA 4.0共享。&lt;/p&gt;
-</description>
+        <description>&lt;img src="https://tva1.sinaimg.cn/large/ee229deegy1h4tmckwp7wj21hc0qrhah.jpg" alt="Featured image of post 女书元素周期表试制" /&gt;我制作了用江永女书书写的元素周期表，分享如下： 其中的女书字体为经我增补的字体Iongsew Tcyntang，使用SIL开源字体许可证1.1共</description>
         </item>
         <item>
         <title>汉语拼音字母儿</title>
@@ -97,114 +28,7 @@
         <pubDate>Thu, 28 Jul 2022 00:00:00 +0000</pubDate>
         
         <guid>https://honoka55.github.io/p/pinyin-alefabeite/</guid>
-        <description>&lt;center&gt;&lt;big&gt;&lt;big&gt;&lt;strong&gt;汉语拼音字母&lt;small&gt;&lt;small&gt;儿&lt;/small&gt;&lt;/small&gt;&lt;/strong&gt;&lt;/big&gt;&lt;/big&gt;&lt;br /&gt;（此页面最终更新于2022年7月28号&lt;small&gt;&lt;small&gt;儿&lt;/small&gt;&lt;/small&gt;）&lt;/center&gt;&lt;p style=&#34;text-indent:2em&#34;&gt;&lt;strong&gt;注：&lt;/strong&gt;红色&lt;small&gt;&lt;small&gt;儿&lt;/small&gt;&lt;/small&gt;的字母&lt;small&gt;&lt;small&gt;儿&lt;/small&gt;&lt;/small&gt;不在Unicode里头，有的字体兴许搁连字特性能显示出来。&lt;/p&gt;&lt;hr /&gt;
-&lt;h2 id=&#34;能标调smallsmall儿smallsmall的字母smallsmall儿smallsmall&#34;&gt;能标调&lt;small&gt;&lt;small&gt;儿&lt;/small&gt;&lt;/small&gt;的字母&lt;small&gt;&lt;small&gt;儿&lt;/small&gt;&lt;/small&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;注：&lt;/strong&gt;这个表&lt;small&gt;&lt;small&gt;儿&lt;/small&gt;&lt;/small&gt;里头字母&lt;small&gt;&lt;small&gt;儿&lt;/small&gt;&lt;/small&gt;用的字体是&lt;span style=&#34;font-family:qinglyu&#34;&gt;&lt;a class=&#34;link&#34; href=&#34;https://github.com/Honoka55/QinglyuWuchenxian&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
-    &gt;Qīnglǚ Wúchènxiàn&lt;/a&gt;&lt;/span&gt;，你要得意给我点个星&lt;small&gt;&lt;small&gt;儿&lt;/small&gt;&lt;/small&gt;呗。&lt;/p&gt;
-&lt;table border=&#34;1&#34; style=&#34;font-size:1.5em;font-family:qinglyu,sans-serif;border-collapse:collapse&#34;&gt;
-  &lt;tr&gt;
-  &lt;th&gt;˙&lt;/th&gt;
-  &lt;th&gt;ˉ&lt;/th&gt;
-  &lt;th&gt;ˊ&lt;/th&gt;
-  &lt;th&gt;ˇ&lt;/th&gt;
-  &lt;th&gt;ˋ
-  &lt;/th&gt;&lt;/tr&gt;
-  &lt;tr&gt;
-  &lt;th&gt;Aa
-  &lt;/th&gt;
-  &lt;td&gt;Āā&lt;/td&gt;
-  &lt;td&gt;Áá&lt;/td&gt;
-  &lt;td&gt;Ǎǎ&lt;/td&gt;
-  &lt;td&gt;Àà&lt;/td&gt;&lt;/tr&gt;
-  &lt;tr&gt;
-  &lt;th&gt;Oo
-  &lt;/th&gt;
-  &lt;td&gt;Ōō&lt;/td&gt;
-  &lt;td&gt;Óó&lt;/td&gt;
-  &lt;td&gt;Ǒǒ&lt;/td&gt;
-  &lt;td&gt;Òò&lt;/td&gt;&lt;/tr&gt;
-  &lt;tr&gt;
-  &lt;th&gt;Ee
-  &lt;/th&gt;
-  &lt;td&gt;Ēē&lt;/td&gt;
-  &lt;td&gt;Éé&lt;/td&gt;
-  &lt;td&gt;Ěě&lt;/td&gt;
-  &lt;td&gt;Èè&lt;/td&gt;&lt;/tr&gt;
-  &lt;tr&gt;
-  &lt;th&gt;Ii
-  &lt;/th&gt;
-  &lt;td&gt;Īī&lt;/td&gt;
-  &lt;td&gt;Íí&lt;/td&gt;
-  &lt;td&gt;Ǐǐ&lt;/td&gt;
-  &lt;td&gt;Ìì&lt;/td&gt;&lt;/tr&gt;
-  &lt;tr&gt;
-  &lt;th&gt;Uu
-  &lt;/th&gt;
-  &lt;td&gt;Ūū&lt;/td&gt;
-  &lt;td&gt;Úú&lt;/td&gt;
-  &lt;td&gt;Ǔǔ&lt;/td&gt;
-  &lt;td&gt;Ùù&lt;/td&gt;&lt;/tr&gt;
-  &lt;tr&gt;
-  &lt;th&gt;Üü
-  &lt;/th&gt;
-  &lt;td&gt;Ǖǖ&lt;/td&gt;
-  &lt;td&gt;Ǘǘ&lt;/td&gt;
-  &lt;td&gt;Ǚǚ&lt;/td&gt;
-  &lt;td&gt;Ǜǜ&lt;/td&gt;&lt;/tr&gt;
-  &lt;tr&gt;
-  &lt;th&gt;Êê
-  &lt;/th&gt;
-  &lt;td&gt;&lt;span style=&#34;color:red;&#34;&gt;Ê̄ê̄&lt;/span&gt;&lt;/td&gt;
-  &lt;td&gt;Ếế&lt;/td&gt;
-  &lt;td&gt;&lt;span style=&#34;color:red;&#34;&gt;Ê̌ê̌&lt;/span&gt;&lt;/td&gt;
-  &lt;td&gt;Ềề&lt;/td&gt;&lt;/tr&gt;
-  &lt;tr&gt;
-  &lt;th&gt;Mm
-  &lt;/th&gt;
-  &lt;td&gt;&lt;span style=&#34;color:red;&#34;&gt;M̄m̄&lt;/span&gt;&lt;/td&gt;
-  &lt;td&gt;Ḿḿ&lt;/td&gt;
-  &lt;td&gt;&lt;span style=&#34;color:red;&#34;&gt;M̌m̌&lt;/span&gt;&lt;/td&gt;
-  &lt;td&gt;&lt;span style=&#34;color:red;&#34;&gt;M̀m̀&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;
-  &lt;tr&gt;
-  &lt;th&gt;Nn
-  &lt;/th&gt;
-  &lt;td&gt;&lt;span style=&#34;color:red;&#34;&gt;N̄n̄&lt;/span&gt;&lt;/td&gt;
-  &lt;td&gt;Ńń&lt;/td&gt;
-  &lt;td&gt;Ňň&lt;/td&gt;
-  &lt;td&gt;Ǹǹ&lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;能缩写的字母smallsmall儿smallsmall&#34;&gt;能缩写的字母&lt;small&gt;&lt;small&gt;儿&lt;/small&gt;&lt;/small&gt;&lt;/h2&gt;
-&lt;table border=&#34;1&#34; style=&#34;font-size:1.5em;border-collapse:collapse&#34;&gt;
-  &lt;tr&gt;
-    &lt;th&gt;完全形式&lt;/th&gt;
-    &lt;th&gt;缩略形式&lt;/th&gt;
-    &lt;th&gt;ˉ&lt;/th&gt;
-    &lt;th&gt;ˊ&lt;/th&gt;
-    &lt;th&gt;ˇ&lt;/th&gt;
-    &lt;th&gt;ˋ
-    &lt;/th&gt;&lt;/tr&gt;
-    &lt;tr&gt;
-    &lt;th&gt;ZHzh
-    &lt;/th&gt;
-    &lt;td&gt;Ẑẑ&lt;/td&gt;
-    &lt;td colspan=&#34;4&#34; rowspan=&#34;3&#34; style=&#34;background:#ececec88;color:grey;vertical-align:middle;text-align:center;&#34;&gt;&lt;small&gt;N/A&lt;/small&gt;&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;
-    &lt;th&gt;CHch
-    &lt;/th&gt;
-    &lt;td&gt;Ĉĉ&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;
-    &lt;th&gt;SHsh
-    &lt;/th&gt;
-    &lt;td&gt;Ŝŝ&lt;/td&gt;&lt;/tr&gt;
-    &lt;tr&gt;
-    &lt;th&gt;NGng
-    &lt;/th&gt;
-    &lt;td&gt;Ŋŋ&lt;/td&gt;
-    &lt;td&gt;&lt;span style=&#34;color:red;&#34;&gt;Ŋ̄ŋ̄&lt;/span&gt;&lt;/td&gt;
-    &lt;td&gt;&lt;span style=&#34;color:red;&#34;&gt;Ŋ́ŋ́&lt;/span&gt;&lt;/td&gt;
-    &lt;td&gt;&lt;span style=&#34;color:red;&#34;&gt;Ŋ̌ŋ̌&lt;/span&gt;&lt;/td&gt;
-    &lt;td&gt;&lt;span style=&#34;color:red;&#34;&gt;Ŋ̀ŋ̀&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;</description>
+        <description>汉语拼音字母儿 （此页面最终更新于2022年7月28号儿）注：红色儿的字母儿不在Unicode里头，有的字体兴许搁连字特性能显示出来。 能标调儿</description>
         </item>
         
     </channel>
