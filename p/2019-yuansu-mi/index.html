@@ -231,10 +231,15 @@
 </script>
 </article>
 <div id="gitalk-container"></div>
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.18.0/js/md5.min.js"></script>
 <script>
-    const gitalk = new Gitalk({
+    if ("zh-cn" == "zh-cn"){
+        lang = "zh-CN"
+    }else{
+        lang = "zh-cn"
+    }
+    gitalk = new Gitalk({
         clientID: "4c243dc52ffe119cd15f",
         clientSecret: "886ddf6875b4e153196f12e011ab9477c8db556c",
         repo: "gitalk-comments",
@@ -242,6 +247,7 @@
         admin: ["Honoka55"],
         distractionFreeMode: false, 
         id: md5(location.pathname), 
+        language: lang,
     });
     (function () {
         if (
