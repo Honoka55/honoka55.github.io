@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://honoka55.github.io/</loc>
-    <lastmod>2022-10-23T00:00:00+00:00</lastmod>
+    <lastmod>2022-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -16,7 +16,7 @@
                 />
   </url><url>
     <loc>https://honoka55.github.io/categories/</loc>
-    <lastmod>2022-10-23T00:00:00+00:00</lastmod>
+    <lastmod>2022-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -28,8 +28,14 @@
                 href="https://honoka55.github.io/categories/"
                 />
   </url><url>
+    <loc>https://honoka55.github.io/categories/ffxiv/</loc>
+    <lastmod>2022-10-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://honoka55.github.io/tags/oc/</loc>
+    <lastmod>2022-10-25T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://honoka55.github.io/post/</loc>
-    <lastmod>2022-10-23T00:00:00+00:00</lastmod>
+    <lastmod>2022-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -42,7 +48,7 @@
                 />
   </url><url>
     <loc>https://honoka55.github.io/tags/</loc>
-    <lastmod>2022-10-22T00:00:00+00:00</lastmod>
+    <lastmod>2022-10-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -53,6 +59,12 @@
                 hreflang="zh-cn"
                 href="https://honoka55.github.io/tags/"
                 />
+  </url><url>
+    <loc>https://honoka55.github.io/tags/%E4%BD%A9%E8%8F%88%E5%AE%81/</loc>
+    <lastmod>2022-10-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://honoka55.github.io/p/ffxiv-oc-3/</loc>
+    <lastmod>2022-10-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://honoka55.github.io/p/cjk-font-fazhan/</loc>
     <lastmod>2022-10-22T00:00:00+00:00</lastmod>
@@ -66,17 +78,11 @@
     <loc>https://honoka55.github.io/tags/%E5%AD%97%E4%BD%93/</loc>
     <lastmod>2022-10-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://honoka55.github.io/categories/ffxiv/</loc>
-    <lastmod>2022-10-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://honoka55.github.io/tags/oc/</loc>
-    <lastmod>2022-10-19T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://honoka55.github.io/p/ffxiv-oc-2/</loc>
     <lastmod>2022-10-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://honoka55.github.io/tags/%E6%95%85%E4%BA%8B/</loc>
-    <lastmod>2022-10-19T00:00:00+00:00</lastmod>
+    <loc>https://honoka55.github.io/tags/%E4%B8%8D%E7%9F%A5%E5%90%8D%E7%8C%AB%E5%A8%98/</loc>
+    <lastmod>2022-08-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://honoka55.github.io/p/ffxiv-oc-1/</loc>
     <lastmod>2022-08-23T00:00:00+00:00</lastmod>
