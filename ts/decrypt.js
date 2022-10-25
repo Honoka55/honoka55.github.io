@@ -32,12 +32,12 @@ const _click_handler = function (element) {
         decrypted = _do_decrypt(encrypted, password);
     } catch (err) {
         console.error(err);
-        alert("Failed to decrypt.");
+        alert("密码好像不对哦。");
         return;
     }
 
     if (!decrypted.includes("--- DON'T MODIFY THIS LINE ---")) {
-        alert("Incorrect password.");
+        alert("数据丢失！");
         return;
     }
 
