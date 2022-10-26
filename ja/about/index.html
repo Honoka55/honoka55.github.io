@@ -3,7 +3,7 @@
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="一般通過女子大生" name="description"/><title>私について</title>
 <link href="https://honoka55.github.io/ja/about/" rel="canonical"/>
-<link href="/scss/style.min.09b2e2ad29960a14cd8e7d11c7ce473fa797643d0b243a2e92a507ffd159bf6c.css" rel="stylesheet"/><meta content="私について" property="og:title"/>
+<link href="/scss/style.min.c4e9568ffcafc962d154ee3fb4a5f2edc5b39aa00f95e4ee4ea1519ecfeddf75.css" rel="stylesheet"/><meta content="私について" property="og:title"/>
 <meta content="一般通過女子大生" property="og:description"/>
 <meta content="https://honoka55.github.io/ja/about/" property="og:url"/>
 <meta content="焔華Honoka55" property="og:site_name"/>
@@ -205,6 +205,7 @@
         Built with <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo</a> <br/>
         Theme <b><a data-version="3.14.0" href="https://github.com/CaiJimmy/hugo-theme-stack" rel="noopener" target="_blank">Stack</a></b> designed by <a href="https://jimmycai.com" rel="noopener" target="_blank">Jimmy</a>
 </section>
+<button class="top-button" id="top-button" onclick="smoothScrollTop()">⬆ TOP</button>
 </footer>
 <div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
 <div class="pswp__bg"></div>
@@ -251,15 +252,36 @@
 <script>
     (function () {
         const customFont = document.createElement('link');
-        customFont.href = "https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;700&text=ぁあぃいぅうぇえぉおかがきぎくぐけげこごさざしじすずせぜそぞただちぢっつづてでとどなにぬねのはばぱひびぴふぶぷへべぺほぼぽまみむめもゃやゅゆょよらりるれろゎわゐゑをんゔゕゖ゙゚゛゜ゝゞゟ゠ァアィイゥウェエォオカガキギクグケゲコゴサザシジスズセゼソゾタダチヂッツヅテデトドナニヌネノハバパヒビピフブプヘベペホボポマミムメモャヤュユョヨラリルレロヮワヰヱヲンヴヵヶヷヸヹヺ・ーヽヾヿㇰㇱㇲㇳㇴㇵㇶㇷㇸㇹㇺㇻㇼㇽㇾㇿ𛀀𛀁&family=Andika:ital,wght@0,400;0,700;1,400;1,700&display=swap";
-
+        customFont.href = "https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;700&text=ぁあぃいぅうぇえぉおかがきぎくぐけげこごさざしじすずせぜそぞただちぢっつづてでとどなにぬねのはばぱひびぴふぶぷへべぺほぼぽまみむめもゃやゅゆょよらりるれろゎわゐゑをんゔゕゖ゙゚゛゜ゝゞゟ゠ァアィイゥウェエォオカガキギクグケゲコゴサザシジスズセゼソゾタダチヂッツヅテデトドナニヌネノハバパヒビピフブプヘベペホボポマミムメモャヤュユョヨラリルレロヮワヰヱヲンヴヵヶヷヸヹヺ・ーヽヾヿㇰㇱㇲㇳㇴㇵㇶㇷㇸㇹㇺㇻㇼㇽㇾㇿ𛀀𛀁&display=swap";
         customFont.type = "text/css";
         customFont.rel = "stylesheet";
-
         document.head.appendChild(customFont);
     }());
 </script>
 <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js"></script>
 <script>twemoji.parse(document.body,{"base":"https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/","ext":".svg","folder":"svg"})</script>
+<script>
+    window.onscroll = function() {scrollTopButton()};
+    function scrollTopButton() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("top-button").style.display = "block";
+      } else {
+        document.getElementById("top-button").style.display = "none";
+      }
+    }
+    function smoothScrollTop(){
+        var timer  = null;
+        cancelAnimationFrame(timer);
+        timer = requestAnimationFrame(function fn(){
+            var oTop = document.body.scrollTop || document.documentElement.scrollTop;
+            if(oTop > 0){
+                document.body.scrollTop = document.documentElement.scrollTop = oTop - 50;
+                timer = requestAnimationFrame(fn);
+            }else{
+                cancelAnimationFrame(timer);
+            }
+        });
+    }
+    </script>
 </body>
 </html>
