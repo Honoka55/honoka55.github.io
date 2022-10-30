@@ -122,6 +122,18 @@
                 href="https://honoka55.github.io/ja/links/"
                 />
   </url><url>
+    <loc>https://honoka55.github.io/ja/font-level/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://honoka55.github.io/font-level/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://honoka55.github.io/ja/font-level/"
+                />
+  </url><url>
     <loc>https://honoka55.github.io/ja/search/</loc>
     <xhtml:link
                 rel="alternate"
