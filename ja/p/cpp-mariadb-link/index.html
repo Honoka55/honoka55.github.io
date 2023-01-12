@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ja">
+<head><meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="C++でMariaDBデータベースに接続する簡単な方法の一つを記録しています。また、簡単な改造でMySQLへ接続することも可能です。
+" name="description"/><title>C++からMariaDBへの接続</title>
+<link href="https://honoka55.github.io/ja/p/cpp-mariadb-link/" rel="canonical"/>
+<link href="/scss/style.min.d85b846c47d86db21b5d14048743d8f54a9fbb27c9428df98cff8ba5df4103ff.css" rel="stylesheet"/><meta content="C++からMariaDBへの接続" property="og:title"/>
+<meta content="C++でMariaDBデータベースに接続する簡単な方法の一つを記録しています。また、簡単な改造でMySQLへ接続することも可能です。
+" property="og:description"/>
+<meta content="https://honoka55.github.io/ja/p/cpp-mariadb-link/" property="og:url"/>
+<meta content="焔華Honoka55" property="og:site_name"/>
+<meta content="article" property="og:type"/><meta content="Post" property="article:section"/><meta content="C/C++" property="article:tag"/><meta content="データベース" property="article:tag"/><meta content="2022-12-11T00:00:00+00:00" property="article:published_time"/><meta content="2023-01-12T00:00:00+00:00" property="article:modified_time"/><meta content="https://s1.ax1x.com/2023/01/12/pSuG5DO.png" property="og:image"/>
+<meta content="C++からMariaDBへの接続" name="twitter:title"/>
+<meta content="C++でMariaDBデータベースに接続する簡単な方法の一つを記録しています。また、簡単な改造でMySQLへ接続することも可能です。
+" name="twitter:description"/><meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://s1.ax1x.com/2023/01/12/pSuG5DO.png" name="twitter:image"/>
+</head>
+<body class="article-page">
+<script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky">
+<button aria-label="メニューを開く・閉じる" class="hamburger hamburger--spin" id="toggle-menu" type="button">
+<span class="hamburger-box">
+<span class="hamburger-inner"></span>
+</span>
+</button>
+<header>
+<figure class="site-avatar">
+<a href="/ja">
+<img alt="Avatar" class="site-logo" height="300" loading="lazy" src="/img/avatar_hu7d9b67be7ef950d905465e1960632c76_41038_300x0_resize_box_3.png" width="300"/>
+</a>
+<span class="emoji">😴</span>
+</figure>
+<div class="site-meta">
+<h1 class="site-name"><a href="/ja">焔華Honoka55</a></h1>
+<h2 class="site-description">焔色昇空、華桜落塵</h2>
+</div>
+</header><ol class="social-menu">
+<li>
+<a href="https://space.bilibili.com/7398042" target="_blank" title="bilibili">
+<svg class="icon icon-tabler icon-tabler-brand-github" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<style type="text/css">
+	.st0{fill:none;}
+
+</style>
+<path class="st0" d="M17.4,18.9H6.7c-1.5,0-2.8-1.2-2.8-2.8V9.9c0-1.5,1.2-2.8,2.8-2.8h10.7c1.5,0,2.8,1.2,2.8,2.8v6.2
+	C20.1,17.6,18.9,18.9,17.4,18.9z"></path>
+<line class="st1" x1="7.4" x2="10.5" y1="4.1" y2="7.2"></line>
+<line class="st1" x1="16.5" x2="13.4" y1="4.1" y2="7.2"></line>
+<line class="st1" x1="9" x2="9" y1="12.1" y2="12.9"></line>
+<line class="st1" x1="15.1" x2="15.1" y1="12.1" y2="12.9"></line>
+</svg>
+</a>
+</li>
+<li>
+<a href="https://github.com/honoka55" target="_blank" title="GitHub">
+<svg class="icon icon-tabler icon-tabler-brand-github" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
+<path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path>
+</svg>
+</a>
+</li>
+<li>
+<a href="http://zhs.glyphwiki.org/wiki/User:honoka55" target="_blank" title="GlyphWiki">
+<svg class="icon icon-tabler icon-tabler-brand-glyphwiki" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<g>
+<path d="M11.9,20.5l2-0.5l0.1,0l0.1,0l0.1-0.1l0,0l0-0.1l0-0.1l0-0.1l-1.5-4.7l-8.3,1.8l-0.1-0.4l8.3-1.8l-0.8-2.6l1.3-0.1l0.3-0.6
+		l0.3-0.5l0.3-0.5l0.3-0.4l0.2-0.4L14.6,9l0.1-0.1L7,10.5l-0.1-0.4L15,8.3l0,0L15.1,8l0.1,0l0.3-0.4l1.4,0.7l-0.4,0.4l-0.6,0.5
+		l-0.1,0.1l-0.3,0.3L15.2,10l-0.3,0.4l-0.4,0.4l-0.4,0.4l-0.4,0.4l-0.4,0.4L13.2,12l-0.1,0.1l0.6,2.1l6.1-1.4l0.7-1.2l1.5,0.7
+		l0.1,0.4l-8.4,1.9l1.5,4.7l0.1,0.3l0,0.3l0,0.3l-0.1,0.3l-0.1,0.2l-0.2,0.2L15,20.9l-0.2,0.1l-0.2,0.1l-0.2,0.1l-0.2-0.6L12,20.8
+		L11.9,20.5z M4,8.6l0.2,0.6l0.1,0.6l0,0.5l0,0.5l-0.1,0.5L4,11.6L3.8,12l-0.4,0.2l-0.5-0.1l-0.2-0.4l0.1-0.4L2.9,11l0.1-0.2
+		l0.1-0.3l0.1-0.4l0.1-0.4l0-0.5l0-0.5L3.3,8L3.2,7.4L3,6.6l0.2-0.1l0.3,0.7l0.2,0.5L10,6.4l-1-3l1.3-0.1l0.4,0.1l-0.2,0.3l0.8,2.5
+		l6.6-1.5l0-0.1l0,0l0,0L18.3,4l1.4,0.7l-0.4,0.4l-0.3,0.2L19,5.4l-0.1,0.3l-0.1,0.3l-0.1,0.4l-0.2,0.4l-0.2,0.4l-0.2,0.4L17.9,8
+		l-0.2,0.4l-0.2-0.1l0.1-0.5l0.1-0.5L17.7,7l0.1-0.4l0-0.4l0-0.4l0-0.3l0-0.3l0-0.1l-14,3.1L4,8.6z"></path>
+</g>
+</svg>
+</a>
+</li>
+</ol><ol class="menu" id="main-menu">
+<li>
+<a href="/ja/">
+<svg class="icon icon-tabler icon-tabler-home" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 0h24v24H0z" stroke="none"></path>
+<polyline points="5 12 3 12 12 3 21 12 19 12"></polyline>
+<path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"></path>
+<path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"></path>
+</svg>
+<span>ホーム</span>
+</a>
+</li>
+<li>
+<a href="/ja/search/">
+<svg class="icon icon-tabler icon-tabler-search" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 0h24v24H0z" stroke="none"></path>
+<circle cx="10" cy="10" r="7"></circle>
+<line x1="21" x2="15" y1="21" y2="15"></line>
+</svg>
+<span>検索</span>
+</a>
+</li>
+<li>
+<a href="/ja/tools/">
+<svg class="icon icon-tabler icon-tabler-tool" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
+<path d="M7 10h3v-3l-3.5 -3.5a6 6 0 0 1 8 8l6 6a2 2 0 0 1 -3 3l-6 -6a6 6 0 0 1 -8 -8l3.5 3.5"></path>
+</svg>
+<span>ツール</span>
+</a>
+</li>
+<li>
+<a href="/ja/about/">
+<svg class="icon icon-tabler icon-tabler-user" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 0h24v24H0z" stroke="none"></path>
+<circle cx="12" cy="7" r="4"></circle>
+<path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
+</svg>
+<span>私について</span>
+</a>
+</li>
+<li>
+<a href="/ja/links/">
+<svg class="icon icon-tabler icon-tabler-link" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 0h24v24H0z" stroke="none"></path>
+<path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5"></path>
+<path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5"></path>
+</svg>
+<span>リンク</span>
+</a>
+</li>
+<div class="menu-bottom-section">
+<li id="i18n-switch">
+<svg class="icon icon-tabler icon-tabler-language" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
+<path d="M4 5h7"></path>
+<path d="M9 3v2c0 4.418 -2.239 8 -5 8"></path>
+<path d="M5 9c-.003 2.144 2.952 3.908 6.7 4"></path>
+<path d="M12 20l4 -9l4 9"></path>
+<path d="M19.1 18h-6.2"></path>
+</svg>
+<select name="language" onchange="window.location.href = this.selectedOptions[0].value">
+<option value="https://honoka55.github.io/">中文</option>
+<option selected="" value="https://honoka55.github.io/ja/">日本語</option>
+</select>
+</li>
+<li id="dark-mode-toggle">
+<svg class="icon icon-tabler icon-tabler-toggle-left" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 0h24v24H0z" stroke="none"></path>
+<circle cx="8" cy="12" r="2"></circle>
+<rect height="12" rx="6" width="20" x="2" y="6"></rect>
+</svg>
+<svg class="icon icon-tabler icon-tabler-toggle-right" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 0h24v24H0z" stroke="none"></path>
+<circle cx="16" cy="12" r="2"></circle>
+<rect height="12" rx="6" width="20" x="2" y="6"></rect>
+</svg>
+<span>ダークモード</span>
+</li>
+</div>
+</ol>
+</aside>
+<main class="main full-width">
+<article class="has-image main-article">
+<header class="article-header">
+<div class="article-image">
+<a href="/ja/p/cpp-mariadb-link/">
+<img alt="Featured image of post C++からMariaDBへの接続" loading="lazy" src="https://s1.ax1x.com/2023/01/12/pSuG5DO.png"/>
+</a>
+</div>
+<div class="article-details">
+<header class="article-category">
+<a href="/ja/categories/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0/">
+                コーディング
+            </a>
+</header>
+<div class="article-title-wrapper">
+<h2 class="article-title">
+<a href="/ja/p/cpp-mariadb-link/">C++からMariaDBへの接続</a>
+</h2>
+</div>
+<footer class="article-time">
+<div>
+<svg class="icon icon-tabler icon-tabler-calendar-time" fill="none" height="56" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="56" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 0h24v24H0z" stroke="none"></path>
+<path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4"></path>
+<circle cx="18" cy="18" r="4"></circle>
+<path d="M15 3v4"></path>
+<path d="M7 3v4"></path>
+<path d="M3 11h16"></path>
+<path d="M18 16.496v1.504l1 1"></path>
+</svg>
+<time class="article-time--published">2022年12月11号</time>
+</div>
+</footer>
+<footer class="article-translations">
+<svg class="icon icon-tabler icon-tabler-language" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
+<path d="M4 5h7"></path>
+<path d="M9 3v2c0 4.418 -2.239 8 -5 8"></path>
+<path d="M5 9c-.003 2.144 2.952 3.908 6.7 4"></path>
+<path d="M12 20l4 -9l4 9"></path>
+<path d="M19.1 18h-6.2"></path>
+</svg>
+<div>
+<a class="link" href="https://honoka55.github.io/p/cpp-mariadb-link/" lang="zh-cn">中文</a>
+</div>
+</footer>
+</div>
+</header>
+<section class="article-content">
+<p>C++でMariaDBデータベースに接続する簡単な方法の一つを記録しています。また、簡単な改造でMySQLへ接続することも可能です。</p>
+<p><strong>環境：</strong> Dev-C++ 5.11、GCC 4.9.2、MariaDB 10.6</p>
+<p><strong>設定手順：</strong></p>
+<ol>
+<li>MariaDBがインストールされているディレクトリの中のincludeフォルダとlibフォルダを、それぞれコンパイルオプションに記載されているインクルードディレクトリとライブラリディレクトリに上書きします。</li>
+<li>コンパイルオプションのコネクタコマンドラインに次のコマンドを追加します：<code>-lmariadb</code>。</li>
+<li>libフォルダからlibmariadb.dllをソースコードのあるディレクトリにコピーします。</li>
+</ol>
+<p><strong>接続とデバッグのソースコード：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;mysql/mysql.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="n">using</span> <span class="n">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">MYSQL</span> <span class="o">*</span><span class="n">link</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">MYSQL_RES</span> <span class="o">*</span><span class="n">res</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="n">MYSQL_ROW</span> <span class="n">row</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+</span></span><span class="line"><span class="cl">    <span class="cm">/* ターミナルのコードページをUTF-8に設定
+</span></span></span><span class="line"><span class="cl"><span class="cm">         日本語OSでのDev-C++のデフォルトエンコーディングはShift JISで変更できないため、
+</span></span></span><span class="line"><span class="cl"><span class="cm">         これによりUTF-8のデータベースが正しく表示されるようになります。
+</span></span></span><span class="line"><span class="cl"><span class="cm">         また、データベース作成時にエンコーディングをShift JISにすることで、
+</span></span></span><span class="line"><span class="cl"><span class="cm">         以下の2行を削除することができます。 */</span>
+</span></span><span class="line"><span class="cl">    <span class="n">system</span><span class="p">(</span><span class="s">"chcp 65001"</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">system</span><span class="p">(</span><span class="s">"cls"</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/* 接続の作成 */</span>
+</span></span><span class="line"><span class="cl">    <span class="n">link</span> <span class="o">=</span> <span class="n">mysql_init</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">mysql_real_connect</span><span class="p">(</span><span class="n">link</span><span class="p">,</span> <span class="s">"localhost"</span><span class="p">,</span> <span class="s">"root"</span><span class="p">,</span> <span class="s">"YOUR_PASSWORD"</span><span class="cm">/* パスワード */</span><span class="p">,</span> <span class="s">"school"</span><span class="cm">/* データベースの名前 */</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">"%s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">mysql_error</span><span class="p">(</span><span class="n">link</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/* テーブル一覧の出力 */</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">mysql_query</span><span class="p">(</span><span class="n">link</span><span class="p">,</span> <span class="s">"SHOW TABLES;"</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">"%s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">mysql_error</span><span class="p">(</span><span class="n">link</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="n">res</span> <span class="o">=</span> <span class="n">mysql_use_result</span><span class="p">(</span><span class="n">link</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">"MySQL Tables in school database:"</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">while</span><span class="p">((</span><span class="n">row</span> <span class="o">=</span> <span class="n">mysql_fetch_row</span><span class="p">(</span><span class="n">res</span><span class="p">))</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/* SELECT文の実行と出力 */</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">char</span> <span class="n">sql</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"SELECT sno, sname FROM student WHERE sno IN (SELECT sno FROM sc GROUP BY sno HAVING COUNT(*) &gt;= 2);"</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">mysql_query</span><span class="p">(</span><span class="n">link</span><span class="p">,</span> <span class="n">sql</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">res</span> <span class="o">=</span> <span class="n">mysql_store_result</span><span class="p">(</span><span class="n">link</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">mysql_num_rows</span><span class="p">(</span><span class="n">res</span><span class="p">);</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">row</span> <span class="o">=</span> <span class="n">mysql_fetch_row</span><span class="p">(</span><span class="n">res</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">&lt;&lt;</span><span class="sc">'\t'</span><span class="o">&lt;&lt;</span><span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="cm">/* メモリの解放と接続の終了 */</span>
+</span></span><span class="line"><span class="cl">    <span class="n">mysql_free_result</span><span class="p">(</span><span class="n">res</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">mysql_close</span><span class="p">(</span><span class="n">link</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>実行：</strong></p>
+<p><img alt="上記コードの実行" loading="lazy" src="https://s1.ax1x.com/2023/01/12/pSu8rtA.png"/></p>
+<p>関数の詳細な説明については、ご自身で公式ドキュメントをご参照ください。</p>
+</section>
+<footer class="article-footer">
+<section class="article-tags">
+<a href="/ja/tags/c/c++/">C/C++</a>
+<a href="/ja/tags/%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9/">データベース</a>
+</section>
+<section class="article-lastmod">
+<svg class="icon icon-tabler icon-tabler-clock" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 0h24v24H0z" stroke="none"></path>
+<circle cx="12" cy="12" r="9"></circle>
+<polyline points="12 7 12 12 15 15"></polyline>
+</svg>
+<span>
+            最終更新 2023年1月12号
+        </span>
+</section></footer>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.css" integrity="sha256-J+iAE0sgH8QSz9hpcDxXIftnj65JEZgNhGcgReTTK9s=" rel="stylesheet"/><script crossorigin="anonymous" defer="" integrity="sha256-InsNdER1b2xUewP+pKCUJpkhiqwHgqiPXDlIk7GzBu4=" src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.js">
+</script><script crossorigin="anonymous" defer="" integrity="sha256-y39Mpg7V3D4lhBX4x6O0bUqTV4pSrfgwEfGKfxkOdgI=" src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/contrib/auto-render.min.js">
+</script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+</article>
+<div id="gitalk-container"></div>
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.18.0/js/md5.min.js"></script>
+<script>
+    if ("ja" == "zh-cn"){
+        lang = "zh-CN"
+    }else{
+        lang = "ja"
+    }
+    gitalk = new Gitalk({
+        clientID: "4c243dc52ffe119cd15f",
+        clientSecret: "886ddf6875b4e153196f12e011ab9477c8db556c",
+        repo: "gitalk-comments",
+        owner: "Honoka55",
+        admin: ["Honoka55"],
+        distractionFreeMode: false, 
+        id: md5(location.pathname), 
+        language: lang,
+    });
+    (function () {
+        if (
+            ["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1
+        ) {
+            document.getElementById("gitalk-container").innerHTML =
+                "Gitalk comments not available by default when the website is previewed locally.";
+            return;
+        }
+        gitalk.render("gitalk-container");
+    })();
+</script>
+<footer class="site-footer">
+<section class="copyright">
+        🄯 
+        
+            2019 - 
+        
+        2023 焔華Honoka55
+    </section>
+<section class="powerby">
+        Built with <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo</a> <br/>
+        Theme <b><a data-version="3.14.0" href="https://github.com/CaiJimmy/hugo-theme-stack" rel="noopener" target="_blank">Stack</a></b> designed by <a href="https://jimmycai.com" rel="noopener" target="_blank">Jimmy</a>
+</section>
+<button class="top-button" id="top-button" onclick="smoothScrollTop()">⬆ TOP</button>
+</footer>
+<div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+<div class="pswp__bg"></div>
+<div class="pswp__scroll-wrap">
+<div class="pswp__container">
+<div class="pswp__item"></div>
+<div class="pswp__item"></div>
+<div class="pswp__item"></div>
+</div>
+<div class="pswp__ui pswp__ui--hidden">
+<div class="pswp__top-bar">
+<div class="pswp__counter"></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title="Share"></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<div class="pswp__preloader">
+<div class="pswp__preloader__icn">
+<div class="pswp__preloader__cut">
+<div class="pswp__preloader__donut"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class="pswp__share-tooltip"></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class="pswp__caption">
+<div class="pswp__caption__center"></div>
+</div>
+</div>
+</div>
+</div><script crossorigin="anonymous" defer="" integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js">
+</script><script crossorigin="anonymous" defer="" integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js">
+</script><link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css" rel="stylesheet"/><link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css" rel="stylesheet"/>
+</main>
+</div>
+<script crossorigin="anonymous" integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z+KMkF24hUW8WePSA9HM=" src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js">
+</script><script defer="" src="/ts/main.js" type="text/javascript"></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;700&text=ぁあぃいぅうぇえぉおかがきぎくぐけげこごさざしじすずせぜそぞただちぢっつづてでとどなにぬねのはばぱひびぴふぶぷへべぺほぼぽまみむめもゃやゅゆょよらりるれろゎわゐゑをんゔゕゖ゙゚゛゜ゝゞゟ゠ァアィイゥウェエォオカガキギクグケゲコゴサザシジスズセゼソゾタダチヂッツヅテデトドナニヌネノハバパヒビピフブプヘベペホボポマミムメモャヤュユョヨラリルレロヮワヰヱヲンヴヵヶヷヸヹヺ・ーヽヾヿㇰㇱㇲㇳㇴㇵㇶㇷㇸㇹㇺㇻㇼㇽㇾㇿ𛀀𛀁&display=swap";
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+        document.head.appendChild(customFont);
+    }());
+</script>
+<script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js"></script>
+<script>twemoji.parse(document.body,{"base":"https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/","ext":".svg","folder":"svg"})</script>
+<script>
+    window.onscroll = function() {scrollTopButton()};
+    function scrollTopButton() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("top-button").style.display = "block";
+      } else {
+        document.getElementById("top-button").style.display = "none";
+      }
+    }
+    function smoothScrollTop(){
+        var timer  = null;
+        cancelAnimationFrame(timer);
+        timer = requestAnimationFrame(function fn(){
+            var oTop = document.body.scrollTop || document.documentElement.scrollTop;
+            if(oTop > 0){
+                document.body.scrollTop = document.documentElement.scrollTop = oTop - 50;
+                timer = requestAnimationFrame(fn);
+            }else{
+                cancelAnimationFrame(timer);
+            }
+        });
+    }
+</script>
+</body>
+</html>

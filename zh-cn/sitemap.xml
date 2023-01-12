@@ -65,6 +65,16 @@
   </url><url>
     <loc>https://honoka55.github.io/p/cpp-mariadb-link/</loc>
     <lastmod>2023-01-12T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://honoka55.github.io/ja/p/cpp-mariadb-link/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://honoka55.github.io/p/cpp-mariadb-link/"
+                />
   </url><url>
     <loc>https://honoka55.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
     <lastmod>2023-01-12T00:00:00+00:00</lastmod>
@@ -193,6 +203,16 @@
     <lastmod>1977-05-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://honoka55.github.io/tags/c/c&#43;&#43;/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://honoka55.github.io/ja/tags/c/c&#43;&#43;/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://honoka55.github.io/tags/c/c&#43;&#43;/"
+                />
   </url><url>
     <loc>https://honoka55.github.io/categories/test/</loc>
   </url><url>

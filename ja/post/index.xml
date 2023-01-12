@@ -6,7 +6,15 @@
         <description>Recent content in Posts on 焔華Honoka55</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Wed, 19 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://honoka55.github.io/ja/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sun, 11 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://honoka55.github.io/ja/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>C&#43;&#43;からMariaDBへの接続</title>
+        <link>https://honoka55.github.io/ja/p/cpp-mariadb-link/</link>
+        <pubDate>Sun, 11 Dec 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://honoka55.github.io/ja/p/cpp-mariadb-link/</guid>
+        <description>&lt;img src="https://s1.ax1x.com/2023/01/12/pSuG5DO.png" alt="Featured image of post C&#43;&#43;からMariaDBへの接続" /&gt;&lt;p&gt;C++でMariaDBデータベースに接続する簡単な方法の一つを記録しています。また、簡単な改造でMySQLへ接続することも可能です。&lt;/p&gt;</description>
+        </item>
+        <item>
         <title>江永女書で書かれた周期表の試作</title>
         <link>https://honoka55.github.io/ja/p/nyushu-zhouqibiao/</link>
         <pubDate>Wed, 19 Oct 2022 00:00:00 +0000</pubDate>
