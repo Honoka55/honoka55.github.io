@@ -30,9 +30,29 @@
   </url><url>
     <loc>https://honoka55.github.io/tags/php/</loc>
     <lastmod>2023-01-12T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://honoka55.github.io/ja/tags/php/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://honoka55.github.io/tags/php/"
+                />
   </url><url>
     <loc>https://honoka55.github.io/p/php-mb-ext/</loc>
     <lastmod>2023-01-12T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://honoka55.github.io/ja/p/php-mb-ext/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://honoka55.github.io/p/php-mb-ext/"
+                />
   </url><url>
     <loc>https://honoka55.github.io/post/</loc>
     <lastmod>2023-01-12T00:00:00+00:00</lastmod>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>PHP on 焔華Honoka55</title>
+        <link>https://honoka55.github.io/ja/tags/php/</link>
+        <description>Recent content in PHP on 焔華Honoka55</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <lastBuildDate>Tue, 13 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://honoka55.github.io/ja/tags/php/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>PHPのマルチバイト関数へのいくつかの追加</title>
+        <link>https://honoka55.github.io/ja/p/php-mb-ext/</link>
+        <pubDate>Tue, 13 Dec 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://honoka55.github.io/ja/p/php-mb-ext/</guid>
+        <description>&lt;img src="https://s1.ax1x.com/2023/01/12/pSuXeXQ.png" alt="Featured image of post PHPのマルチバイト関数へのいくつかの追加" /&gt;&lt;p&gt;PHPに付属していないマルチバイト関数をいくつか追加しています。&lt;/p&gt;</description>
+        </item>
+        
+    </channel>
+</rss>
