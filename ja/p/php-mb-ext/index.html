@@ -242,7 +242,7 @@
 <pre class="chroma" tabindex="0"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">echo</span> <span class="nx">substr_replace</span><span class="p">(</span><span class="s1">'nidema zai Nihon!'</span><span class="p">,</span><span class="s1">'Shanghai'</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>上記のコードでは、<code>'nidema zai Nihon!'</code>の11文字目からの5文字を<code>'Shanghai'</code>で置換し、「nidema zai Shanghai!」と出力されます。もちろんUnicode文字については、このマルチバイトでない関数では期待通りに扱えない。</p>
+</div><p>上記のコードでは、<code>'nidema zai Nihon!'</code>の11文字目からの5文字を<code>'Shanghai'</code>で置換し、「nidema zai Shanghai!」と出力されます。もちろんUnicode文字については、このマルチバイトでない関数では期待通りに扱えないです。</p>
 <p>この関数のマルチバイト版は以下のように実装することができます。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -304,7 +304,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>ここでは、1バイト目とマスクをビットごとにANDを取って、1文字を読み込むために読み込む必要があるバイト数を決定します。192はU＋0080〜U＋07FF（2バイト）、224はU＋0800〜U＋FFFF（3バイト）、240はU＋10000〜U＋1FFFFF（4バイト）にマッチする。</p>
+</div><p>ここでは、1バイト目とマスクをビットごとにANDを取って、1文字を読み込むために読み込む必要があるバイト数を決定します。マスクとは、192がU＋0080〜U＋07FF（2バイト）、224がU＋0800〜U＋FFFF（3バイト）、240がU＋10000〜U＋1FFFFF（4バイト）にマッチするものです。</p>
 <h3>使用例</h3>
 <p>ここでは、読み込むファイルの内容が「草😂」（<code>U+8349</code> <code>U+1F602</code>）で始まるとします。</p>
 <div class="highlight"><div class="chroma">
@@ -315,8 +315,8 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma" tabindex="0"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nv">$fp</span> <span class="o">=</span> <span class="nx">fopen</span><span class="p">(</span><span class="nv">$_FILES</span><span class="p">[</span><span class="s1">'file'</span><span class="p">][</span><span class="s1">'tmp_name'</span><span class="p">],</span> <span class="s1">'r'</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="k">echo</span> <span class="nx">mb_fgetc</span><span class="p">(</span><span class="nv">$fp</span><span class="p">);</span> <span class="c1">// ファイルポインタの1文字目「草」を読み込んで出力します
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">echo</span> <span class="nx">mb_fgetc</span><span class="p">(</span><span class="nv">$fp</span><span class="p">);</span> <span class="c1">// ファイルポインタの2文字目「😂」を読み込んで出力します
+</span></span><span class="line"><span class="cl"><span class="k">echo</span> <span class="nx">mb_fgetc</span><span class="p">(</span><span class="nv">$fp</span><span class="p">);</span> <span class="c1">// ファイルポインタの1文字目「草」を読み込んで出力
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">echo</span> <span class="nx">mb_fgetc</span><span class="p">(</span><span class="nv">$fp</span><span class="p">);</span> <span class="c1">// ファイルポインタの2文字目「😂」を読み込んで出力
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><p>他にも既存のマルチバイト版がない関数は多くありますが、もし遭遇した場合はそれぞれ個別に分析してください。</p>
