@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="zh-cn">
 <head><meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="提供了C++连接到MariaDB数据库的一种简单方法。也可以进行简单修改以适用于MySQL。
-" name="description"/><title>C++连接到MariaDB数据库</title>
-<link href="https://honoka55.github.io/p/cpp-mariadb-link/" rel="canonical"/>
-<link href="/scss/style.min.8c17314dcd70b6b5230d4168d22f5036a6f964dac8292de2b6f56bb11472308f.css" rel="stylesheet"/><meta content="C++连接到MariaDB数据库" property="og:title"/>
-<meta content="提供了C++连接到MariaDB数据库的一种简单方法。也可以进行简单修改以适用于MySQL。
+<meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="本文补充一些PHP中不自带的多字节函数。
+" name="description"/><title>PHP多字节函数的一些补充</title>
+<link href="https://honoka55.github.io/p/php-mb-ext/" rel="canonical"/>
+<link href="/scss/style.min.8c17314dcd70b6b5230d4168d22f5036a6f964dac8292de2b6f56bb11472308f.css" rel="stylesheet"/><meta content="PHP多字节函数的一些补充" property="og:title"/>
+<meta content="本文补充一些PHP中不自带的多字节函数。
 " property="og:description"/>
-<meta content="https://honoka55.github.io/p/cpp-mariadb-link/" property="og:url"/>
+<meta content="https://honoka55.github.io/p/php-mb-ext/" property="og:url"/>
 <meta content="焰华Honoka55" property="og:site_name"/>
-<meta content="article" property="og:type"/><meta content="Post" property="article:section"/><meta content="C/C++" property="article:tag"/><meta content="数据库" property="article:tag"/><meta content="2022-12-11T00:00:00+00:00" property="article:published_time"/><meta content="2023-01-12T00:00:00+00:00" property="article:modified_time"/><meta content="https://s1.ax1x.com/2023/01/12/pSuG5DO.png" property="og:image"/>
-<meta content="C++连接到MariaDB数据库" name="twitter:title"/>
-<meta content="提供了C++连接到MariaDB数据库的一种简单方法。也可以进行简单修改以适用于MySQL。
+<meta content="article" property="og:type"/><meta content="Post" property="article:section"/><meta content="PHP" property="article:tag"/><meta content="2022-12-13T00:00:00+00:00" property="article:published_time"/><meta content="2023-01-12T00:00:00+00:00" property="article:modified_time"/><meta content="https://s1.ax1x.com/2023/01/12/pSuXeXQ.png" property="og:image"/>
+<meta content="PHP多字节函数的一些补充" name="twitter:title"/>
+<meta content="本文补充一些PHP中不自带的多字节函数。
 " name="twitter:description"/><meta content="summary_large_image" name="twitter:card"/>
-<meta content="https://s1.ax1x.com/2023/01/12/pSuG5DO.png" name="twitter:image"/>
+<meta content="https://s1.ax1x.com/2023/01/12/pSuXeXQ.png" name="twitter:image"/>
 </head>
 <body class="article-page">
 <script>
@@ -182,8 +182,8 @@
 <article class="has-image main-article">
 <header class="article-header">
 <div class="article-image">
-<a href="/p/cpp-mariadb-link/">
-<img alt="Featured image of post C++连接到MariaDB数据库" loading="lazy" src="https://s1.ax1x.com/2023/01/12/pSuG5DO.png"/>
+<a href="/p/php-mb-ext/">
+<img alt="Featured image of post PHP多字节函数的一些补充" loading="lazy" src="https://s1.ax1x.com/2023/01/12/pSuXeXQ.png"/>
 </a>
 </div>
 <div class="article-details">
@@ -194,7 +194,7 @@
 </header>
 <div class="article-title-wrapper">
 <h2 class="article-title">
-<a href="/p/cpp-mariadb-link/">C++连接到MariaDB数据库</a>
+<a href="/p/php-mb-ext/">PHP多字节函数的一些补充</a>
 </h2>
 </div>
 <footer class="article-time">
@@ -208,21 +208,61 @@
 <path d="M3 11h16"></path>
 <path d="M18 16.496v1.504l1 1"></path>
 </svg>
-<time class="article-time--published">2022年12月11号</time>
+<time class="article-time--published">2022年12月13号</time>
 </div>
 </footer>
 </div>
 </header>
 <section class="article-content">
-<p>提供了C++连接到MariaDB数据库的一种简单方法。也可以进行简单修改以适用于MySQL。</p>
-<p><strong>环境：</strong> Dev-C++ 5.11，GCC 4.9.2，MariaDB 10.6</p>
-<p><strong>配置步骤：</strong></p>
-<ol>
-<li>将MariaDB安装目录下的include与lib文件夹分别覆盖到编译选项中的包含文件与库目录。</li>
-<li>在编译选项的连接器命令行加入以下命令：<code>-lmariadb</code>。</li>
-<li>将lib文件夹中的libmariadb.dll复制到源代码所在目录下。</li>
-</ol>
-<p><strong>连接与简单调试的源代码：</strong></p>
+<p>本文补充一些PHP中不自带的多字节函数。</p>
+<p>PHP默认自带的mbstring扩展中有一些以<code>mb_</code>开头的<a class="link" href="https://www.php.net/manual/zh/ref.mbstring.php" rel="noopener" target="_blank">专门用于处理多字节字符的函数</a>，专门用以处理UTF-8编码的内容。</p>
+<p>例如，UTF-8编码下同样是返回字符串长度的函数，<code>strlen("焰华Honoka55")</code>的返回值是14（一个BMP汉字为三个字节），而<code>mb_strlen("焰华Honoka55")</code>的返回值是10（一个汉字算作一个字符）。</p>
+<p>不过，mbstring扩展提供的函数种类并不丰富，下面是一些笔者数据库课设中用到而补充的函数。</p>
+<h2 id="mb_substr_replace">mb_substr_replace</h2>
+<p>mbstring扩展中有<a class="link" href="https://www.php.net/manual/zh/function.mb-substr.php" rel="noopener" target="_blank"><code>mb_substr</code></a>函数，但并没有<a class="link" href="https://www.php.net/manual/zh/function.substr-replace.php" rel="noopener" target="_blank"><code>substr_replace</code></a>函数的“mb版”。</p>
+<p><code>substr_replace</code>函数的功能为替换字符串中子串，例如</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">echo</span> <span class="nx">substr_replace</span><span class="p">(</span><span class="s1">'nidema zai Nihon!'</span><span class="p">,</span><span class="s1">'Shanghai'</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>上面的代码表示将<code>'nidema zai Nihon!'</code>从第11个字符起的5个字符替换为<code>'Shanghai'</code>，将打印“nidema zai Shanghai!”。当然，对于Unicode字符，该非多字节函数无法按预期处理。</p>
+<p>下面是该函数的多字节版本的一个可行的实现。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">function</span> <span class="nf">mb_substr_replace</span><span class="p">(</span><span class="nv">$string</span><span class="p">,</span> <span class="nv">$replace</span><span class="p">,</span> <span class="nv">$offset</span><span class="p">,</span> <span class="nv">$length</span> <span class="o">=</span> <span class="k">null</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">preg_match_all</span><span class="p">(</span><span class="s1">'/./us'</span><span class="p">,</span> <span class="nv">$string</span><span class="p">,</span> <span class="nv">$ar</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">preg_match_all</span><span class="p">(</span><span class="s1">'/./us'</span><span class="p">,</span> <span class="nv">$replace</span><span class="p">,</span> <span class="nv">$rar</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$length</span> <span class="o">=</span> <span class="nx">is_int</span><span class="p">(</span><span class="nv">$length</span><span class="p">)</span> <span class="o">?</span> <span class="nv">$length</span> <span class="o">:</span> <span class="nx">mb_strlen</span><span class="p">(</span><span class="nv">$string</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">array_splice</span><span class="p">(</span><span class="nv">$ar</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nv">$offset</span><span class="p">,</span> <span class="nv">$length</span><span class="p">,</span> <span class="nv">$rar</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">implode</span><span class="p">(</span><span class="nv">$ar</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3>使用例</h3>
+<p>为保护个人隐私，需要将姓名的第二个字改为“<code>*</code>”，代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">echo</span> <span class="nx">mb_substr_replace</span><span class="p">(</span><span class="s1">'灰太狼'</span><span class="p">,</span> <span class="s1">'*'</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// 打印“灰*狼”
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="mb_fgetc">mb_fgetc</h2>
+<p><a class="link" href="https://www.php.net/manual/zh/function.fgetc.php" rel="noopener" target="_blank"><code>fgetc</code></a>函数也没有多字节版。该函数从文件指针中获取一个字符。当然，确切来说是一个字节。下面我们来实现它的多字节版。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma" tabindex="0"><code><span class="lnt"> 1
@@ -236,93 +276,41 @@
 </span><span class="lnt"> 9
 </span><span class="lnt">10
 </span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma" tabindex="0"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;mysql/mysql.h&gt;</span><span class="cp">
-</span></span></span><span class="line"><span class="cl"><span class="cp"></span><span class="n">using</span> <span class="n">namespace</span> <span class="n">std</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="n">MYSQL</span> <span class="o">*</span><span class="n">link</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="n">MYSQL_RES</span> <span class="o">*</span><span class="n">res</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="n">MYSQL_ROW</span> <span class="n">row</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
-</span></span><span class="line"><span class="cl">    <span class="cm">/* 将终端当前代码页设置为UTF-8
-</span></span></span><span class="line"><span class="cl"><span class="cm">         因为简体中文系统下Dev-C++默认编码为GBK且不可修改，故这样保证UTF-8数据库显示正确。
-</span></span></span><span class="line"><span class="cl"><span class="cm">         也可以创建数据库时将编码方式设为GBK，则下面两行可以删去。 */</span>
-</span></span><span class="line"><span class="cl">    <span class="n">system</span><span class="p">(</span><span class="s">"chcp 65001"</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">system</span><span class="p">(</span><span class="s">"cls"</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="cm">/* 建立连接 */</span>
-</span></span><span class="line"><span class="cl">    <span class="n">link</span> <span class="o">=</span> <span class="n">mysql_init</span><span class="p">(</span><span class="nb">NULL</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">mysql_real_connect</span><span class="p">(</span><span class="n">link</span><span class="p">,</span> <span class="s">"localhost"</span><span class="p">,</span> <span class="s">"root"</span><span class="p">,</span> <span class="s">"YOUR_PASSWORD"</span><span class="cm">/* 别忘了改成你的密码 */</span><span class="p">,</span> <span class="s">"school"</span><span class="cm">/* 数据库名字 */</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">        <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">"%s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">mysql_error</span><span class="p">(</span><span class="n">link</span><span class="p">));</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="cm">/* 查询数据库中表名并输出 */</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">mysql_query</span><span class="p">(</span><span class="n">link</span><span class="p">,</span> <span class="s">"SHOW TABLES;"</span><span class="p">))</span>
-</span></span><span class="line"><span class="cl">        <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">"%s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">mysql_error</span><span class="p">(</span><span class="n">link</span><span class="p">));</span>
-</span></span><span class="line"><span class="cl">    <span class="n">res</span> <span class="o">=</span> <span class="n">mysql_use_result</span><span class="p">(</span><span class="n">link</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">"MySQL Tables in school database:"</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">while</span><span class="p">((</span><span class="n">row</span> <span class="o">=</span> <span class="n">mysql_fetch_row</span><span class="p">(</span><span class="n">res</span><span class="p">))</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">        <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="cm">/* 执行查询并输出 */</span>
-</span></span><span class="line"><span class="cl">    <span class="kt">char</span> <span class="n">sql</span><span class="p">[]</span> <span class="o">=</span> <span class="s">"SELECT sno, sname FROM student WHERE sno IN (SELECT sno FROM sc GROUP BY sno HAVING COUNT(*) &gt;= 2);"</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="n">mysql_query</span><span class="p">(</span><span class="n">link</span><span class="p">,</span> <span class="n">sql</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">res</span> <span class="o">=</span> <span class="n">mysql_store_result</span><span class="p">(</span><span class="n">link</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">mysql_num_rows</span><span class="p">(</span><span class="n">res</span><span class="p">);</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
-</span></span><span class="line"><span class="cl">        <span class="n">row</span> <span class="o">=</span> <span class="n">mysql_fetch_row</span><span class="p">(</span><span class="n">res</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">        <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">&lt;&lt;</span><span class="sc">'\t'</span><span class="o">&lt;&lt;</span><span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+<pre class="chroma" tabindex="0"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">function</span> <span class="nf">mb_fgetc</span><span class="p">(</span><span class="nv">$stream</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$mask</span> <span class="o">=</span> <span class="p">[</span><span class="mi">192</span><span class="p">,</span> <span class="mi">224</span><span class="p">,</span> <span class="mi">240</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$ch</span> <span class="o">=</span> <span class="nx">fgetc</span><span class="p">(</span><span class="nv">$stream</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nv">$ch</span><span class="p">)</span> <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nv">$buf</span> <span class="o">=</span> <span class="nv">$ch</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="nv">$i</span><span class="o">++</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">((</span><span class="nx">ord</span><span class="p">(</span><span class="nv">$ch</span><span class="p">)</span> <span class="o">&amp;</span> <span class="nv">$mask</span><span class="p">[</span><span class="nv">$i</span><span class="p">])</span> <span class="o">!=</span> <span class="nv">$mask</span><span class="p">[</span><span class="nv">$i</span><span class="p">])</span> <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$buf</span> <span class="o">.=</span> <span class="nx">fgetc</span><span class="p">(</span><span class="nv">$stream</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="cm">/* 释放结果并关闭连接 */</span>
-</span></span><span class="line"><span class="cl">    <span class="n">mysql_free_result</span><span class="p">(</span><span class="n">res</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="n">mysql_close</span><span class="p">(</span><span class="n">link</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nv">$buf</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><strong>效果：</strong></p>
-<p><img alt="上述代码运行的结果" loading="lazy" src="https://s1.ax1x.com/2023/01/12/pSu8rtA.png"/></p>
-<p>关于所用到函数的详细介绍，请自行查阅官方文档。</p>
+</div><p>这里令首字节与掩码按位与来判断读入一个字符需要读几个字节，192匹配U+0080～U+07FF（双字节），224匹配U+0800～U+FFFF（三字节），240匹配U+10000～U+1FFFFF（四字节）。</p>
+<h3>使用例</h3>
+<p>这里假设要读取的文件内容开头为“草😂”（<code>U+8349</code> <code>U+1F602</code>）。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nv">$fp</span> <span class="o">=</span> <span class="nx">fopen</span><span class="p">(</span><span class="nv">$_FILES</span><span class="p">[</span><span class="s1">'file'</span><span class="p">][</span><span class="s1">'tmp_name'</span><span class="p">],</span> <span class="s1">'r'</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="k">echo</span> <span class="nx">mb_fgetc</span><span class="p">(</span><span class="nv">$fp</span><span class="p">);</span> <span class="c1">// 读取并打印文件指针的第一个字符“草”
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">echo</span> <span class="nx">mb_fgetc</span><span class="p">(</span><span class="nv">$fp</span><span class="p">);</span> <span class="c1">// 读取并打印文件指针的第二个字符“😂”
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>还有很多函数没有可以直接用的多字节版，若遇到，可以就具体函数给出合适的相应解决方案。</p>
 </section>
 <footer class="article-footer">
 <section class="article-tags">
-<a href="/tags/c/c++/">C/C++</a>
-<a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+<a href="/tags/php/">PHP</a>
 </section>
 <section class="article-lastmod">
 <svg class="icon icon-tabler icon-tabler-clock" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
@@ -353,12 +341,12 @@
 <div class="related-content">
 <div class="flex article-list--tile">
 <article class="has-image">
-<a href="/p/php-mb-ext/">
+<a href="/p/cpp-mariadb-link/">
 <div class="article-image">
-<img data-hash="https://s1.ax1x.com/2023/01/12/pSuXeXQ.png" data-key="" loading="lazy" src="https://s1.ax1x.com/2023/01/12/pSuXeXQ.png"/>
+<img data-hash="https://s1.ax1x.com/2023/01/12/pSuG5DO.png" data-key="" loading="lazy" src="https://s1.ax1x.com/2023/01/12/pSuG5DO.png"/>
 </div>
 <div class="article-details">
-<h2 class="article-title">PHP多字节函数的一些补充</h2>
+<h2 class="article-title">C++连接到MariaDB数据库</h2>
 </div>
 </a>
 </article>
@@ -448,6 +436,28 @@
 </script><script crossorigin="anonymous" defer="" integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js">
 </script><link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css" rel="stylesheet"/><link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css" rel="stylesheet"/>
 </main>
+<aside class="sidebar right-sidebar sticky">
+<section class="widget archives">
+<div class="widget-icon">
+<svg class="icon icon-tabler icon-tabler-hash" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 0h24v24H0z" stroke="none"></path>
+<line x1="5" x2="19" y1="9" y2="9"></line>
+<line x1="5" x2="19" y1="15" y2="15"></line>
+<line x1="11" x2="7" y1="4" y2="20"></line>
+<line x1="17" x2="13" y1="4" y2="20"></line>
+</svg>
+</div>
+<h2 class="widget-title section-title">目录</h2>
+<div class="widget--toc">
+<nav id="TableOfContents">
+<ol>
+<li><a href="#mb_substr_replace">mb_substr_replace</a></li>
+<li><a href="#mb_fgetc">mb_fgetc</a></li>
+</ol>
+</nav>
+</div>
+</section>
+</aside>
 </div>
 <script crossorigin="anonymous" integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z+KMkF24hUW8WePSA9HM=" src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js">
 </script><script defer="" src="/ts/main.js" type="text/javascript"></script>
