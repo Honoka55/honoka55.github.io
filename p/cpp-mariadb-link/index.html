@@ -266,6 +266,8 @@
 </span><span class="lnt">39
 </span><span class="lnt">40
 </span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma" tabindex="0"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
@@ -289,7 +291,7 @@
 </span></span><span class="line"><span class="cl">        <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">"%s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">mysql_error</span><span class="p">(</span><span class="n">link</span><span class="p">));</span>
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    <span class="cm">/* 查询数据库中表名并输出 */</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">mysql_query</span><span class="p">(</span><span class="n">link</span><span class="p">,</span> <span class="s">"SHOW TABLES"</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="n">mysql_query</span><span class="p">(</span><span class="n">link</span><span class="p">,</span> <span class="s">"SHOW TABLES;"</span><span class="p">))</span>
 </span></span><span class="line"><span class="cl">        <span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span> <span class="s">"%s</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span> <span class="n">mysql_error</span><span class="p">(</span><span class="n">link</span><span class="p">));</span>
 </span></span><span class="line"><span class="cl">    <span class="n">res</span> <span class="o">=</span> <span class="n">mysql_use_result</span><span class="p">(</span><span class="n">link</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">"Tables in school database:"</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
@@ -308,6 +310,8 @@
 </span></span><span class="line"><span class="cl">    <span class="cm">/* 释放结果并关闭连接 */</span>
 </span></span><span class="line"><span class="cl">    <span class="n">mysql_free_result</span><span class="p">(</span><span class="n">res</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl">    <span class="n">mysql_close</span><span class="p">(</span><span class="n">link</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
