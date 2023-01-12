@@ -228,7 +228,7 @@
 </header>
 <section class="article-content">
 <p>PHPに付属していないマルチバイト関数をいくつか追加しています。</p>
-<p>PHPにデフォルトで付属しているmbstring拡張モジュールは、UTF-8でエンコードされたコンテンツを扱うために<code>mb_</code>で始まるいくつかのマルチバイト関数を備えています。</p>
+<p>PHPにデフォルトで付属しているmbstring拡張モジュールは、UTF-8でエンコードされたコンテンツを扱うために<code>mb_</code>で始まるいくつかの<a class="link" href="https://www.php.net/manual/ja/ref.mbstring.php" rel="noopener" target="_blank">マルチバイト関数</a>を備えています。</p>
 <p>例えばUTF-8エンコーディングでは、どちらも文字列の長さを返す関数が、<code>strlen("焔華Honoka55")</code>は14（BMP漢字1文字は3バイト）、<code>mb_strlen("焔華Honoka55")</code>は10（1漢字は1文字と数える）を返します。</p>
 <p>しかし、mbstring拡張に備えている関数はそれほど豊富ではありません。以下は、筆者が学校のデータベースコース設計で使用しているいくつかの追加関数です。</p>
 <h2 id="mb_substr_replace">mb_substr_replace</h2>
