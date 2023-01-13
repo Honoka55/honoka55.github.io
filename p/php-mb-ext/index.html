@@ -275,7 +275,7 @@
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="mb_fgetc">mb_fgetc</h2>
-<p><a class="link" href="https://www.php.net/manual/zh/function.fgetc.php" rel="noopener" target="_blank"><code>fgetc</code></a>函数也没有多字节版。该函数从文件指针中获取一个字符。当然，确切来说是一个字节。下面我们来实现它的多字节版。</p>
+<p><a class="link" href="https://www.php.net/manual/zh/function.fgetc.php" rel="noopener" target="_blank"><code>fgetc</code></a>函数也没有多字节版。该函数从文件指针中获取一个字符。当然，确切来说是一个字节。下面我们来实现它的多字节版（准确来说，是UTF-8版）。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma" tabindex="0"><code><span class="lnt"> 1
@@ -304,7 +304,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>这里令首字节与掩码按位与来判断读入一个字符需要读几个字节，192匹配U+0080～U+07FF（双字节），224匹配U+0800～U+FFFF（三字节），240匹配U+10000～U+1FFFFF（四字节）。</p>
+</div><p>这里令首字节与掩码按位与来判断读入一个字符需要读几个字节，192匹配U+0080～U+07FF（双字节），224匹配U+0800～U+FFFF（三字节），240匹配U+10000～U+1FFFFF（四字节），这是UTF-8编码下的实现。如果文件编码不是UTF-8，比如是GBK，则还需要换用其他的方法。而自动判断文件的编码方式需要更复杂的算法，没办法仅靠一个函数实现。</p>
 <h3>使用例</h3>
 <p>这里假设要读取的文件内容开头为“草😂”（<code>U+8349</code> <code>U+1F602</code>）。</p>
 <div class="highlight"><div class="chroma">

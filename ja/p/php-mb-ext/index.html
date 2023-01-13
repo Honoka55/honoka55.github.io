@@ -275,7 +275,7 @@
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="mb_fgetc">mb_fgetc</h2>
-<p><a class="link" href="https://www.php.net/manual/ja/function.fgetc.php" rel="noopener" target="_blank"><code>fgetc</code></a>関数にもマルチバイト版がありません。この関数は、ファイルポインタから1文字取り出すものです。もちろん、正確には1バイトです。以下は、そのマルチバイト版を実装してみましょう。</p>
+<p><a class="link" href="https://www.php.net/manual/ja/function.fgetc.php" rel="noopener" target="_blank"><code>fgetc</code></a>関数にもマルチバイト版がありません。この関数は、ファイルポインタから1文字取り出すものです。もちろん、正確には1バイトです。以下は、そのマルチバイト版（正確にはUTF-8版）を実装してみましょう。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma" tabindex="0"><code><span class="lnt"> 1
@@ -304,7 +304,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>ここでは、1バイト目とマスクをビットごとにANDを取って、1文字を読み込むために読み込む必要があるバイト数を決定します。マスクとは、192がU＋0080〜U＋07FF（2バイト）、224がU＋0800〜U＋FFFF（3バイト）、240がU＋10000〜U＋1FFFFF（4バイト）にマッチするものです。</p>
+</div><p>この関数はUTF-8のエンコードに基づいて実装されており、文字の1バイト目とマスクをビットごとにANDを取って、1文字を読み込むために必要なバイト数を判断します。192はU＋0080〜U＋07FF（2バイト）、224はU＋0800〜U＋FFFF（3バイト）、240はU＋10000〜U＋1FFFFF（4バイト）に一致します。もし、ファイルのエンコーディングがUTF-8ではなく、例えばShift JISの場合は、他の方法を使用しなければならないです。ファイルのエンコーディングを自動的に判断するにはより複雑なアルゴリズムが必要であり、一つの関数だけでは実現できません。</p>
 <h3>使用例</h3>
 <p>ここでは、読み込むファイルの内容が「草😂」（<code>U+8349</code> <code>U+1F602</code>）で始まるとします。</p>
 <div class="highlight"><div class="chroma">
