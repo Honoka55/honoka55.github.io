@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="zh-cn">
 <head><meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="本文补充一些PHP中不自带的多字节函数。
-" name="description"/><title>PHP多字节函数的一些补充 - 焰色升空，华樱落尘</title>
-<link href="https://honoka55.github.io/p/php-mb-ext/" rel="canonical"/>
-<link href="/scss/style.min.d85b846c47d86db21b5d14048743d8f54a9fbb27c9428df98cff8ba5df4103ff.css" rel="stylesheet"/><meta content="PHP多字节函数的一些补充" property="og:title"/>
-<meta content="本文补充一些PHP中不自带的多字节函数。
-" property="og:description"/>
-<meta content="https://honoka55.github.io/p/php-mb-ext/" property="og:url"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="幕间：像风一样自由" name="description"/><title>幕间：像风一样自由 - 焰色升空，华樱落尘</title>
+<link href="https://honoka55.github.io/p/ffxiv-oc-4/" rel="canonical"/>
+<link href="/scss/style.min.d85b846c47d86db21b5d14048743d8f54a9fbb27c9428df98cff8ba5df4103ff.css" rel="stylesheet"/><meta content="幕间：像风一样自由" property="og:title"/>
+<meta content="幕间：像风一样自由" property="og:description"/>
+<meta content="https://honoka55.github.io/p/ffxiv-oc-4/" property="og:url"/>
 <meta content="焰华Honoka55" property="og:site_name"/>
-<meta content="article" property="og:type"/><meta content="Post" property="article:section"/><meta content="PHP" property="article:tag"/><meta content="2022-12-13T00:00:00+00:00" property="article:published_time"/><meta content="2023-01-12T00:00:00+00:00" property="article:modified_time"/><meta content="https://s1.ax1x.com/2023/01/12/pSuXeXQ.png" property="og:image"/>
-<meta content="PHP多字节函数的一些补充" name="twitter:title"/>
-<meta content="本文补充一些PHP中不自带的多字节函数。
-" name="twitter:description"/><meta content="summary_large_image" name="twitter:card"/>
-<meta content="https://s1.ax1x.com/2023/01/12/pSuXeXQ.png" name="twitter:image"/>
+<meta content="article" property="og:type"/><meta content="Post" property="article:section"/><meta content="OC" property="article:tag"/><meta content="私设光" property="article:tag"/><meta content="2023-01-13T00:00:00+00:00" property="article:published_time"/><meta content="2023-01-13T00:00:00+00:00" property="article:modified_time"/>
+<meta content="幕间：像风一样自由" name="twitter:title"/>
+<meta content="幕间：像风一样自由" name="twitter:description"/>
 </head>
 <body class="article-page">
 <script>
@@ -179,22 +175,17 @@
 </ol>
 </aside>
 <main class="main full-width">
-<article class="has-image main-article">
+<article class="main-article">
 <header class="article-header">
-<div class="article-image">
-<a href="/p/php-mb-ext/">
-<img alt="Featured image of post PHP多字节函数的一些补充" loading="lazy" src="https://s1.ax1x.com/2023/01/12/pSuXeXQ.png"/>
-</a>
-</div>
 <div class="article-details">
 <header class="article-category">
-<a href="/categories/%E4%BB%A3%E7%A0%81/">
-                代码
+<a href="/categories/ffxiv/">
+                FFXIV
             </a>
 </header>
 <div class="article-title-wrapper">
 <h2 class="article-title">
-<a href="/p/php-mb-ext/">PHP多字节函数的一些补充</a>
+<a href="/p/ffxiv-oc-4/">幕间：像风一样自由</a>
 </h2>
 </div>
 <footer class="article-time">
@@ -208,133 +199,28 @@
 <path d="M3 11h16"></path>
 <path d="M18 16.496v1.504l1 1"></path>
 </svg>
-<time class="article-time--published">2022年12月13号</time>
-</div>
-</footer>
-<footer class="article-translations">
-<svg class="icon icon-tabler icon-tabler-language" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-<path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
-<path d="M4 5h7"></path>
-<path d="M9 3v2c0 4.418 -2.239 8 -5 8"></path>
-<path d="M5 9c-.003 2.144 2.952 3.908 6.7 4"></path>
-<path d="M12 20l4 -9l4 9"></path>
-<path d="M19.1 18h-6.2"></path>
-</svg>
-<div>
-<a class="link" href="https://honoka55.github.io/ja/p/php-mb-ext/" lang="ja">日本語</a>
+<time class="article-time--published">2023年1月13号</time>
 </div>
 </footer>
 </div>
 </header>
 <section class="article-content">
-<p>本文补充一些PHP中不自带的多字节函数。</p>
-<p>PHP默认自带的mbstring扩展中有一些以<code>mb_</code>开头的<a class="link" href="https://www.php.net/manual/zh/ref.mbstring.php" rel="noopener" target="_blank">专门用于处理多字节字符的函数</a>，专门用以处理UTF-8编码的内容。</p>
-<p>例如，UTF-8编码下同样是返回字符串长度的函数，<code>strlen("焰华Honoka55")</code>的返回值是14（一个BMP汉字为三个字节），而<code>mb_strlen("焰华Honoka55")</code>的返回值是10（一个汉字算作一个字符）。</p>
-<p>不过，mbstring扩展提供的函数种类并不丰富，下面是一些笔者数据库课设中用到而补充的函数。</p>
-<h2 id="mb_substr_replace">mb_substr_replace</h2>
-<p>mbstring扩展中有<a class="link" href="https://www.php.net/manual/zh/function.mb-substr.php" rel="noopener" target="_blank"><code>mb_substr</code></a>函数，但并没有<a class="link" href="https://www.php.net/manual/zh/function.substr-replace.php" rel="noopener" target="_blank"><code>substr_replace</code></a>函数的“mb版”。</p>
-<p><code>substr_replace</code>函数的功能为替换字符串中子串，例如</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma" tabindex="0"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma" tabindex="0"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">echo</span> <span class="nx">substr_replace</span><span class="p">(</span><span class="s1">'nidema zai Nihon!'</span><span class="p">,</span><span class="s1">'Shanghai'</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">5</span><span class="p">);</span>
-</span></span></code></pre></td></tr></table>
+<h1 id="幕间像风一样自由">幕间：像风一样自由</h1>
+<p>注意：以下内容含有6.2版本主线及支线任务剧透，若确认要阅读，请输入“我知道了”。</p>
+<div class="hugo-encryptor-container">
+<div class="hugo-encryptor-form">
+<input class="hugo-encryptor-input" placeholder="猜猜她在想什么…"/>
+<input class="hugo-encryptor-button" onclick="_click_handler(this)" type="button" value="确定"/>
 </div>
-</div><p>上面的代码表示将<code>'nidema zai Nihon!'</code>从第11个字符起的5个字符替换为<code>'Shanghai'</code>，将打印“nidema zai Shanghai!”。当然，对于Unicode字符，该非多字节函数无法按预期处理。</p>
-<p>下面是该函数的多字节版本的一个可行的实现。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma" tabindex="0"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span><span class="lnt">7
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma" tabindex="0"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">function</span> <span class="nf">mb_substr_replace</span><span class="p">(</span><span class="nv">$string</span><span class="p">,</span> <span class="nv">$replace</span><span class="p">,</span> <span class="nv">$offset</span><span class="p">,</span> <span class="nv">$length</span> <span class="o">=</span> <span class="k">null</span><span class="p">){</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">preg_match_all</span><span class="p">(</span><span class="s1">'/./us'</span><span class="p">,</span> <span class="nv">$string</span><span class="p">,</span> <span class="nv">$ar</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">preg_match_all</span><span class="p">(</span><span class="s1">'/./us'</span><span class="p">,</span> <span class="nv">$replace</span><span class="p">,</span> <span class="nv">$rar</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="nv">$length</span> <span class="o">=</span> <span class="nx">is_int</span><span class="p">(</span><span class="nv">$length</span><span class="p">)</span> <span class="o">?</span> <span class="nv">$length</span> <span class="o">:</span> <span class="nx">mb_strlen</span><span class="p">(</span><span class="nv">$string</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="nx">array_splice</span><span class="p">(</span><span class="nv">$ar</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nv">$offset</span><span class="p">,</span> <span class="nv">$length</span><span class="p">,</span> <span class="nv">$rar</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">implode</span><span class="p">(</span><span class="nv">$ar</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
+<div class="hugo-encryptor-cipher-text" style="display: none;">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</div>
 </div>
-</div><h3>使用例</h3>
-<p>为保护个人隐私，需要将姓名的第二个字改为“<code>*</code>”，代码如下：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma" tabindex="0"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma" tabindex="0"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">echo</span> <span class="nx">mb_substr_replace</span><span class="p">(</span><span class="s1">'灰太狼'</span><span class="p">,</span> <span class="s1">'*'</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// 打印“灰*狼”
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="mb_fgetc">mb_fgetc</h2>
-<p><a class="link" href="https://www.php.net/manual/zh/function.fgetc.php" rel="noopener" target="_blank"><code>fgetc</code></a>函数也没有多字节版。该函数从文件指针中获取一个字符。当然，确切来说是一个字节。下面我们来实现它的多字节版。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma" tabindex="0"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma" tabindex="0"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="k">function</span> <span class="nf">mb_fgetc</span><span class="p">(</span><span class="nv">$stream</span><span class="p">){</span>
-</span></span><span class="line"><span class="cl">    <span class="nv">$mask</span> <span class="o">=</span> <span class="p">[</span><span class="mi">192</span><span class="p">,</span> <span class="mi">224</span><span class="p">,</span> <span class="mi">240</span><span class="p">];</span>
-</span></span><span class="line"><span class="cl">    <span class="nv">$ch</span> <span class="o">=</span> <span class="nx">fgetc</span><span class="p">(</span><span class="nv">$stream</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nv">$ch</span><span class="p">)</span> <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="nv">$buf</span> <span class="o">=</span> <span class="nv">$ch</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="nv">$i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">;</span> <span class="nv">$i</span><span class="o">++</span><span class="p">){</span>
-</span></span><span class="line"><span class="cl">        <span class="k">if</span><span class="p">((</span><span class="nx">ord</span><span class="p">(</span><span class="nv">$ch</span><span class="p">)</span> <span class="o">&amp;</span> <span class="nv">$mask</span><span class="p">[</span><span class="nv">$i</span><span class="p">])</span> <span class="o">!=</span> <span class="nv">$mask</span><span class="p">[</span><span class="nv">$i</span><span class="p">])</span> <span class="k">break</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$buf</span> <span class="o">.=</span> <span class="nx">fgetc</span><span class="p">(</span><span class="nv">$stream</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nv">$buf</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>这里令首字节与掩码按位与来判断读入一个字符需要读几个字节，192匹配U+0080～U+07FF（双字节），224匹配U+0800～U+FFFF（三字节），240匹配U+10000～U+1FFFFF（四字节）。</p>
-<h3>使用例</h3>
-<p>这里假设要读取的文件内容开头为“草😂”（<code>U+8349</code> <code>U+1F602</code>）。</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma" tabindex="0"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma" tabindex="0"><code class="language-php" data-lang="php"><span class="line"><span class="cl"><span class="nv">$fp</span> <span class="o">=</span> <span class="nx">fopen</span><span class="p">(</span><span class="nv">$_FILES</span><span class="p">[</span><span class="s1">'file'</span><span class="p">][</span><span class="s1">'tmp_name'</span><span class="p">],</span> <span class="s1">'r'</span><span class="p">);</span>
-</span></span><span class="line"><span class="cl"><span class="k">echo</span> <span class="nx">mb_fgetc</span><span class="p">(</span><span class="nv">$fp</span><span class="p">);</span> <span class="c1">// 读取并打印文件指针的第一个字符“草”
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">echo</span> <span class="nx">mb_fgetc</span><span class="p">(</span><span class="nv">$fp</span><span class="p">);</span> <span class="c1">// 读取并打印文件指针的第二个字符“😂”
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>还有很多函数没有可以直接用的多字节版，若遇到，可以就具体函数给出合适的相应解决方案。</p>
 </section>
 <footer class="article-footer">
 <section class="article-tags">
-<a href="/tags/php/">PHP</a>
+<a href="/tags/oc/">OC</a>
+<a href="/tags/%E7%A7%81%E8%AE%BE%E5%85%89/">私设光</a>
 </section>
-<section class="article-lastmod">
-<svg class="icon icon-tabler icon-tabler-clock" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-<path d="M0 0h24v24H0z" stroke="none"></path>
-<circle cx="12" cy="12" r="9"></circle>
-<polyline points="12 7 12 12 15 15"></polyline>
-</svg>
-<span>
-            最后更新于 2023年1月12号
-        </span>
-</section></footer>
+</footer>
 <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.css" integrity="sha256-J+iAE0sgH8QSz9hpcDxXIftnj65JEZgNhGcgReTTK9s=" rel="stylesheet"/><script crossorigin="anonymous" defer="" integrity="sha256-InsNdER1b2xUewP+pKCUJpkhiqwHgqiPXDlIk7GzBu4=" src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.js">
 </script><script crossorigin="anonymous" defer="" integrity="sha256-y39Mpg7V3D4lhBX4x6O0bUqTV4pSrfgwEfGKfxkOdgI=" src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/contrib/auto-render.min.js">
 </script><script>
@@ -353,13 +239,24 @@
 <h2 class="section-title">相关文章</h2>
 <div class="related-content">
 <div class="flex article-list--tile">
-<article class="has-image">
-<a href="/p/cpp-mariadb-link/">
-<div class="article-image">
-<img data-hash="https://s1.ax1x.com/2023/01/12/pSuG5DO.png" data-key="" loading="lazy" src="https://s1.ax1x.com/2023/01/12/pSuG5DO.png"/>
-</div>
+<article class="">
+<a href="/p/ffxiv-oc-1/">
 <div class="article-details">
-<h2 class="article-title">C++连接到MariaDB数据库</h2>
+<h2 class="article-title">光之战士尘封的往事</h2>
+</div>
+</a>
+</article>
+<article class="">
+<a href="/p/ffxiv-oc-3/">
+<div class="article-details">
+<h2 class="article-title">他乡的归途</h2>
+</div>
+</a>
+</article>
+<article class="">
+<a href="/p/ffxiv-oc-2/">
+<div class="article-details">
+<h2 class="article-title">不是光之战士的她</h2>
 </div>
 </a>
 </article>
@@ -449,28 +346,6 @@
 </script><script crossorigin="anonymous" defer="" integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js">
 </script><link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css" rel="stylesheet"/><link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css" rel="stylesheet"/>
 </main>
-<aside class="sidebar right-sidebar sticky">
-<section class="widget archives">
-<div class="widget-icon">
-<svg class="icon icon-tabler icon-tabler-hash" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-<path d="M0 0h24v24H0z" stroke="none"></path>
-<line x1="5" x2="19" y1="9" y2="9"></line>
-<line x1="5" x2="19" y1="15" y2="15"></line>
-<line x1="11" x2="7" y1="4" y2="20"></line>
-<line x1="17" x2="13" y1="4" y2="20"></line>
-</svg>
-</div>
-<h2 class="widget-title section-title">目录</h2>
-<div class="widget--toc">
-<nav id="TableOfContents">
-<ol>
-<li><a href="#mb_substr_replace">mb_substr_replace</a></li>
-<li><a href="#mb_fgetc">mb_fgetc</a></li>
-</ol>
-</nav>
-</div>
-</section>
-</aside>
 </div>
 <script crossorigin="anonymous" integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z+KMkF24hUW8WePSA9HM=" src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js">
 </script><script defer="" src="/ts/main.js" type="text/javascript"></script>
@@ -508,5 +383,5 @@
         });
     }
 </script>
-</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script><script src="/ts/decrypt.js"></script></body>
 </html>
