@@ -14,6 +14,14 @@
 <description>&lt;h1 id="幕间像风一样自由"&gt;幕间：像风一样自由&lt;/h1&gt;</description>
 </item>
 <item>
+<title>PHP与MariaDB数据库实现的省市区三级联动下拉选择器</title>
+<link>https://honoka55.github.io/p/php-distpicker/</link>
+<pubDate>Wed, 14 Dec 2022 00:00:00 +0000</pubDate>
+<guid>https://honoka55.github.io/p/php-distpicker/</guid>
+<description>&lt;img src="https://s1.ax1x.com/2023/01/13/pSMpPIJ.png" alt="Featured image of post PHP与MariaDB数据库实现的省市区三级联动下拉选择器" /&gt;&lt;p&gt;我的&lt;a class="link" href="https://github.com/Honoka55/distpicker-php"  target="_blank" rel="noopener"
+    &gt;省市区三级联动下拉选择器&lt;/a&gt;的思路或者说一些相关的碎碎念。&lt;/p&gt;</description>
+</item>
+<item>
 <title>PHP多字节函数的一些补充</title>
 <link>https://honoka55.github.io/p/php-mb-ext/</link>
 <pubDate>Tue, 13 Dec 2022 00:00:00 +0000</pubDate>

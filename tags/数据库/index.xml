@@ -6,7 +6,16 @@
         <description>Recent content in 数据库 on 焰华Honoka55</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Sun, 11 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://honoka55.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Wed, 14 Dec 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://honoka55.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>PHP与MariaDB数据库实现的省市区三级联动下拉选择器</title>
+        <link>https://honoka55.github.io/p/php-distpicker/</link>
+        <pubDate>Wed, 14 Dec 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://honoka55.github.io/p/php-distpicker/</guid>
+        <description>&lt;img src="https://s1.ax1x.com/2023/01/13/pSMpPIJ.png" alt="Featured image of post PHP与MariaDB数据库实现的省市区三级联动下拉选择器" /&gt;&lt;p&gt;我的&lt;a class=&#34;link&#34; href=&#34;https://github.com/Honoka55/distpicker-php&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;省市区三级联动下拉选择器&lt;/a&gt;的思路或者说一些相关的碎碎念。&lt;/p&gt;</description>
+        </item>
+        <item>
         <title>C&#43;&#43;连接到MariaDB数据库</title>
         <link>https://honoka55.github.io/p/cpp-mariadb-link/</link>
         <pubDate>Sun, 11 Dec 2022 00:00:00 +0000</pubDate>
