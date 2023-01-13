@@ -232,7 +232,7 @@
 <p>例えばUTF-8エンコーディングでは、どちらも文字列の長さを返す関数が、<code>strlen("焔華Honoka55")</code>は14（BMP漢字1文字は3バイト）、<code>mb_strlen("焔華Honoka55")</code>は10（1漢字は1文字と数える）を返します。</p>
 <p>しかし、mbstring拡張に備えている関数はそれほど豊富ではありません。以下は、筆者が学校のデータベースコース設計で使用しているいくつかの追加関数です。</p>
 <h2 id="mb_substr_replace">mb_substr_replace</h2>
-<p>mbstring拡張には<a class="link" href="https://www.php.net/manual/ja/function.mb-substr.php" rel="noopener" target="_blank"><code>mb_substr</code></a>関数がありますが、関数<a class="link" href="https://www.php.net/manual/ja/function.substr-replace.php" rel="noopener" target="_blank"><code>substr_replace</code></a>の「mb版」は存在しません。</p>
+<p>mbstring拡張には<a class="link" href="https://www.php.net/manual/ja/function.mb-substr.php" rel="noopener" target="_blank"><code>mb_substr</code></a>という関数がありますが、<a class="link" href="https://www.php.net/manual/ja/function.substr-replace.php" rel="noopener" target="_blank"><code>substr_replace</code></a>関数の「mb版」は存在しません。</p>
 <p>関数<code>substr_replace</code>は文字列の一部を置換するものです。例えば</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
