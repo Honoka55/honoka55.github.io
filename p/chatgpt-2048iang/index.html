@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="zh-cn">
+<head><meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="没有JavaScript基础也可以借助AI改出来的小游戏——2048iáng。
+" name="description"/><title>利用ChatGPT开发一例 | 焰色升空，华樱落尘</title>
+<link href="https://honoka55.github.io/p/chatgpt-2048iang/" rel="canonical"/>
+<link href="/scss/style.min.eeb01916234730fae6bfbb5e529c0bbc3cd66660871f4e1c48bbe5782861ebd8.css" rel="stylesheet"/><meta content="利用ChatGPT开发一例" property="og:title"/>
+<meta content="没有JavaScript基础也可以借助AI改出来的小游戏——2048iáng。
+" property="og:description"/>
+<meta content="https://honoka55.github.io/p/chatgpt-2048iang/" property="og:url"/>
+<meta content="焰色升空，华樱落尘" property="og:site_name"/>
+<meta content="article" property="og:type"/><meta content="Post" property="article:section"/><meta content="ChatGPT" property="article:tag"/><meta content="2023-01-15T00:00:00+00:00" property="article:published_time"/><meta content="2023-01-15T00:00:00+00:00" property="article:modified_time"/><meta content="https://s1.ax1x.com/2023/01/15/pSQgGzq.png" property="og:image"/>
+<meta content="利用ChatGPT开发一例" name="twitter:title"/>
+<meta content="没有JavaScript基础也可以借助AI改出来的小游戏——2048iáng。
+" name="twitter:description"/><meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://s1.ax1x.com/2023/01/15/pSQgGzq.png" name="twitter:image"/>
+</head>
+<body class="article-page">
+<script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky">
+<button aria-label="切换菜单" class="hamburger hamburger--spin" id="toggle-menu" type="button">
+<span class="hamburger-box">
+<span class="hamburger-inner"></span>
+</span>
+</button>
+<header>
+<figure class="site-avatar">
+<a href="/">
+<img alt="Avatar" class="site-logo" height="300" loading="lazy" src="/img/avatar_hu7d9b67be7ef950d905465e1960632c76_41038_300x0_resize_box_3.png" width="300"/>
+</a>
+<span class="emoji">😴</span>
+</figure>
+<div class="site-meta">
+<h1 class="site-name"><a href="/">焰华Honoka55</a></h1>
+<h2 class="site-description">焰色升空，华樱落尘</h2>
+</div>
+</header><ol class="social-menu">
+<li>
+<a href="https://space.bilibili.com/7398042" target="_blank" title="bilibili">
+<svg class="icon icon-tabler icon-tabler-brand-github" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<style type="text/css">
+	.st0{fill:none;}
+
+</style>
+<path class="st0" d="M17.4,18.9H6.7c-1.5,0-2.8-1.2-2.8-2.8V9.9c0-1.5,1.2-2.8,2.8-2.8h10.7c1.5,0,2.8,1.2,2.8,2.8v6.2
+	C20.1,17.6,18.9,18.9,17.4,18.9z"></path>
+<line class="st1" x1="7.4" x2="10.5" y1="4.1" y2="7.2"></line>
+<line class="st1" x1="16.5" x2="13.4" y1="4.1" y2="7.2"></line>
+<line class="st1" x1="9" x2="9" y1="12.1" y2="12.9"></line>
+<line class="st1" x1="15.1" x2="15.1" y1="12.1" y2="12.9"></line>
+</svg>
+</a>
+</li>
+<li>
+<a href="https://github.com/honoka55" target="_blank" title="GitHub">
+<svg class="icon icon-tabler icon-tabler-brand-github" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
+<path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path>
+</svg>
+</a>
+</li>
+<li>
+<a href="http://zhs.glyphwiki.org/wiki/User:honoka55" target="_blank" title="GlyphWiki">
+<svg class="icon icon-tabler icon-tabler-brand-glyphwiki" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<g>
+<path d="M11.9,20.5l2-0.5l0.1,0l0.1,0l0.1-0.1l0,0l0-0.1l0-0.1l0-0.1l-1.5-4.7l-8.3,1.8l-0.1-0.4l8.3-1.8l-0.8-2.6l1.3-0.1l0.3-0.6
+		l0.3-0.5l0.3-0.5l0.3-0.4l0.2-0.4L14.6,9l0.1-0.1L7,10.5l-0.1-0.4L15,8.3l0,0L15.1,8l0.1,0l0.3-0.4l1.4,0.7l-0.4,0.4l-0.6,0.5
+		l-0.1,0.1l-0.3,0.3L15.2,10l-0.3,0.4l-0.4,0.4l-0.4,0.4l-0.4,0.4l-0.4,0.4L13.2,12l-0.1,0.1l0.6,2.1l6.1-1.4l0.7-1.2l1.5,0.7
+		l0.1,0.4l-8.4,1.9l1.5,4.7l0.1,0.3l0,0.3l0,0.3l-0.1,0.3l-0.1,0.2l-0.2,0.2L15,20.9l-0.2,0.1l-0.2,0.1l-0.2,0.1l-0.2-0.6L12,20.8
+		L11.9,20.5z M4,8.6l0.2,0.6l0.1,0.6l0,0.5l0,0.5l-0.1,0.5L4,11.6L3.8,12l-0.4,0.2l-0.5-0.1l-0.2-0.4l0.1-0.4L2.9,11l0.1-0.2
+		l0.1-0.3l0.1-0.4l0.1-0.4l0-0.5l0-0.5L3.3,8L3.2,7.4L3,6.6l0.2-0.1l0.3,0.7l0.2,0.5L10,6.4l-1-3l1.3-0.1l0.4,0.1l-0.2,0.3l0.8,2.5
+		l6.6-1.5l0-0.1l0,0l0,0L18.3,4l1.4,0.7l-0.4,0.4l-0.3,0.2L19,5.4l-0.1,0.3l-0.1,0.3l-0.1,0.4l-0.2,0.4l-0.2,0.4l-0.2,0.4L17.9,8
+		l-0.2,0.4l-0.2-0.1l0.1-0.5l0.1-0.5L17.7,7l0.1-0.4l0-0.4l0-0.4l0-0.3l0-0.3l0-0.1l-14,3.1L4,8.6z"></path>
+</g>
+</svg>
+</a>
+</li>
+</ol><ol class="menu" id="main-menu">
+<li>
+<a href="/">
+<svg class="icon icon-tabler icon-tabler-home" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 0h24v24H0z" stroke="none"></path>
+<polyline points="5 12 3 12 12 3 21 12 19 12"></polyline>
+<path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"></path>
+<path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"></path>
+</svg>
+<span>主页</span>
+</a>
+</li>
+<li>
+<a href="/search/">
+<svg class="icon icon-tabler icon-tabler-search" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 0h24v24H0z" stroke="none"></path>
+<circle cx="10" cy="10" r="7"></circle>
+<line x1="21" x2="15" y1="21" y2="15"></line>
+</svg>
+<span>搜索</span>
+</a>
+</li>
+<li>
+<a href="/tools/">
+<svg class="icon icon-tabler icon-tabler-tool" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
+<path d="M7 10h3v-3l-3.5 -3.5a6 6 0 0 1 8 8l6 6a2 2 0 0 1 -3 3l-6 -6a6 6 0 0 1 -8 -8l3.5 3.5"></path>
+</svg>
+<span>工具</span>
+</a>
+</li>
+<li>
+<a href="/about/">
+<svg class="icon icon-tabler icon-tabler-user" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 0h24v24H0z" stroke="none"></path>
+<circle cx="12" cy="7" r="4"></circle>
+<path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
+</svg>
+<span>关于</span>
+</a>
+</li>
+<li>
+<a href="/links/">
+<svg class="icon icon-tabler icon-tabler-link" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 0h24v24H0z" stroke="none"></path>
+<path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5"></path>
+<path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5"></path>
+</svg>
+<span>友链</span>
+</a>
+</li>
+<div class="menu-bottom-section">
+<li id="i18n-switch">
+<svg class="icon icon-tabler icon-tabler-language" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
+<path d="M4 5h7"></path>
+<path d="M9 3v2c0 4.418 -2.239 8 -5 8"></path>
+<path d="M5 9c-.003 2.144 2.952 3.908 6.7 4"></path>
+<path d="M12 20l4 -9l4 9"></path>
+<path d="M19.1 18h-6.2"></path>
+</svg>
+<select name="language" onchange="window.location.href = this.selectedOptions[0].value">
+<option selected="" value="https://honoka55.github.io/">中文</option>
+<option value="https://honoka55.github.io/ja/">日本語</option>
+</select>
+</li>
+<li id="dark-mode-toggle">
+<svg class="icon icon-tabler icon-tabler-toggle-left" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 0h24v24H0z" stroke="none"></path>
+<circle cx="8" cy="12" r="2"></circle>
+<rect height="12" rx="6" width="20" x="2" y="6"></rect>
+</svg>
+<svg class="icon icon-tabler icon-tabler-toggle-right" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 0h24v24H0z" stroke="none"></path>
+<circle cx="16" cy="12" r="2"></circle>
+<rect height="12" rx="6" width="20" x="2" y="6"></rect>
+</svg>
+<span>深色模式</span>
+</li>
+</div>
+</ol>
+</aside>
+<main class="main full-width">
+<article class="has-image main-article">
+<header class="article-header">
+<div class="article-image">
+<a href="/p/chatgpt-2048iang/">
+<img alt="Featured image of post 利用ChatGPT开发一例" loading="lazy" src="https://s1.ax1x.com/2023/01/15/pSQgGzq.png"/>
+</a>
+</div>
+<div class="article-details">
+<header class="article-category">
+<a href="/categories/%E4%BB%A3%E7%A0%81/">
+                代码
+            </a>
+</header>
+<div class="article-title-wrapper">
+<h2 class="article-title">
+<a href="/p/chatgpt-2048iang/">利用ChatGPT开发一例</a>
+</h2>
+</div>
+<footer class="article-time">
+<div>
+<svg class="icon icon-tabler icon-tabler-calendar-time" fill="none" height="56" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="56" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 0h24v24H0z" stroke="none"></path>
+<path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4"></path>
+<circle cx="18" cy="18" r="4"></circle>
+<path d="M15 3v4"></path>
+<path d="M7 3v4"></path>
+<path d="M3 11h16"></path>
+<path d="M18 16.496v1.504l1 1"></path>
+</svg>
+<time class="article-time--published">2023年1月15号</time>
+</div>
+</footer>
+</div>
+</header>
+<section class="article-content">
+<p>没有JavaScript基础也可以借助AI改出来的小游戏——<a class="link" href="https://honoka55.github.io/2048iang/" rel="noopener" target="_blank">2048iáng</a>。</p>
+<p>因为实在很闲所以做了，之前就想过做这个。基于<a class="link" href="https://github.com/gabrielecirulli/2048" rel="noopener" target="_blank">Gabriele Cirulli的2048源码</a>，基本靠ChatGPT完成了代码部分的修改。</p>
+<p>下面简要记录开发的过程。</p>
+<p>首先，把GameManager喂给AI，我甚至不知道这是什么，AI告诉我这是用于2048游戏的类。类就类吧，我让它给我解释了每一部分代码都是干什么的，之后我猜发现，甚至这一步都是多余的。</p>
+<p>接下来我开始提需求了。我还是先对我要实现的游戏进行了简单的抽象化的：我让1～9分别代表“幺”“言”“长”“马”“月”“刂”“穴”“心”“辶”，然后比如55，是两个5，就代表“朋”。这样“𰻝”就可以表示成75121343689（问就是按笔顺排列的）。</p>
+<blockquote>
+<p><strong>我：</strong> 假设我现在要设计一种新型的2048，它是这样的：会随机产生1～9这9种不同的方块，两个1可以合并成11，两个2可以合并成22，两个3可以合并成33，但是两个4不能合并成44。此外，1和2可以合并成12，3和4可以合并成34，1和12可以合并成121，3和34可以合并成343，121和343可以合并成121343，121343和5可以合并成5121343，121343和6可以合并成1213436，5121343和6或者5和1213436都可以合并成51213436，51213436和7可以合并成751213436，51213436和8可以合并成512134368，512134368和7或者751213436和8都可以合并成7512134368，最后，7512134368和9可以合并成75121343689。除了我提到的方块种类之外不存在其他种类的方块，除了我提到的合并方法之外的方块都不可以合并，这个代码需要进行怎样的改动？<br/>
+<strong>ChatGPT：</strong> 为了实现这种新型的2048游戏，需要在整个游戏的代码中进行一些修改。<br/>
+1.首先要在Tile类中增加一个新属性，用来存储方块的种类。<br/>
+2.修改随机生成新方块的代码，使得生成的方块可以是1~9这9种不同的方块。<br/>
+3.修改合并方块的代码，使得只有满足新的合并规则的方块才能进行合并。<br/>
+4.修改判断游戏结束的代码，使得当没有可移动或可合并的方块时，游戏才结束。<br/>
+5.最后需要对游戏的UI部分进行修改，使得游戏界面能够展示新的方块种类以及新的合并规则。<br/>
+这些修改都需要对代码进行大量的更改，并且需要具备较为丰富的javascript开发经验。</p>
+</blockquote>
+<p>既然它已经把需求分解好了，我一个一个问就是了。</p>
+<blockquote>
+<p><strong>我：</strong> 请告诉我怎么在Tile类中增加一个新属性，用来存储方块的种类</p>
+</blockquote>
+<p>我不会，但是它当然能给出来：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">Tile</span><span class="p">(</span><span class="nx">position</span><span class="p">,</span> <span class="nx">value</span><span class="p">,</span> <span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">this</span><span class="p">.</span><span class="nx">x</span>                <span class="o">=</span> <span class="nx">position</span><span class="p">.</span><span class="nx">x</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">this</span><span class="p">.</span><span class="nx">y</span>                <span class="o">=</span> <span class="nx">position</span><span class="p">.</span><span class="nx">y</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">this</span><span class="p">.</span><span class="nx">value</span>            <span class="o">=</span> <span class="nx">value</span> <span class="o">||</span> <span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">this</span><span class="p">.</span><span class="nx">type</span>             <span class="o">=</span> <span class="nx">type</span><span class="p">;</span><span class="c1">//新增的属性
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>不过我突然想到，为什么要加新的type属性，我不能利用value属性吗？可惜，ChatGPT对此的回答是，不可以，我必须新增一个属性来存储这些1～9、11等数字。我让它思考值是否仍有意义，它说是有意义的，可以用于计算分数，这一点倒是启发了我。我暂时跳过这条，仍然打算把方块的种类存在value中。它还提到了胜利条件，当然是拼出“𰻝”字。由此我想到了新的问题，也是它提出的第二点需求。</p>
+<blockquote>
+<p><strong>我：</strong> 根据我的合并规则与胜利条件，随机生成1～9的概率分别是多大能使得游戏难度适中？</p>
+</blockquote>
+<p>经过反复调教，它最终给我的概率是：</p>
+<ul>
+<li>1: 0.1</li>
+<li>2: 0.2</li>
+<li>3: 0.1</li>
+<li>4: 0.2</li>
+<li>5: 0.1</li>
+<li>6: 0.1</li>
+<li>7: 0.05</li>
+<li>8: 0.05</li>
+<li>9: 0.01</li>
+</ul>
+<p>加起来不到1也是意料之中的，它一直没给出过加和为1的概率，不过大致可以参考这个比例了。</p>
+<blockquote>
+<p><strong>我：</strong> 现在请你修改随机生成新方块的代码（addRandomTile），使得生成的方块可以是1~9这9种不同的方块且概率如你所说</p>
+</blockquote>
+<p>它给我的写法我没看懂，我让它换一种写法，令数组直接存储概率，它也做到了。接下来让它继续实现需求。</p>
+<blockquote>
+<p><strong>我：</strong> 谢谢你，我改好了。接下来，如何修改合并方块的代码，使得只有满足新的合并规则的方块才能进行合并？</p>
+</blockquote>
+<p>几下引导后，它给出了判断能否合并的方法：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">GameManager</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">canMerge</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">first</span><span class="p">,</span> <span class="nx">second</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 判断两个方块的类型是否允许合并
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kd">var</span> <span class="nx">firstType</span> <span class="o">=</span> <span class="nx">first</span><span class="p">.</span><span class="nx">type</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="nx">secondType</span> <span class="o">=</span> <span class="nx">second</span><span class="p">.</span><span class="nx">type</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="nx">pattern</span> <span class="o">=</span> <span class="nx">firstType</span> <span class="o">+</span> <span class="nx">secondType</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="sr">/^(11|22|33|12|34|121|343|5121343|1213436|51213436|751213436|512134368|7512134368|75121343689)$/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">pattern</span><span class="p">)){</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>当然，它还惦记它那type，我打算value存。而且if(x) return true; else return false;的写法也很蠢。这些都是小问题，我甩出了代码中明显存在的错误：</p>
+<blockquote>
+<p><strong>我：</strong> 万一first是1，second是12，1和12是可以合并成121的，你这样就按112判断不能合并了<br/>
+<strong>ChatGPT：</strong> 我错了，应该用判断firstType在secondType中出现的位置来确定是否可以合并。这样就可以避免上面提到的问题了。我会修改代码。</p>
+</blockquote>
+<p>结果它给出的修改居然是：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-js" data-lang="js"><span class="line"><span class="cl"> <span class="k">if</span><span class="p">(</span><span class="nx">firstType</span> <span class="o">===</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="nx">secondType</span> <span class="o">===</span> <span class="mi">2</span> <span class="o">||</span> <span class="nx">firstType</span> <span class="o">===</span> <span class="mi">2</span> <span class="o">&amp;&amp;</span> <span class="nx">secondType</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="s1">'12'</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="c1">// 下略
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>还没等写完就被我叫停了。不过它刚才的判断方法也给了我新的思路。部件一样不就能合并嘛，只需要给出哪些合并结果是合法的就行了。问题就转化成了</p>
+<blockquote>
+<p><strong>我：</strong> 怎么把数字改成各位从小到大排列，如1432改成1234，7512134368改成1123345679</p>
+</blockquote>
+<p>我懒死，有AI用决不去百度。它给我了一段代码，直接就能用了。在它刚才写的正则匹配的判定基础上修改，比如1213436就改成1123346，匹配的就可以合并。不过没想到，接下来这个问题难住它了。</p>
+<blockquote>
+<p><strong>我：</strong> 原来的2048中，相等的方块即可合并。现在我写了canMerge函数，原来代码中哪些部分需要用这个函数替换？</p>
+</blockquote>
+<p>它列举了六七处用<code>===</code>连接的地方，告诉我改成用canMerge。可是，整个代码中都没有这么多处判断能否合并！闹鬼的是，它列举的代码在最开始喂给它的代码里根本不存在！也许是达到它的记忆token上限忘记了？我感觉又不想。最终还是靠我人工找到两处判断了能否合并的地方，自己替换成了canMerge。</p>
+<p>进行测试，我想要的功能基本全部实现。还差的地方一个是计分，一个是要把数字显示成对应的汉字。原本的2048计分是加上合并出的方块的值。现在合并出的值不能直接反应难度，2的值的位数次幂才是原来的分数记法。</p>
+<blockquote>
+<p><strong>我：</strong> value为整数，如何知道它有几位数？<br/>
+<strong>ChatGPT：</strong> 可以使用JavaScript中的内置函数toString()将value转换为字符串，然后计算字符串长度，即可得到value有几位数：<code>var valueLength = value.toString().length;</code><br/>
+<strong>我：</strong> 求2的这个长度次幂怎么算<br/>
+<strong>ChatGPT：</strong> 2的n次幂可以使用 Math.pow(2, n) 来计算.</p>
+</blockquote>
+<p>计分也改好了，接下来只需要把数字显示成对应的汉字，再补一下字体调一下样式，这就算完工了。</p>
+<blockquote>
+<p><strong>我：</strong> 现在我要更改数字的显示，比如1显示为啊，2显示为啦，12显示为去，121343显示为你，应该怎么做</p>
+</blockquote>
+<p>它又告诉我给Tile加属性……可以有没有一种可能就是同样的数字就是会显示同样的汉字？好在它同时给出，也可以在渲染时直接打印值。我让它帮我写了这个把值转换成汉字的函数，就是一个简单的switch，不过我是真的不懂JavaScript语法。它给一个样子我就能照猫画虎了。</p>
+<p>现在我需求中的游戏完全成形了，而我还没完整地写过一行代码。太神奇了！</p>
+<p>我进行了简单的测试，发现很难。仔细想想这个游戏的话，前半段的目标是拼成“⿱⿲幺言幺⿲长马长”，接下来才是给“⿱⿲幺言幺⿲长马长”依次加月字旁、立刀旁、穴字头、心字底、走之。所以我打算为前后两部分设置不同的概率。当然，我不会自己出手。</p>
+<blockquote>
+<p><strong>我：</strong> 帮我写一个返回当前网格中最大数值格子的数值的函数</p>
+</blockquote>
+<p>它写出来了个<code>Grid.prototype.getMaxValue</code>，当然也是直接粘贴进去就能用。if我也懒得自己写，于是</p>
+<blockquote>
+<p><strong>我：</strong> 帮我把addRandomTile改成先getMaxValue到最大值，若最大值小于112334，则不会产生方块5-9，最大值大于等于112334时1-9都会产生</p>
+</blockquote>
+<p>它把if也帮我写好了。</p>
+<p>剩下的是一点我自己能做的工作了。UI方面，与计分类似，用数字的位数当指数求2的幂，原版2048的样式直接就能用。字体我选择了以LINE Seed的ExtraBold字重为底板来制作，很快也拼好了。因为是日文字体嘛，懒得拼简化字部件所以偷懒把“马”“长”等都换成了“馬”“長”，“𰻝”也换成了繁体的“𰻞”。</p>
+<p>真可惜，怎么AI不能帮我拼字体呢？</p>
+<p>接下来就是发布了。可是我懒啊。</p>
+<blockquote>
+<p><strong>我：</strong> 谢谢你，我已经完成了这个新型2048的开发，UI界面之类的也全都写好了。我将一次性commit以上所有工作，请帮我用约定式提交来写本次提交的commit message</p>
+</blockquote>
+<p>懒死我得了。总之结论就是，ChatGPT太强了，真的很适合我这种啥也不会的懒狗。</p>
+</section>
+<footer class="article-footer">
+<section class="article-tags">
+<a href="/tags/chatgpt/">ChatGPT</a>
+</section>
+</footer>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.css" integrity="sha256-J+iAE0sgH8QSz9hpcDxXIftnj65JEZgNhGcgReTTK9s=" rel="stylesheet"/><script crossorigin="anonymous" defer="" integrity="sha256-InsNdER1b2xUewP+pKCUJpkhiqwHgqiPXDlIk7GzBu4=" src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.js">
+</script><script crossorigin="anonymous" defer="" integrity="sha256-y39Mpg7V3D4lhBX4x6O0bUqTV4pSrfgwEfGKfxkOdgI=" src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/contrib/auto-render.min.js">
+</script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+</article>
+<aside class="related-content--wrapper">
+<h2 class="section-title">相关文章</h2>
+<div class="related-content">
+<div class="flex article-list--tile">
+<article class="has-image">
+<a href="/p/php-distpicker/">
+<div class="article-image">
+<img data-hash="https://s1.ax1x.com/2023/01/13/pSMpPIJ.png" data-key="" loading="lazy" src="https://s1.ax1x.com/2023/01/13/pSMpPIJ.png"/>
+</div>
+<div class="article-details">
+<h2 class="article-title">PHP与MariaDB数据库实现的省市区三级联动下拉选择器</h2>
+</div>
+</a>
+</article>
+<article class="has-image">
+<a href="/p/php-mb-ext/">
+<div class="article-image">
+<img data-hash="https://s1.ax1x.com/2023/01/12/pSuXeXQ.png" data-key="" loading="lazy" src="https://s1.ax1x.com/2023/01/12/pSuXeXQ.png"/>
+</div>
+<div class="article-details">
+<h2 class="article-title">PHP多字节函数的一些补充</h2>
+</div>
+</a>
+</article>
+<article class="has-image">
+<a href="/p/cpp-mariadb-link/">
+<div class="article-image">
+<img data-hash="https://s1.ax1x.com/2023/01/12/pSuG5DO.png" data-key="" loading="lazy" src="https://s1.ax1x.com/2023/01/12/pSuG5DO.png"/>
+</div>
+<div class="article-details">
+<h2 class="article-title">C++连接到MariaDB数据库</h2>
+</div>
+</a>
+</article>
+</div>
+</div>
+</aside>
+<div id="gitalk-container"></div>
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.18.0/js/md5.min.js"></script>
+<script>
+    if ("zh-cn" == "zh-cn"){
+        lang = "zh-CN"
+    }else{
+        lang = "zh-cn"
+    }
+    gitalk = new Gitalk({
+        clientID: "4c243dc52ffe119cd15f",
+        clientSecret: "886ddf6875b4e153196f12e011ab9477c8db556c",
+        repo: "gitalk-comments",
+        owner: "Honoka55",
+        admin: ["Honoka55"],
+        distractionFreeMode: false, 
+        id: md5(location.pathname), 
+        language: lang,
+    });
+    (function () {
+        if (
+            ["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1
+        ) {
+            document.getElementById("gitalk-container").innerHTML =
+                "Gitalk comments not available by default when the website is previewed locally.";
+            return;
+        }
+        gitalk.render("gitalk-container");
+    })();
+</script>
+<footer class="site-footer">
+<section class="copyright">
+<a href="/LICENSE.txt" rel="noopener" target="_blank">CC BY 4.0</a> 🄯 
+        
+            2019 - 
+        
+        2023 焰华Honoka55
+    </section>
+<section class="powerby">
+        Built with <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo</a> <br/>
+        Theme <b><a data-version="3.14.0" href="https://github.com/CaiJimmy/hugo-theme-stack" rel="noopener" target="_blank">Stack</a></b> designed by <a href="https://jimmycai.com" rel="noopener" target="_blank">Jimmy</a>
+</section>
+<button class="top-button" id="top-button" onclick="smoothScrollTop()">⬆ TOP</button>
+</footer>
+<div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+<div class="pswp__bg"></div>
+<div class="pswp__scroll-wrap">
+<div class="pswp__container">
+<div class="pswp__item"></div>
+<div class="pswp__item"></div>
+<div class="pswp__item"></div>
+</div>
+<div class="pswp__ui pswp__ui--hidden">
+<div class="pswp__top-bar">
+<div class="pswp__counter"></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title="Share"></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<div class="pswp__preloader">
+<div class="pswp__preloader__icn">
+<div class="pswp__preloader__cut">
+<div class="pswp__preloader__donut"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class="pswp__share-tooltip"></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class="pswp__caption">
+<div class="pswp__caption__center"></div>
+</div>
+</div>
+</div>
+</div><script crossorigin="anonymous" defer="" integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js">
+</script><script crossorigin="anonymous" defer="" integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js">
+</script><link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css" rel="stylesheet"/><link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css" rel="stylesheet"/>
+</main>
+</div>
+<script crossorigin="anonymous" integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z+KMkF24hUW8WePSA9HM=" src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js">
+</script><script defer="" src="/ts/main.js" type="text/javascript"></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@400;700&text=ぁあぃいぅうぇえぉおかがきぎくぐけげこごさざしじすずせぜそぞただちぢっつづてでとどなにぬねのはばぱひびぴふぶぷへべぺほぼぽまみむめもゃやゅゆょよらりるれろゎわゐゑをんゔゕゖ゙゚゛゜ゝゞゟ゠ァアィイゥウェエォオカガキギクグケゲコゴサザシジスズセゼソゾタダチヂッツヅテデトドナニヌネノハバパヒビピフブプヘベペホボポマミムメモャヤュユョヨラリルレロヮワヰヱヲンヴヵヶヷヸヹヺ・ーヽヾヿㇰㇱㇲㇳㇴㇵㇶㇷㇸㇹㇺㇻㇼㇽㇾㇿ𛀀𛀁&display=swap";
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+        document.head.appendChild(customFont);
+    }());
+</script>
+<script crossorigin="anonymous" src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js"></script>
+<script>twemoji.parse(document.body,{"base":"https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/","ext":".svg","folder":"svg"})</script>
+<script>
+    window.onscroll = function() {scrollTopButton()};
+    function scrollTopButton() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("top-button").style.display = "block";
+      } else {
+        document.getElementById("top-button").style.display = "none";
+      }
+    }
+    function smoothScrollTop(){
+        var timer  = null;
+        cancelAnimationFrame(timer);
+        timer = requestAnimationFrame(function fn(){
+            var oTop = document.body.scrollTop || document.documentElement.scrollTop;
+            if(oTop > 0){
+                document.body.scrollTop = document.documentElement.scrollTop = oTop - 50;
+                timer = requestAnimationFrame(fn);
+            }else{
+                cancelAnimationFrame(timer);
+            }
+        });
+    }
+</script>
+</body>
+</html>
