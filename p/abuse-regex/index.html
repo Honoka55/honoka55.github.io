@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="zh-cn">
 <head><meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="焰色升空，华樱落尘" name="description"/><title>Tag: ChatGPT - 焰华Honoka55 | 焰色升空，华樱落尘</title>
-<link href="https://honoka55.github.io/tags/chatgpt/" rel="canonical"/>
-<link href="/scss/style.min.b8ba00b6d2c33190386c6c41e4ebc6d7f84c397eee48ebb92d1865a5db26aa93.css" rel="stylesheet"/><meta content="Tag: ChatGPT - 焰华Honoka55" property="og:title"/>
-<meta content="焰色升空，华樱落尘" property="og:description"/>
-<meta content="https://honoka55.github.io/tags/chatgpt/" property="og:url"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="" name="description"/><title>防滥用过滤器用的正则表达式 | 焰色升空，华樱落尘</title>
+<link href="https://honoka55.github.io/p/abuse-regex/" rel="canonical"/>
+<link href="/scss/style.min.b8ba00b6d2c33190386c6c41e4ebc6d7f84c397eee48ebb92d1865a5db26aa93.css" rel="stylesheet"/><meta content="防滥用过滤器用的正则表达式" property="og:title"/>
+<meta content="" property="og:description"/>
+<meta content="https://honoka55.github.io/p/abuse-regex/" property="og:url"/>
 <meta content="焰色升空，华樱落尘" property="og:site_name"/>
-<meta content="website" property="og:type"/><meta content=" 2023-02-15T00:00:01+00:00 " property="og:updated_time"/>
-<meta content="Tag: ChatGPT - 焰华Honoka55" name="twitter:title"/>
-<meta content="焰色升空，华樱落尘" name="twitter:description"/><link href="https://honoka55.github.io/tags/chatgpt/index.xml" rel="alternate" type="application/rss+xml"/>
+<meta content="article" property="og:type"/><meta content="Post" property="article:section"/><meta content="字体" property="article:tag"/><meta content="2023-02-15T00:00:01+00:00" property="article:published_time"/><meta content="2023-02-15T00:00:01+00:00" property="article:modified_time"/>
+<meta content="防滥用过滤器用的正则表达式" name="twitter:title"/>
+<meta content="" name="twitter:description"/>
 </head>
-<body class="">
+<body class="article-page">
 <script>
         (function() {
             const colorSchemeKey = 'StackColorScheme';
@@ -196,34 +196,207 @@
 </ol>
 </aside>
 <main class="main full-width">
-<header>
-<h3 class="section-title">
-            
-                Tags
-            
-        </h3>
-<div class="section-card">
-<div class="section-details">
-<h3 class="section-count">1 page</h3>
-<h1 class="section-term">ChatGPT</h1>
-</div>
-</div>
-</header>
-<section class="article-list--compact">
-<article>
-<a href="/p/chatgpt-2048iang/">
+<article class="main-article">
+<header class="article-header">
 <div class="article-details">
-<h2 class="article-title">利用ChatGPT开发一例</h2>
+<header class="article-category">
+<a href="/categories/%E4%BB%A3%E7%A0%81/">
+                代码
+            </a>
+</header>
+<div class="article-title-wrapper">
+<h2 class="article-title">
+<a href="/p/abuse-regex/">防滥用过滤器用的正则表达式</a>
+</h2>
+</div>
 <footer class="article-time">
-<time datetime="2023-01-15T00:00:00Z">2023年1月15号</time>
+<div>
+<svg class="icon icon-tabler icon-tabler-calendar-time" fill="none" height="56" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="56" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 0h24v24H0z" stroke="none"></path>
+<path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4"></path>
+<circle cx="18" cy="18" r="4"></circle>
+<path d="M15 3v4"></path>
+<path d="M7 3v4"></path>
+<path d="M3 11h16"></path>
+<path d="M18 16.496v1.504l1 1"></path>
+</svg>
+<time class="article-time--published">2023年2月15号</time>
+</div>
+</footer>
+<footer class="article-translations">
+<svg class="icon icon-tabler icon-tabler-language" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
+<path d="M4 5h7"></path>
+<path d="M9 3v2c0 4.418 -2.239 8 -5 8"></path>
+<path d="M5 9c-.003 2.144 2.952 3.908 6.7 4"></path>
+<path d="M12 20l4 -9l4 9"></path>
+<path d="M19.1 18h-6.2"></path>
+</svg>
+<div>
+<a class="link" href="https://honoka55.github.io/ja/p/abuse-regex/" lang="ja">日本語</a>
+</div>
 </footer>
 </div>
+</header>
+<section class="article-content">
+<h2 id="题目描述">题目描述</h2>
+<p>某网站的防滥用过滤器用正则表达式来检测并匹配某字体以后可能需要制作的字符：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-perl" data-lang="perl"><span class="line"><span class="cl"><span class="p">(</span><span class="n">action</span> <span class="o">==</span> <span class="s">"edit"</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="o">&amp;</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">added_lines</span> <span class="n">rlike</span> <span class="s">"[龦-鿼䶶-䶿𠀀-𱍊]"</span><span class="p">)</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如上过滤器匹配了加入CJK统一表意文字中基本区补充（早期部分）、扩展A区补充及扩展B到G区的全部文字（当然，也包含了空码位和兼容补充）的编辑。对于高频字，即便在字体中已经包括，仍然会在编辑时触发过滤器，不便于制作字体时作为参考。现要对该正则表达式进行修改，即匹配Unicode新版汉字但去掉已经制作完成的部分，避免重复触发。每次字体更新后，该过滤器的正则表达式也需要相应更新，从需要匹配的文字中减去本次更新中已经制作好的部分。</p>
+<h2 id="输入格式">输入格式</h2>
+<p>一行，包含两个字符串，即可以匹配单字的正则表达式$a, b$，它们能匹配到的文字集合分别为$A,B$。</p>
+<h2 id="输出格式">输出格式</h2>
+<p>输出一个字符串，为最短的可以匹配$A-B$的正则表达式，且其中出现的<code>-[]</code>以外的字符按Unicode码位从小到大排列。</p>
+<h2 id="输入输出样例">输入输出样例</h2>
+<p><strong>输入 #1</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[𰀀-𱍊] [𰻞]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>输出 #1</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[𰀀-𰻝𰻟-𱍊]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>输入 #2</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[龦-鿿] [龲龵鿏鿔鿭鿬鿫]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>输出 #2</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[龦-龱龳龴龶-鿎鿐-鿓鿕-鿪鿮-鿿]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="说明提示">说明/提示</h2>
+<ol>
+<li>$a,b$均以<code>[</code>开头，以<code>]</code>结尾，其余字符只含CJK统一表意文字与<code>-</code>。</li>
+<li>$B \subseteq A$，且$\mathrm{card}(A) &lt; 3 \times 10^5$。</li>
+</ol>
+</section>
+<footer class="article-footer">
+<section class="article-tags">
+<a href="/tags/%E5%AD%97%E4%BD%93/">字体</a>
+</section>
+</footer>
+<link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.css" integrity="sha256-J+iAE0sgH8QSz9hpcDxXIftnj65JEZgNhGcgReTTK9s=" rel="stylesheet"/><script crossorigin="anonymous" defer="" integrity="sha256-InsNdER1b2xUewP+pKCUJpkhiqwHgqiPXDlIk7GzBu4=" src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.js">
+</script><script crossorigin="anonymous" defer="" integrity="sha256-y39Mpg7V3D4lhBX4x6O0bUqTV4pSrfgwEfGKfxkOdgI=" src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/contrib/auto-render.min.js">
+</script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        renderMathInElement(document.querySelector(`.article-content`), {
+            delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+                { left: "\\[", right: "\\]", display: true }
+            ]
+        });})
+</script>
+</article>
+<aside class="related-content--wrapper">
+<h2 class="section-title">相关文章</h2>
+<div class="related-content">
+<div class="flex article-list--tile">
+<article class="has-image">
+<a href="/p/chatgpt-2048iang/">
 <div class="article-image">
-<img alt="Featured image of post 利用ChatGPT开发一例" loading="lazy" src="https://s1.ax1x.com/2023/01/15/pSQgGzq.png"/>
+<img data-hash="https://s1.ax1x.com/2023/01/15/pSQgGzq.png" data-key="" loading="lazy" src="https://s1.ax1x.com/2023/01/15/pSQgGzq.png"/>
+</div>
+<div class="article-details">
+<h2 class="article-title">利用ChatGPT开发一例</h2>
 </div>
 </a>
 </article>
-</section>
+<article class="has-image">
+<a href="/p/php-distpicker/">
+<div class="article-image">
+<img data-hash="https://s1.ax1x.com/2023/01/13/pSMpPIJ.png" data-key="" loading="lazy" src="https://s1.ax1x.com/2023/01/13/pSMpPIJ.png"/>
+</div>
+<div class="article-details">
+<h2 class="article-title">PHP与MariaDB数据库实现的省市区三级联动下拉选择器</h2>
+</div>
+</a>
+</article>
+<article class="has-image">
+<a href="/p/php-mb-ext/">
+<div class="article-image">
+<img data-hash="https://s1.ax1x.com/2023/01/12/pSuXeXQ.png" data-key="" loading="lazy" src="https://s1.ax1x.com/2023/01/12/pSuXeXQ.png"/>
+</div>
+<div class="article-details">
+<h2 class="article-title">PHP多字节函数的一些补充</h2>
+</div>
+</a>
+</article>
+<article class="has-image">
+<a href="/p/cpp-mariadb-link/">
+<div class="article-image">
+<img data-hash="https://s1.ax1x.com/2023/01/12/pSuG5DO.png" data-key="" loading="lazy" src="https://s1.ax1x.com/2023/01/12/pSuG5DO.png"/>
+</div>
+<div class="article-details">
+<h2 class="article-title">C++连接到MariaDB数据库</h2>
+</div>
+</a>
+</article>
+</div>
+</div>
+</aside>
+<div id="gitalk-container"></div>
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.18.0/js/md5.min.js"></script>
+<script>
+    if ("zh-cn" == "zh-cn"){
+        lang = "zh-CN"
+    }else{
+        lang = "zh-cn"
+    }
+    gitalk = new Gitalk({
+        clientID: "4c243dc52ffe119cd15f",
+        clientSecret: "886ddf6875b4e153196f12e011ab9477c8db556c",
+        repo: "gitalk-comments",
+        owner: "Honoka55",
+        admin: ["Honoka55"],
+        distractionFreeMode: false, 
+        id: md5(location.pathname), 
+        language: lang,
+    });
+    (function () {
+        if (
+            ["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1
+        ) {
+            document.getElementById("gitalk-container").innerHTML =
+                "Gitalk comments not available by default when the website is previewed locally.";
+            return;
+        }
+        gitalk.render("gitalk-container");
+    })();
+</script>
 <footer class="site-footer">
 <section class="copyright">
 <a href="/LICENSE.txt" rel="noopener" target="_blank">CC BY 4.0</a>
@@ -235,22 +408,47 @@
 </section>
 <button class="top-button" id="top-button" onclick="smoothScrollTop()">⬆ TOP</button>
 </footer>
+<div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+<div class="pswp__bg"></div>
+<div class="pswp__scroll-wrap">
+<div class="pswp__container">
+<div class="pswp__item"></div>
+<div class="pswp__item"></div>
+<div class="pswp__item"></div>
+</div>
+<div class="pswp__ui pswp__ui--hidden">
+<div class="pswp__top-bar">
+<div class="pswp__counter"></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title="Share"></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<div class="pswp__preloader">
+<div class="pswp__preloader__icn">
+<div class="pswp__preloader__cut">
+<div class="pswp__preloader__donut"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class="pswp__share-tooltip"></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class="pswp__caption">
+<div class="pswp__caption__center"></div>
+</div>
+</div>
+</div>
+</div><script crossorigin="anonymous" defer="" integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo=" src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js">
+</script><script crossorigin="anonymous" defer="" integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU=" src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js">
+</script><link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css" rel="stylesheet"/><link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css" rel="stylesheet"/>
 </main>
 <aside class="sidebar right-sidebar sticky">
-<form action="/search/" class="search-form widget">
-<p>
-<label>搜索</label>
-<input name="keyword" placeholder="输入关键词…" required=""/>
-<button title="搜索">
-<svg class="icon icon-tabler icon-tabler-search" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-<path d="M0 0h24v24H0z" stroke="none"></path>
-<circle cx="10" cy="10" r="7"></circle>
-<line x1="21" x2="15" y1="21" y2="15"></line>
-</svg>
-</button>
-</p>
-</form>
-<section class="widget tagCloud">
+<section class="widget archives">
 <div class="widget-icon">
 <svg class="icon icon-tabler icon-tabler-hash" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 <path d="M0 0h24v24H0z" stroke="none"></path>
@@ -260,65 +458,17 @@
 <line x1="17" x2="13" y1="4" y2="20"></line>
 </svg>
 </div>
-<h2 class="widget-title section-title">分类</h2>
-<div class="tagCloud-tags">
-<a class="font_size_9" href="/categories/%E6%B1%89%E5%AD%97/">
-                汉字
-            </a>
-<a class="font_size_5" href="/categories/%E4%BB%A3%E7%A0%81/">
-                代码
-            </a>
-<a class="font_size_4" href="/categories/ffxiv/">
-                FFXIV
-            </a>
-<a class="font_size_2" href="/categories/%E6%9D%82%E9%A1%B9/">
-                杂项
-            </a>
-<a class="font_size_2" href="/categories/%E9%9D%9E%E6%B1%89%E5%AD%97/">
-                非汉字
-            </a>
-</div>
-</section>
-<section class="widget tagCloud">
-<div class="widget-icon">
-<svg class="icon icon-tabler icon-tabler-tag" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-<path d="M0 0h24v24H0z" stroke="none"></path>
-<path d="M11 3L20 12a1.5 1.5 0 0 1 0 2L14 20a1.5 1.5 0 0 1 -2 0L3 11v-4a4 4 0 0 1 4 -4h4"></path>
-<circle cx="9" cy="9" r="2"></circle>
-</svg>
-</div>
-<h2 class="widget-title section-title">标签</h2>
-<div class="tagCloud-tags">
-<a class="font_size_4" href="/tags/oc/">
-                OC
-            </a>
-<a class="font_size_4" href="/tags/%E5%AD%97%E4%BD%93/">
-                字体
-            </a>
-<a class="font_size_4" href="/tags/%E6%B1%89%E8%AF%AD/">
-                汉语
-            </a>
-<a class="font_size_4" href="/tags/%E7%94%B5%E5%AD%90%E5%8C%96/">
-                电子化
-            </a>
-<a class="font_size_3" href="/tags/%E5%8C%96%E5%AD%A6/">
-                化学
-            </a>
-<a class="font_size_2" href="/tags/php/">
-                PHP
-            </a>
-<a class="font_size_2" href="/tags/%E4%BD%A9%E8%8F%88%E5%AE%81/">
-                佩·菈宁
-            </a>
-<a class="font_size_2" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
-                数据库
-            </a>
-<a class="font_size_2" href="/tags/%E7%A7%81%E8%AE%BE%E5%85%89/">
-                私设光
-            </a>
-<a class="font_size_1" href="/tags/c/c++/">
-                C/C++
-            </a>
+<h2 class="widget-title section-title">目录</h2>
+<div class="widget--toc">
+<nav id="TableOfContents">
+<ol>
+<li><a href="#题目描述">题目描述</a></li>
+<li><a href="#输入格式">输入格式</a></li>
+<li><a href="#输出格式">输出格式</a></li>
+<li><a href="#输入输出样例">输入输出样例</a></li>
+<li><a href="#说明提示">说明/提示</a></li>
+</ol>
+</nav>
 </div>
 </section>
 </aside>
