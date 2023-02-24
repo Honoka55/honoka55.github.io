@@ -5,7 +5,16 @@
         <link>https://honoka55.github.io/ja/page/</link>
         <description>Recent content in Pages on 焔色昇空、華桜落塵</description>
         <generator>Hugo -- gohugo.io</generator>
-        <language>zh-cn</language><atom:link href="https://honoka55.github.io/ja/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <language>zh-cn</language>
+        <lastBuildDate>Sat, 01 Jan 2011 00:00:00 +0000</lastBuildDate><atom:link href="https://honoka55.github.io/ja/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>名前について</title>
+        <link>https://honoka55.github.io/ja/mingr/</link>
+        <pubDate>Sat, 01 Jan 2011 00:00:00 +0000</pubDate>
+        
+        <guid>https://honoka55.github.io/ja/mingr/</guid>
+        <description>&lt;p&gt;名前は「焔華Honoka55」で、スペースはありません。&lt;/p&gt;</description>
+        </item>
+        <item>
         <title>ツール</title>
         <link>https://honoka55.github.io/ja/tools/</link>
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -43,7 +52,7 @@
         <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
         
         <guid>https://honoka55.github.io/ja/about/</guid>
-        <description>&lt;p&gt;中国東北で育ち、クィアフレンドリーなラディカルフェミニストで、光の戦士で、音ゲーマーです。&lt;/p&gt;</description>
+        <description></description>
         </item>
         
     </channel>
