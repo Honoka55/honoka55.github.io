@@ -3,7 +3,7 @@
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="" name="description"/><title>艾欧泽亚历法备忘 | 焰色升空，华樱落尘</title>
 <link href="https://honoka55.github.io/p/ffxiv-calendar/" rel="canonical"/>
-<link href="/scss/style.min.5758abb8869e35f4650b5aa266adb777b5bd56dfc23f518505a9b3becf71c329.css" rel="stylesheet"/><meta content="艾欧泽亚历法备忘" property="og:title"/>
+<link href="/scss/style.min.db825163d28d4063fe60dff1641ed43b856eb8653a3d39101af973e720a9f203.css" rel="stylesheet"/><meta content="艾欧泽亚历法备忘" property="og:title"/>
 <meta content="" property="og:description"/>
 <meta content="https://honoka55.github.io/p/ffxiv-calendar/" property="og:url"/>
 <meta content="焰色升空，华樱落尘" property="og:site_name"/>
@@ -567,7 +567,7 @@
 </table></div>
 <p>2013年的降神节未举办，但可以推测其对应的是十二神中剩下的一位，利姆莱茵。</p>
 <p>如果从字面意思来理解，有相同汉字就可以对应的话，人历中的工年<sup>3</sup>可以对应工艺神比尔格（子<sup>1</sup>），商年<sup>6</sup>可以对应商贸神纳尔札尔（亥<sup>12</sup>），战年<sup>9</sup>可以对应战争神哈罗妮（卯<sup>4</sup>），但这就已经完全无法对应上顺序了。</p>
-<p>将人历的排位与十二神作为主神的出现次序相对比，十二种可能中都会有一些看起来比较奇怪的，也许神掌管的内容和人历中的字面含义并没有联系<del>，或者更有可能的原因是人历的设定也被废除了，因为ARR中从未提到过人历</del>。如果让破年<sup>4</sup>对应破坏神拉尔戈（酉<sup>10</sup>），那么商年<sup>6</sup>对应商贸神纳尔札尔（亥<sup>12</sup>）也说得通，但剩下的看起来都像演的，所以这个我真的很喜欢的设定看起来也没办法用了。（明明1.0的时候都举办过两次降神节了怎么那时候就吃书不好好对应上啊！！）</p>
+<p>将人历的排位与十二神作为主神的出现次序相对比，十二种可能中都会有一些看起来比较奇怪的，也许神掌管的内容和人历中的字面含义并没有联系<del>，或者更有可能的原因是人历的设定也被废除了，因为ARR中从未提到过人历</del>。如果让破年<sup>4</sup>对应破坏神拉尔戈（酉<sup>10</sup>），那么商年<sup>6</sup>对应商贸神纳尔札尔（亥<sup>12</sup>）也说得通，但剩下的看起来都像演的，所以这个我真的很喜欢的设定看起来也没办法用了。（明明1.0的时候都举办过两次降神节了怎么那时候就吃书不好好对应上啊‼）</p>
 <p>此外，1.0早期的游戏日文文本中“人历”（以及“神历”“五纪历”）有<span lang="ja">「歴/暦」</span>的<span lang="ja">表記揺れ</span>，在1.18版本中已经统一修正为<span lang="ja">「暦」</span>。（说起来1.0的降神节还是标了念<span lang="ja"><ruby>降<rp>（</rp><rt>ごう</rt><rp>）</rp></ruby>神祭</span>的，最近PLL里听到的也都变成<span lang="ja"><ruby><strong>降</strong><rp>（</rp><rt><strong>こう</strong></rt><rp>）</rp></ruby>神祭</span>了的样子。</p>
 <h2 id="神历-span-langja神暦span-of-gods">神历 <span lang="ja">神暦</span> Of Gods</h2>
 <p>众神所用的单位，比人历大，不知道究竟有多大。神历中，衰亡的时代“灵灾”和繁荣的时代“星历”循环往复。至少知道的部分有</p>
@@ -848,6 +848,13 @@ FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.</p>
 <div class="related-content">
 <div class="flex article-list--tile">
 <article class="">
+<a href="/p/ffxiv-oc-5/">
+<div class="article-details">
+<h2 class="article-title">新纪元的英雄与战舞</h2>
+</div>
+</a>
+</article>
+<article class="">
 <a href="/p/ffxiv-oc-4/">
 <div class="article-details">
 <h2 class="article-title">幕间：像风一样自由</h2>
@@ -1003,7 +1010,16 @@ FINAL FANTASY is a registered trademark of Square Enix Holdings Co., Ltd.</p>
     }());
 </script>
 <script crossorigin="anonymous" src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js"></script>
-<script>twemoji.parse(document.body,{"base":"https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/","ext":".svg","folder":"svg"})</script>
+<script>twemoji.parse(document.body, {
+    callback: function(icon, options, variant) {
+        switch ( icon ) {
+            case '203c':
+            case '2049':
+                return false;
+        }
+        return ''.concat(options.base, options.size, '/', icon, options.ext);
+    }
+});</script>
 <script>
     window.onscroll = function() {scrollTopButton()};
     function scrollTopButton() {

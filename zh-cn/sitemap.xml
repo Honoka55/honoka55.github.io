@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://honoka55.github.io/</loc>
-    <lastmod>2023-03-01T00:00:00+00:00</lastmod>
+    <lastmod>2023-03-03T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -16,7 +16,7 @@
                 />
   </url><url>
     <loc>https://honoka55.github.io/categories/</loc>
-    <lastmod>2023-03-01T00:00:00+00:00</lastmod>
+    <lastmod>2023-03-03T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -29,10 +29,13 @@
                 />
   </url><url>
     <loc>https://honoka55.github.io/categories/ffxiv/</loc>
-    <lastmod>2023-03-01T00:00:00+00:00</lastmod>
+    <lastmod>2023-03-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://honoka55.github.io/tags/oc/</loc>
+    <lastmod>2023-03-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://honoka55.github.io/post/</loc>
-    <lastmod>2023-03-01T00:00:00+00:00</lastmod>
+    <lastmod>2023-03-03T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -45,7 +48,7 @@
                 />
   </url><url>
     <loc>https://honoka55.github.io/tags/</loc>
-    <lastmod>2023-03-01T00:00:00+00:00</lastmod>
+    <lastmod>2023-03-03T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -56,6 +59,12 @@
                 hreflang="zh-cn"
                 href="https://honoka55.github.io/tags/"
                 />
+  </url><url>
+    <loc>https://honoka55.github.io/tags/%E7%A7%81%E8%AE%BE%E5%85%89/</loc>
+    <lastmod>2023-03-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://honoka55.github.io/p/ffxiv-oc-5/</loc>
+    <lastmod>2023-03-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://honoka55.github.io/p/ffxiv-calendar/</loc>
     <lastmod>2023-02-28T00:00:00+00:00</lastmod>
@@ -98,14 +107,8 @@
     <loc>https://honoka55.github.io/p/chatgpt-2048iang/</loc>
     <lastmod>2023-01-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://honoka55.github.io/tags/oc/</loc>
-    <lastmod>2023-03-01T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://honoka55.github.io/p/ffxiv-oc-4/</loc>
     <lastmod>2023-01-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://honoka55.github.io/tags/%E7%A7%81%E8%AE%BE%E5%85%89/</loc>
-    <lastmod>2023-03-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://honoka55.github.io/tags/php/</loc>
     <lastmod>2023-01-13T00:00:00+00:00</lastmod>

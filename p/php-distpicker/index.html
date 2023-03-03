@@ -4,7 +4,7 @@
 <meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="我的省市区三级联动下拉选择器的思路或者说一些相关的碎碎念。
 " name="description"/><title>PHP与MariaDB数据库实现的省市区三级联动下拉选择器 | 焰色升空，华樱落尘</title>
 <link href="https://honoka55.github.io/p/php-distpicker/" rel="canonical"/>
-<link href="/scss/style.min.5758abb8869e35f4650b5aa266adb777b5bd56dfc23f518505a9b3becf71c329.css" rel="stylesheet"/><meta content="PHP与MariaDB数据库实现的省市区三级联动下拉选择器" property="og:title"/>
+<link href="/scss/style.min.db825163d28d4063fe60dff1641ed43b856eb8653a3d39101af973e720a9f203.css" rel="stylesheet"/><meta content="PHP与MariaDB数据库实现的省市区三级联动下拉选择器" property="og:title"/>
 <meta content="我的省市区三级联动下拉选择器的思路或者说一些相关的碎碎念。
 " property="og:description"/>
 <meta content="https://honoka55.github.io/p/php-distpicker/" property="og:url"/>
@@ -553,7 +553,16 @@
     }());
 </script>
 <script crossorigin="anonymous" src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js"></script>
-<script>twemoji.parse(document.body,{"base":"https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/","ext":".svg","folder":"svg"})</script>
+<script>twemoji.parse(document.body, {
+    callback: function(icon, options, variant) {
+        switch ( icon ) {
+            case '203c':
+            case '2049':
+                return false;
+        }
+        return ''.concat(options.base, options.size, '/', icon, options.ext);
+    }
+});</script>
 <script>
     window.onscroll = function() {scrollTopButton()};
     function scrollTopButton() {

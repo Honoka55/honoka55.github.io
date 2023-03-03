@@ -3,7 +3,7 @@
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="" name="description"/><title>搜索 | 焰色升空，华樱落尘</title>
 <link href="https://honoka55.github.io/search/" rel="canonical"/>
-<link href="/scss/style.min.5758abb8869e35f4650b5aa266adb777b5bd56dfc23f518505a9b3becf71c329.css" rel="stylesheet"/><meta content="搜索" property="og:title"/>
+<link href="/scss/style.min.db825163d28d4063fe60dff1641ed43b856eb8653a3d39101af973e720a9f203.css" rel="stylesheet"/><meta content="搜索" property="og:title"/>
 <meta content="" property="og:description"/>
 <meta content="https://honoka55.github.io/search/" property="og:url"/>
 <meta content="焰色升空，华樱落尘" property="og:site_name"/>
@@ -241,7 +241,16 @@
     }());
 </script>
 <script crossorigin="anonymous" src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js"></script>
-<script>twemoji.parse(document.body,{"base":"https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/","ext":".svg","folder":"svg"})</script>
+<script>twemoji.parse(document.body, {
+    callback: function(icon, options, variant) {
+        switch ( icon ) {
+            case '203c':
+            case '2049':
+                return false;
+        }
+        return ''.concat(options.base, options.size, '/', icon, options.ext);
+    }
+});</script>
 <script>
     window.onscroll = function() {scrollTopButton()};
     function scrollTopButton() {

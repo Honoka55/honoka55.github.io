@@ -3,11 +3,11 @@
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="焰色升空，华樱落尘" name="description"/><title>Posts | 焰色升空，华樱落尘</title>
 <link href="https://honoka55.github.io/post/" rel="canonical"/>
-<link href="/scss/style.min.5758abb8869e35f4650b5aa266adb777b5bd56dfc23f518505a9b3becf71c329.css" rel="stylesheet"/><meta content="Posts" property="og:title"/>
+<link href="/scss/style.min.db825163d28d4063fe60dff1641ed43b856eb8653a3d39101af973e720a9f203.css" rel="stylesheet"/><meta content="Posts" property="og:title"/>
 <meta content="焰色升空，华樱落尘" property="og:description"/>
 <meta content="https://honoka55.github.io/post/" property="og:url"/>
 <meta content="焰色升空，华樱落尘" property="og:site_name"/>
-<meta content="website" property="og:type"/><meta content=" 2023-03-01T00:00:00+00:00 " property="og:updated_time"/>
+<meta content="website" property="og:type"/><meta content=" 2023-03-03T00:00:00+00:00 " property="og:updated_time"/>
 <meta content="Posts" name="twitter:title"/>
 <meta content="焰色升空，华樱落尘" name="twitter:description"/><link href="https://honoka55.github.io/post/index.xml" rel="alternate" type="application/rss+xml"/>
 </head>
@@ -204,12 +204,25 @@
         </h3>
 <div class="section-card">
 <div class="section-details">
-<h3 class="section-count">23 pages</h3>
+<h3 class="section-count">24 pages</h3>
 <h1 class="section-term">Posts</h1>
 </div>
 </div>
 </header>
 <section class="article-list--compact">
+<article>
+<a href="/p/php-distpicker/">
+<div class="article-details">
+<h2 class="article-title">PHP与MariaDB数据库实现的省市区三级联动下拉选择器</h2>
+<footer class="article-time">
+<time datetime="2022-12-14T00:00:00Z">2022年12月14号</time>
+</footer>
+</div>
+<div class="article-image">
+<img alt="Featured image of post PHP与MariaDB数据库实现的省市区三级联动下拉选择器" loading="lazy" src="https://s1.ax1x.com/2023/01/13/pSMpPIJ.png"/>
+</div>
+</a>
+</article>
 <article>
 <a href="/p/php-mb-ext/">
 <div class="article-details">
@@ -256,19 +269,6 @@
 <footer class="article-time">
 <time datetime="2022-10-25T00:00:00Z">2022年10月25号</time>
 </footer>
-</div>
-</a>
-</article>
-<article>
-<a href="/p/cjk-font-fazhan/">
-<div class="article-details">
-<h2 class="article-title">关于开源CJK字体发展方向的设想</h2>
-<footer class="article-time">
-<time datetime="2022-10-22T00:00:00Z">2022年10月22号</time>
-</footer>
-</div>
-<div class="article-image">
-<img alt="Featured image of post 关于开源CJK字体发展方向的设想" loading="lazy" src="https://p1.meituan.net/dpplatform/a5896969007eda46462f83569a1ed46d24627.png"/>
 </div>
 </a>
 </article>
@@ -321,7 +321,7 @@
 <a class="font_size_9" href="/categories/%E6%B1%89%E5%AD%97/">
                 汉字
             </a>
-<a class="font_size_5" href="/categories/ffxiv/">
+<a class="font_size_6" href="/categories/ffxiv/">
                 FFXIV
             </a>
 <a class="font_size_5" href="/categories/%E4%BB%A3%E7%A0%81/">
@@ -345,7 +345,7 @@
 </div>
 <h2 class="widget-title section-title">标签</h2>
 <div class="tagCloud-tags">
-<a class="font_size_4" href="/tags/oc/">
+<a class="font_size_5" href="/tags/oc/">
                 OC
             </a>
 <a class="font_size_4" href="/tags/%E5%AD%97%E4%BD%93/">
@@ -360,6 +360,9 @@
 <a class="font_size_3" href="/tags/%E5%8C%96%E5%AD%A6/">
                 化学
             </a>
+<a class="font_size_3" href="/tags/%E7%A7%81%E8%AE%BE%E5%85%89/">
+                私设光
+            </a>
 <a class="font_size_2" href="/tags/php/">
                 PHP
             </a>
@@ -368,9 +371,6 @@
             </a>
 <a class="font_size_2" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">
                 数据库
-            </a>
-<a class="font_size_2" href="/tags/%E7%A7%81%E8%AE%BE%E5%85%89/">
-                私设光
             </a>
 <a class="font_size_1" href="/tags/c/c++/">
                 C/C++
@@ -391,7 +391,16 @@
     }());
 </script>
 <script crossorigin="anonymous" src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js"></script>
-<script>twemoji.parse(document.body,{"base":"https://cdn.jsdelivr.net/gh/twitter/twemoji/assets/","ext":".svg","folder":"svg"})</script>
+<script>twemoji.parse(document.body, {
+    callback: function(icon, options, variant) {
+        switch ( icon ) {
+            case '203c':
+            case '2049':
+                return false;
+        }
+        return ''.concat(options.base, options.size, '/', icon, options.ext);
+    }
+});</script>
 <script>
     window.onscroll = function() {scrollTopButton()};
     function scrollTopButton() {
