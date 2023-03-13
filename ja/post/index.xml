@@ -6,7 +6,15 @@
         <description>Recent content in Posts on 焔色昇空、華桜落塵</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Fri, 24 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://honoka55.github.io/ja/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 13 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://honoka55.github.io/ja/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Windowsでアセンブリを一発コンパイル・実行するメイクファイル</title>
+        <link>https://honoka55.github.io/ja/p/masm32-assembly-make/</link>
+        <pubDate>Mon, 13 Mar 2023 00:00:00 +0000</pubDate>
+        
+        <guid>https://honoka55.github.io/ja/p/masm32-assembly-make/</guid>
+        <description>&lt;img src="https://s1.ax1x.com/2023/03/13/ppMLlhF.png" alt="Featured image of post Windowsでアセンブリを一発コンパイル・実行するメイクファイル" /&gt;&lt;p&gt;この記事では、MASM32 SDKのコンパイラとリンカを使ってアセンブリ言語をコンパイルする方法について説明します。単一ファイルの場合に適用されます。&lt;/p&gt;</description>
+        </item>
+        <item>
         <title>「2048iáng」の日本プレイヤーに感謝と色々</title>
         <link>https://honoka55.github.io/ja/p/2048iang-kansha/</link>
         <pubDate>Fri, 24 Feb 2023 00:00:00 +0000</pubDate>
