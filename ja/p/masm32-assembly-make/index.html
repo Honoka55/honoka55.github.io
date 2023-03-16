@@ -9,7 +9,7 @@
 " property="og:description"/>
 <meta content="https://honoka55.github.io/ja/p/masm32-assembly-make/" property="og:url"/>
 <meta content="焔色昇空、華桜落塵" property="og:site_name"/>
-<meta content="article" property="og:type"/><meta content="Post" property="article:section"/><meta content="アセンブリ" property="article:tag"/><meta content="2023-03-13T00:00:00+00:00" property="article:published_time"/><meta content="2023-03-13T00:00:00+00:00" property="article:modified_time"/><meta content="https://s1.ax1x.com/2023/03/13/ppMLlhF.png" property="og:image"/>
+<meta content="article" property="og:type"/><meta content="Post" property="article:section"/><meta content="アセンブリ" property="article:tag"/><meta content="2023-03-13T00:00:00+00:00" property="article:published_time"/><meta content="2023-03-16T00:00:00+00:00" property="article:modified_time"/><meta content="https://s1.ax1x.com/2023/03/13/ppMLlhF.png" property="og:image"/>
 <meta content="Windowsでアセンブリを一発コンパイル・実行するメイクファイル" name="twitter:title"/>
 <meta content="この記事では、MASM32 SDKのコンパイラとリンカを使ってアセンブリ言語をコンパイルする方法について説明します。単一ファイルの場合に適用されます。
 " name="twitter:description"/><meta content="summary_large_image" name="twitter:card"/>
@@ -298,8 +298,8 @@
 </span></span><span class="line"><span class="cl"><span class="nv">LD</span> <span class="o">=</span> link
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c"># コンパイラとリンカのオプションの定義
-</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nv">CFLAGS</span> <span class="o">=</span> /c /coff /ID:/masm32/include /ID:/irvine
-</span></span><span class="line"><span class="cl"><span class="nv">LDFLAGS</span> <span class="o">=</span> /subsystem:CONSOLE /out:test.exe /LIBPATH:D:/masm32/lib
+</span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nv">CFLAGS</span> <span class="o">=</span> /c /coff /ID:/masm32/include /ID:/Irvine
+</span></span><span class="line"><span class="cl"><span class="nv">LDFLAGS</span> <span class="o">=</span> /subsystem:CONSOLE /out:test.exe /LIBPATH:D:/masm32/lib /LIBPATH:D:/Irvine
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c"># ソースファイル、オブジェクトファイル、実行ファイルの定義
 </span></span></span><span class="line"><span class="cl"><span class="c"></span><span class="nv">SRC</span> <span class="o">=</span> test.asm
@@ -329,14 +329,23 @@
 <p><img alt="makeの実行結果" loading="lazy" src="https://s1.ax1x.com/2023/03/13/ppMqfSJ.png"/></p>
 <h3>註釈</h3>
 <ol>
-<li id="note-1"><a class="themed-link" href="#ref-1">↑</a>Kip R. Irvine氏が初心者向けに自ら設計した便利なライブラリです。これらのライブラリを使用しない場合は、6行目の<code> /ID:/irvine</code>を削除してください。</li>
+<li id="note-1"><a class="themed-link" href="#ref-1">↑</a>Kip R. Irvine氏が初心者向けに自ら設計した便利なライブラリです。これらのライブラリを使用しない場合は、6行目の<code> /ID:/irvine</code>と7行目の<code> /LIBPATH:D:/Irvine</code>を削除してください。</li>
 </ol>
 </section>
 <footer class="article-footer">
 <section class="article-tags">
 <a href="/ja/tags/%E3%82%A2%E3%82%BB%E3%83%B3%E3%83%96%E3%83%AA/">アセンブリ</a>
 </section>
-</footer>
+<section class="article-lastmod">
+<svg class="icon icon-tabler icon-tabler-clock" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 0h24v24H0z" stroke="none"></path>
+<circle cx="12" cy="12" r="9"></circle>
+<polyline points="12 7 12 12 15 15"></polyline>
+</svg>
+<span>
+            最終更新 2023年3月16号
+        </span>
+</section></footer>
 <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.css" integrity="sha256-J+iAE0sgH8QSz9hpcDxXIftnj65JEZgNhGcgReTTK9s=" rel="stylesheet"/><script crossorigin="anonymous" defer="" integrity="sha256-InsNdER1b2xUewP+pKCUJpkhiqwHgqiPXDlIk7GzBu4=" src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.js">
 </script><script crossorigin="anonymous" defer="" integrity="sha256-y39Mpg7V3D4lhBX4x6O0bUqTV4pSrfgwEfGKfxkOdgI=" src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/contrib/auto-render.min.js">
 </script><script>
