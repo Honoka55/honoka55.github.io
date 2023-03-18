@@ -9,7 +9,7 @@
 " property="og:description"/>
 <meta content="https://honoka55.github.io/ja/p/masm32-assembly-make/" property="og:url"/>
 <meta content="焔色昇空、華桜落塵" property="og:site_name"/>
-<meta content="article" property="og:type"/><meta content="Post" property="article:section"/><meta content="アセンブリ" property="article:tag"/><meta content="2023-03-13T00:00:00+00:00" property="article:published_time"/><meta content="2023-03-16T00:00:00+00:00" property="article:modified_time"/><meta content="https://s1.ax1x.com/2023/03/13/ppMLlhF.png" property="og:image"/>
+<meta content="article" property="og:type"/><meta content="Post" property="article:section"/><meta content="アセンブリ" property="article:tag"/><meta content="2023-03-13T00:00:00+00:00" property="article:published_time"/><meta content="2023-03-18T00:00:00+00:00" property="article:modified_time"/><meta content="https://s1.ax1x.com/2023/03/13/ppMLlhF.png" property="og:image"/>
 <meta content="Windowsでアセンブリを一発コンパイル・実行するメイクファイル" name="twitter:title"/>
 <meta content="この記事では、MASM32 SDKのコンパイラとリンカを使ってアセンブリ言語をコンパイルする方法について説明します。単一ファイルの場合に適用されます。
 " name="twitter:description"/><meta content="summary_large_image" name="twitter:card"/>
@@ -327,6 +327,11 @@
 <h2 id="実行結果">実行結果</h2>
 <p>例として、ターミナルに<code>Hello, World!</code>を出力するための簡単な80386アセンブリプログラムを使用します。<code>make</code>コマンドで一発コンパイルと実行すると、以下のように出力されます。</p>
 <p><img alt="makeの実行結果" loading="lazy" src="https://s1.ax1x.com/2023/03/13/ppMqfSJ.png"/></p>
+<h2 id="追記">追記</h2>
+<ul>
+<li><a class="link" href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.makefile-tools" rel="noopener" target="_blank">Makefile Tools</a>という拡張機能をインストールすることで、VS Code内でサイドバーからアセンブリの生成と実行を直接行うことができます。</li>
+<li>コマンドライン引数を渡す必要がある場合は、24行目の後ろに追加するか、ターミナルで自分で実行してください。</li>
+</ul>
 <h3>註釈</h3>
 <ol>
 <li id="note-1"><a class="themed-link" href="#ref-1">↑</a>Kip R. Irvine氏が初心者向けに自ら設計した便利なライブラリです。これらのライブラリを使用しない場合は、6行目の<code> /ID:/irvine</code>と7行目の<code> /LIBPATH:D:/Irvine</code>を削除してください。</li>
@@ -343,7 +348,7 @@
 <polyline points="12 7 12 12 15 15"></polyline>
 </svg>
 <span>
-            最終更新 2023年3月16号
+            最終更新 2023年3月18号
         </span>
 </section></footer>
 <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.css" integrity="sha256-J+iAE0sgH8QSz9hpcDxXIftnj65JEZgNhGcgReTTK9s=" rel="stylesheet"/><script crossorigin="anonymous" defer="" integrity="sha256-InsNdER1b2xUewP+pKCUJpkhiqwHgqiPXDlIk7GzBu4=" src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.js">
@@ -500,6 +505,7 @@
 <li><a href="#設定手順">設定手順</a></li>
 <li><a href="#メイクファイルのソースコード">メイクファイルのソースコード</a></li>
 <li><a href="#実行結果">実行結果</a></li>
+<li><a href="#追記">追記</a></li>
 </ol>
 </nav>
 </div>

@@ -9,7 +9,7 @@
 " property="og:description"/>
 <meta content="https://honoka55.github.io/p/masm32-assembly-make/" property="og:url"/>
 <meta content="焰色升空，华樱落尘" property="og:site_name"/>
-<meta content="article" property="og:type"/><meta content="Post" property="article:section"/><meta content="汇编" property="article:tag"/><meta content="2023-03-13T00:00:00+00:00" property="article:published_time"/><meta content="2023-03-16T00:00:00+00:00" property="article:modified_time"/><meta content="https://s1.ax1x.com/2023/03/13/ppMqhl9.png" property="og:image"/>
+<meta content="article" property="og:type"/><meta content="Post" property="article:section"/><meta content="汇编" property="article:tag"/><meta content="2023-03-13T00:00:00+00:00" property="article:published_time"/><meta content="2023-03-18T00:00:00+00:00" property="article:modified_time"/><meta content="https://s1.ax1x.com/2023/03/13/ppMqhl9.png" property="og:image"/>
 <meta content="Windows下一键编译运行汇编的make文件" name="twitter:title"/>
 <meta content="本文利用MASM32 SDK中的编译器和链接器编译汇编语言，适用于单文件的情况。
 " name="twitter:description"/><meta content="summary_large_image" name="twitter:card"/>
@@ -327,6 +327,11 @@
 <h2 id="运行效果">运行效果</h2>
 <p>以一个在终端打印<code>Hello, World!</code>的简单80386汇编程序为例。通过<code>make</code>直接编译运行的效果如下：</p>
 <p><img alt="make运行的结果" loading="lazy" src="https://s1.ax1x.com/2023/03/13/ppMqfSJ.png"/></p>
+<h2 id="其他">其他</h2>
+<ul>
+<li>可以安装VS Code的<a class="link" href="https://marketplace.visualstudio.com/items?itemName=ms-vscode.makefile-tools" rel="noopener" target="_blank">Makefile Tools</a>扩展，以便直接在VS Code内打开侧边栏生成和运行汇编。</li>
+<li>如果需要带命令行参数，可以加到第二十四行后面，或自行在终端中运行。</li>
+</ul>
 <h3>注释</h3>
 <ol>
 <li id="note-1"><a class="themed-link" href="#ref-1">↑</a>基普·R.欧文所著《汇编语言：基于x86处理器》一书中所用的库。如不引用这些库，删掉第六行中的<code> /ID:/irvine</code>与第七行中的<code> /LIBPATH:D:/Irvine</code>。</li>
@@ -343,7 +348,7 @@
 <polyline points="12 7 12 12 15 15"></polyline>
 </svg>
 <span>
-            最后更新于 2023年3月16号
+            最后更新于 2023年3月18号
         </span>
 </section></footer>
 <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.css" integrity="sha256-J+iAE0sgH8QSz9hpcDxXIftnj65JEZgNhGcgReTTK9s=" rel="stylesheet"/><script crossorigin="anonymous" defer="" integrity="sha256-InsNdER1b2xUewP+pKCUJpkhiqwHgqiPXDlIk7GzBu4=" src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.js">
@@ -513,6 +518,7 @@
 <li><a href="#配置步骤">配置步骤</a></li>
 <li><a href="#makefile文件源码">makefile文件源码</a></li>
 <li><a href="#运行效果">运行效果</a></li>
+<li><a href="#其他">其他</a></li>
 </ol>
 </nav>
 </div>
