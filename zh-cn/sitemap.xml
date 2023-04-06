@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://honoka55.github.io/</loc>
-    <lastmod>2023-04-05T00:00:00+00:00</lastmod>
+    <lastmod>2023-04-06T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -16,7 +16,7 @@
                 />
   </url><url>
     <loc>https://honoka55.github.io/categories/</loc>
-    <lastmod>2023-04-05T00:00:00+00:00</lastmod>
+    <lastmod>2023-04-06T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -29,7 +29,7 @@
                 />
   </url><url>
     <loc>https://honoka55.github.io/post/</loc>
-    <lastmod>2023-04-05T00:00:00+00:00</lastmod>
+    <lastmod>2023-04-06T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -42,7 +42,7 @@
                 />
   </url><url>
     <loc>https://honoka55.github.io/tags/</loc>
-    <lastmod>2023-03-18T00:00:00+00:00</lastmod>
+    <lastmod>2023-04-06T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -53,6 +53,18 @@
                 hreflang="zh-cn"
                 href="https://honoka55.github.io/tags/"
                 />
+  </url><url>
+    <loc>https://honoka55.github.io/tags/%E7%BC%96%E7%A0%81/</loc>
+    <lastmod>2023-04-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://honoka55.github.io/categories/%E6%B1%89%E5%AD%97/</loc>
+    <lastmod>2023-04-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://honoka55.github.io/p/apple-18030/</loc>
+    <lastmod>2023-04-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://honoka55.github.io/tags/%E6%9D%82%E8%B0%88/</loc>
+    <lastmod>2023-04-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://honoka55.github.io/p/masm32-assembly-make/</loc>
     <lastmod>2023-03-18T00:00:00+00:00</lastmod>
@@ -174,9 +186,6 @@
     <loc>https://honoka55.github.io/p/yuurei-1/</loc>
     <lastmod>2022-12-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://honoka55.github.io/categories/%E6%B1%89%E5%AD%97/</loc>
-    <lastmod>2023-03-05T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://honoka55.github.io/tags/%E8%80%83%E6%8D%AE/</loc>
     <lastmod>2022-12-07T00:00:00+00:00</lastmod>
   </url><url>
@@ -187,9 +196,6 @@
     <lastmod>2022-12-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://honoka55.github.io/p/cjk-font-fazhan/</loc>
-    <lastmod>2022-10-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://honoka55.github.io/tags/%E6%9D%82%E8%B0%88/</loc>
     <lastmod>2022-10-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://honoka55.github.io/p/ffxiv-oc-2/</loc>
