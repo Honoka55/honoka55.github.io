@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="ja">
 <head><meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="" name="description"/><title>ツール | 焔色昇空、華桜落塵</title>
-<link href="https://honoka55.github.io/ja/tools/" rel="canonical"/>
-<link href="/scss/style.min.1e6a20d3af2ff2a48d565a5b7cb1eb64880e27e2f2304daf2c46cdcdbe611b23.css" rel="stylesheet"/><meta content="ツール" property="og:title"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="" name="description"/><title>どうやって行列の列から4つの連続要素をNEONレジスタに格納するの？ | 焔色昇空、華桜落塵</title>
+<link href="https://honoka55.github.io/ja/p/neon-load-column/" rel="canonical"/>
+<link href="/scss/style.min.1e6a20d3af2ff2a48d565a5b7cb1eb64880e27e2f2304daf2c46cdcdbe611b23.css" rel="stylesheet"/><meta content="どうやって行列の列から4つの連続要素をNEONレジスタに格納するの？" property="og:title"/>
 <meta content="" property="og:description"/>
-<meta content="https://honoka55.github.io/ja/tools/" property="og:url"/>
+<meta content="https://honoka55.github.io/ja/p/neon-load-column/" property="og:url"/>
 <meta content="焔色昇空、華桜落塵" property="og:site_name"/>
-<meta content="article" property="og:type"/><meta content="Page" property="article:section"/>
-<meta content="ツール" name="twitter:title"/>
+<meta content="article" property="og:type"/><meta content="Post" property="article:section"/><meta content="アセンブリ" property="article:tag"/><meta content="C/C++" property="article:tag"/><meta content="2023-05-04T00:00:00+00:00" property="article:published_time"/><meta content="2023-05-04T00:00:00+00:00" property="article:modified_time"/>
+<meta content="どうやって行列の列から4つの連続要素をNEONレジスタに格納するの？" name="twitter:title"/>
 <meta content="" name="twitter:description"/>
 </head>
 <body class="article-page">
@@ -135,7 +135,7 @@
 <span>検索</span>
 </a>
 </li>
-<li class="current">
+<li>
 <a href="/ja/tools/">
 <svg class="icon icon-tabler icon-tabler-tool" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 <path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
@@ -199,11 +199,30 @@
 <article class="main-article">
 <header class="article-header">
 <div class="article-details">
+<header class="article-category">
+<a href="/ja/categories/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0/">
+                コーディング
+            </a>
+</header>
 <div class="article-title-wrapper">
 <h2 class="article-title">
-<a href="/ja/tools/">ツール</a>
+<a href="/ja/p/neon-load-column/">どうやって行列の列から4つの連続要素をNEONレジスタに格納するの？</a>
 </h2>
 </div>
+<footer class="article-time">
+<div>
+<svg class="icon icon-tabler icon-tabler-calendar-time" fill="none" height="56" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="56" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 0h24v24H0z" stroke="none"></path>
+<path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4"></path>
+<circle cx="18" cy="18" r="4"></circle>
+<path d="M15 3v4"></path>
+<path d="M7 3v4"></path>
+<path d="M3 11h16"></path>
+<path d="M18 16.496v1.504l1 1"></path>
+</svg>
+<time class="article-time--published">2023年5月4号</time>
+</div>
+</footer>
 <footer class="article-translations">
 <svg class="icon icon-tabler icon-tabler-language" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 <path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
@@ -214,14 +233,77 @@
 <path d="M19.1 18h-6.2"></path>
 </svg>
 <div>
-<a class="link" href="https://honoka55.github.io/tools/" lang="zh-cn">中文</a>
+<a class="link" href="https://honoka55.github.io/p/neon-load-column/" lang="zh-cn">中文</a>
 </div>
 </footer>
 </div>
 </header>
 <section class="article-content">
+<p>C言語は行優先の並び順でデータを格納するため、行列の一行から連続する4つの要素をNEONレジスタに格納することは簡単です。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">src1</span> <span class="o">=</span> <span class="n">vld1q_f32</span><span class="p">(</span><span class="n">m_a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">k</span><span class="p">);</span> <span class="c1">// m_aの第i行のk番から始まる4つの連続した要素をsrc1に格納
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>それでは、行列<code>m_b</code>の第<code>j</code>列の<code>k</code>番から始まる4つの連続した要素を<code>src2</code>に格納したい場合はどうすればよいでしょうか？</p>
+<p>もちろん、<code>vsetq_lane_f32</code>を使用することができます。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">src2</span> <span class="o">=</span> <span class="n">vsetq_lane_f32</span><span class="p">(</span><span class="n">m_b</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="err">，</span><span class="n">src2</span><span class="err">，</span><span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">src2</span> <span class="o">=</span> <span class="n">vsetq_lane_f32</span><span class="p">(</span><span class="n">m_b</span><span class="p">[</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">],</span><span class="n">src2</span><span class="err">，</span><span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">src2</span> <span class="o">=</span> <span class="n">vsetq_lane_f32</span><span class="p">(</span><span class="n">m_b</span><span class="p">[</span><span class="n">k</span> <span class="o">+</span> <span class="mi">2</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="err">，</span><span class="n">src2</span><span class="err">，</span><span class="mi">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">src2</span> <span class="o">=</span> <span class="n">vsetq_lane_f32</span><span class="p">(</span><span class="n">m_b</span><span class="p">[</span><span class="n">k</span> <span class="o">+</span> <span class="mi">3</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="err">，</span><span class="n">src2</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>1行で書くこともできます。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">src2</span> <span class="o">=</span> <span class="n">vsetq_lane_f32</span><span class="p">(</span><span class="n">m_b</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">vsetq_lane_f32</span><span class="p">(</span><span class="n">m_b</span><span class="p">[</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">vsetq_lane_f32</span><span class="p">(</span><span class="n">m_b</span><span class="p">[</span><span class="n">k</span> <span class="o">+</span> <span class="mi">2</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">vsetq_lane_f32</span><span class="p">(</span><span class="n">m_b</span><span class="p">[</span><span class="n">k</span> <span class="o">+</span> <span class="mi">3</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">accum</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">0</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>しかし、これはとても不器用に見えます。すべての時間をアドレス指定に費やすようです。</p>
+<p>実際に$1300$次正方行列の掛け算を行うと、この方法で〝最適化〟されたコードは、普通の3重ループに比べて遅くなります。</p>
+<p>では、どのように書けばよいでしょうか？</p>
+<p>$A\times B$では、列を取得するためにアドレス指定のコストがかかります。しかし、行だけを取得する必要がある場合は、そこまで時間がかかりません。したがって、$A\times B^{\mathrm T}$を計算することができます。$A$と$B$はどちらも、行の連続した要素だけを取得するだけで済みます。$A\times\left(B^{\mathrm T}\right)^{\mathrm T}=A\times B$を計算することは簡単です。最終的な解決策は、以下のようになります。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">tmp</span> <span class="o">=</span> <span class="n">m_b</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="n">m_b</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">m_b</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="n">m_b</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
 </section>
 <footer class="article-footer">
+<section class="article-tags">
+<a href="/ja/tags/%E3%82%A2%E3%82%BB%E3%83%B3%E3%83%96%E3%83%AA/">アセンブリ</a>
+<a href="/ja/tags/c/c++/">C/C++</a>
+</section>
 </footer>
 <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.css" integrity="sha256-J+iAE0sgH8QSz9hpcDxXIftnj65JEZgNhGcgReTTK9s=" rel="stylesheet"/><script crossorigin="anonymous" defer="" integrity="sha256-InsNdER1b2xUewP+pKCUJpkhiqwHgqiPXDlIk7GzBu4=" src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.js">
 </script><script crossorigin="anonymous" defer="" integrity="sha256-y39Mpg7V3D4lhBX4x6O0bUqTV4pSrfgwEfGKfxkOdgI=" src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/contrib/auto-render.min.js">
@@ -237,98 +319,57 @@
         });})
 </script>
 </article>
-<div class="article-list--compact links">
-<article>
-<a href="/2048iang" rel="noopener" target="_blank">
-<div class="article-details">
-<h2 class="article-title">🟨 二千四十𰻞 🟧</h2>
-<footer class="article-time">
-                        
-                            2048iang
-                        
-                    </footer>
-</div>
+<aside class="related-content--wrapper">
+<h2 class="section-title">関連するコンテンツ</h2>
+<div class="related-content">
+<div class="flex article-list--tile">
+<article class="has-image">
+<a href="/ja/p/masm32-assembly-make/">
 <div class="article-image">
-<img loading="lazy" src="https://s1.ax1x.com/2023/01/15/pSQsqIA.png"/>
+<img data-hash="https://s1.ax1x.com/2023/03/13/ppMLlhF.png" data-key="" loading="lazy" src="https://s1.ax1x.com/2023/03/13/ppMLlhF.png"/>
+</div>
+<div class="article-details">
+<h2 class="article-title">Windowsでアセンブリを一発コンパイル・実行するメイクファイル</h2>
 </div>
 </a>
 </article>
-<article>
-<a href="/DNC-Simulator" rel="noopener" target="_blank">
-<div class="article-details">
-<h2 class="article-title">💃 踊り子シミュレーター ☸️</h2>
-<footer class="article-time">
-                        
-                            DNC-Simulator
-                        
-                    </footer>
-</div>
+<article class="has-image">
+<a href="/ja/p/cpp-mariadb-link/">
 <div class="article-image">
-<img loading="lazy" src="https://gcore.jsdelivr.net/gh/Honoka55/DNC-Simulator/static/image/ClickBefore.png"/>
+<img data-hash="https://s1.ax1x.com/2023/01/12/pSuG5DO.png" data-key="" loading="lazy" src="https://s1.ax1x.com/2023/01/12/pSuG5DO.png"/>
 </div>
-</a>
-</article>
-<article>
-<a href="/erjian-convert" rel="noopener" target="_blank">
 <div class="article-details">
-<h2 class="article-title">🍊 二簡字変換ツール 🛑</h2>
-<footer class="article-time">
-                        
-                            erjian-convert
-                        
-                    </footer>
+<h2 class="article-title">C++からMariaDBへの接続</h2>
 </div>
 </a>
 </article>
-<article>
-<a href="https://github.com/Honoka55/donghua-database" rel="noopener" target="_blank">
+<article class="">
+<a href="/ja/p/2048iang-kansha/">
 <div class="article-details">
-<h2 class="article-title">📺 中国アニメデータベース 🐏</h2>
-<footer class="article-time">
-                        
-                            donghua-database
-                        
-                    </footer>
+<h2 class="article-title">「2048iáng」の日本プレイヤーに感謝と色々</h2>
 </div>
 </a>
 </article>
-<article>
-<a href="/ja/font-level" rel="noopener" target="_blank">
+<article class="">
+<a href="/ja/p/abuse-regex/">
 <div class="article-details">
-<h2 class="article-title">💻 漢字表示検定 🀄</h2>
-<footer class="article-time">
-                        
-                            font-level
-                        
-                    </footer>
+<h2 class="article-title">不正利用フィルター用の正規表現</h2>
 </div>
 </a>
 </article>
-<article>
-<a href="https://raw.githubusercontent.com/Honoka55/hrbeu-credit-statistics/main/%e5%ad%a6%e5%88%86%e7%bb%9f%e8%ae%a1.user.js" rel="noopener" target="_blank">
+<article class="has-image">
+<a href="/ja/p/php-mb-ext/">
+<div class="article-image">
+<img data-hash="https://s1.ax1x.com/2023/01/13/pSKigRs.png" data-key="" loading="lazy" src="https://s1.ax1x.com/2023/01/13/pSKigRs.png"/>
+</div>
 <div class="article-details">
-<h2 class="article-title">📚 修得単位カウント 💯</h2>
-<footer class="article-time">
-                        
-                            hrbeu-credit-statistics
-                        
-                    </footer>
-</div>
-</a>
-</article>
-<article>
-<a href="/xiv-triple-triad" rel="noopener" target="_blank">
-<div class="article-details">
-<h2 class="article-title">🅰 カードバトルルーム 5️⃣</h2>
-<footer class="article-time">
-                        
-                            xiv-triple-triad
-                        
-                    </footer>
+<h2 class="article-title">PHPのマルチバイト関数へのいくつかの追加</h2>
 </div>
 </a>
 </article>
 </div>
+</div>
+</aside>
 <div id="gitalk-container"></div>
 <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.18.0/js/md5.min.js"></script>

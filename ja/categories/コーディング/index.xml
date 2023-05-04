@@ -6,7 +6,15 @@
         <description>Recent content in コーディング on 焔色昇空、華桜落塵</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Mon, 13 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://honoka55.github.io/ja/categories/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 04 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://honoka55.github.io/ja/categories/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>どうやって行列の列から4つの連続要素をNEONレジスタに格納するの？</title>
+        <link>https://honoka55.github.io/ja/p/neon-load-column/</link>
+        <pubDate>Thu, 04 May 2023 00:00:00 +0000</pubDate>
+        
+        <guid>https://honoka55.github.io/ja/p/neon-load-column/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Windowsでアセンブリを一発コンパイル・実行するメイクファイル</title>
         <link>https://honoka55.github.io/ja/p/masm32-assembly-make/</link>
         <pubDate>Mon, 13 Mar 2023 00:00:00 +0000</pubDate>

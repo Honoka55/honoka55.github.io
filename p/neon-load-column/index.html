@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="ja">
+<html dir="ltr" lang="zh-cn">
 <head><meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="" name="description"/><title>ツール | 焔色昇空、華桜落塵</title>
-<link href="https://honoka55.github.io/ja/tools/" rel="canonical"/>
-<link href="/scss/style.min.1e6a20d3af2ff2a48d565a5b7cb1eb64880e27e2f2304daf2c46cdcdbe611b23.css" rel="stylesheet"/><meta content="ツール" property="og:title"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="" name="description"/><title>怎么把矩阵一列的连续四个元素装入一个NEON寄存器 | 焰色升空，华樱落尘</title>
+<link href="https://honoka55.github.io/p/neon-load-column/" rel="canonical"/>
+<link href="/scss/style.min.1e6a20d3af2ff2a48d565a5b7cb1eb64880e27e2f2304daf2c46cdcdbe611b23.css" rel="stylesheet"/><meta content="怎么把矩阵一列的连续四个元素装入一个NEON寄存器" property="og:title"/>
 <meta content="" property="og:description"/>
-<meta content="https://honoka55.github.io/ja/tools/" property="og:url"/>
-<meta content="焔色昇空、華桜落塵" property="og:site_name"/>
-<meta content="article" property="og:type"/><meta content="Page" property="article:section"/>
-<meta content="ツール" name="twitter:title"/>
+<meta content="https://honoka55.github.io/p/neon-load-column/" property="og:url"/>
+<meta content="焰色升空，华樱落尘" property="og:site_name"/>
+<meta content="article" property="og:type"/><meta content="Post" property="article:section"/><meta content="汇编" property="article:tag"/><meta content="C/C++" property="article:tag"/><meta content="2023-05-04T00:00:00+00:00" property="article:published_time"/><meta content="2023-05-04T00:00:00+00:00" property="article:modified_time"/>
+<meta content="怎么把矩阵一列的连续四个元素装入一个NEON寄存器" name="twitter:title"/>
 <meta content="" name="twitter:description"/>
 </head>
 <body class="article-page">
@@ -35,21 +35,21 @@
     })();
 </script>
 <div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky">
-<button aria-label="メニューを開く・閉じる" class="hamburger hamburger--spin" id="toggle-menu" type="button">
+<button aria-label="切换菜单" class="hamburger hamburger--spin" id="toggle-menu" type="button">
 <span class="hamburger-box">
 <span class="hamburger-inner"></span>
 </span>
 </button>
 <header>
 <figure class="site-avatar">
-<a href="/ja">
+<a href="/">
 <img alt="Avatar" class="site-logo" height="300" loading="lazy" src="/img/avatar_hu7d9b67be7ef950d905465e1960632c76_41038_300x0_resize_box_3.png" width="300"/>
 </a>
 <span class="emoji">😴</span>
 </figure>
 <div class="site-meta">
-<h1 class="site-name"><a href="/ja">焔華Honoka55</a></h1>
-<h2 class="site-description">焔色昇空、華桜落塵</h2>
+<h1 class="site-name"><a href="/">焰华Honoka55</a></h1>
+<h2 class="site-description">焰色升空，华樱落尘</h2>
 </div>
 </header><ol class="social-menu">
 <li>
@@ -115,53 +115,53 @@
 </li>
 </ol><ol class="menu" id="main-menu">
 <li>
-<a href="/ja/">
+<a href="/">
 <svg class="icon icon-tabler icon-tabler-home" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 <path d="M0 0h24v24H0z" stroke="none"></path>
 <polyline points="5 12 3 12 12 3 21 12 19 12"></polyline>
 <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7"></path>
 <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6"></path>
 </svg>
-<span>ホーム</span>
+<span>主页</span>
 </a>
 </li>
 <li>
-<a href="/ja/search/">
+<a href="/search/">
 <svg class="icon icon-tabler icon-tabler-search" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 <path d="M0 0h24v24H0z" stroke="none"></path>
 <circle cx="10" cy="10" r="7"></circle>
 <line x1="21" x2="15" y1="21" y2="15"></line>
 </svg>
-<span>検索</span>
+<span>搜索</span>
 </a>
 </li>
-<li class="current">
-<a href="/ja/tools/">
+<li>
+<a href="/tools/">
 <svg class="icon icon-tabler icon-tabler-tool" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 <path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
 <path d="M7 10h3v-3l-3.5 -3.5a6 6 0 0 1 8 8l6 6a2 2 0 0 1 -3 3l-6 -6a6 6 0 0 1 -8 -8l3.5 3.5"></path>
 </svg>
-<span>ツール</span>
+<span>工具</span>
 </a>
 </li>
 <li>
-<a href="/ja/about/">
+<a href="/about/">
 <svg class="icon icon-tabler icon-tabler-user" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 <path d="M0 0h24v24H0z" stroke="none"></path>
 <circle cx="12" cy="7" r="4"></circle>
 <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
 </svg>
-<span>私について</span>
+<span>关于</span>
 </a>
 </li>
 <li>
-<a href="/ja/links/">
+<a href="/links/">
 <svg class="icon icon-tabler icon-tabler-link" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 <path d="M0 0h24v24H0z" stroke="none"></path>
 <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5"></path>
 <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5"></path>
 </svg>
-<span>リンク</span>
+<span>友链</span>
 </a>
 </li>
 <div class="menu-bottom-section">
@@ -175,8 +175,8 @@
 <path d="M19.1 18h-6.2"></path>
 </svg>
 <select name="language" onchange="window.location.href = this.selectedOptions[0].value">
-<option selected="" value="https://honoka55.github.io/ja/">日本語</option>
-<option value="https://honoka55.github.io/">中文</option>
+<option value="https://honoka55.github.io/ja/">日本語</option>
+<option selected="" value="https://honoka55.github.io/">中文</option>
 </select>
 </li>
 <li id="dark-mode-toggle">
@@ -190,7 +190,7 @@
 <circle cx="16" cy="12" r="2"></circle>
 <rect height="12" rx="6" width="20" x="2" y="6"></rect>
 </svg>
-<span>ダークモード</span>
+<span>深色模式</span>
 </li>
 </div>
 </ol>
@@ -199,11 +199,30 @@
 <article class="main-article">
 <header class="article-header">
 <div class="article-details">
+<header class="article-category">
+<a href="/categories/%E4%BB%A3%E7%A0%81/">
+                代码
+            </a>
+</header>
 <div class="article-title-wrapper">
 <h2 class="article-title">
-<a href="/ja/tools/">ツール</a>
+<a href="/p/neon-load-column/">怎么把矩阵一列的连续四个元素装入一个NEON寄存器</a>
 </h2>
 </div>
+<footer class="article-time">
+<div>
+<svg class="icon icon-tabler icon-tabler-calendar-time" fill="none" height="56" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="56" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 0h24v24H0z" stroke="none"></path>
+<path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4"></path>
+<circle cx="18" cy="18" r="4"></circle>
+<path d="M15 3v4"></path>
+<path d="M7 3v4"></path>
+<path d="M3 11h16"></path>
+<path d="M18 16.496v1.504l1 1"></path>
+</svg>
+<time class="article-time--published">2023年5月4号</time>
+</div>
+</footer>
 <footer class="article-translations">
 <svg class="icon icon-tabler icon-tabler-language" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 <path d="M0 0h24v24H0z" fill="none" stroke="none"></path>
@@ -214,14 +233,78 @@
 <path d="M19.1 18h-6.2"></path>
 </svg>
 <div>
-<a class="link" href="https://honoka55.github.io/tools/" lang="zh-cn">中文</a>
+<a class="link" href="https://honoka55.github.io/ja/p/neon-load-column/" lang="ja">日本語</a>
 </div>
 </footer>
 </div>
 </header>
 <section class="article-content">
+<p>由于C语言是行主序存储的，所以如果要把矩阵一行中的连续四个元素装入NEON寄存器很简单：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">src1</span> <span class="o">=</span> <span class="n">vld1q_f32</span><span class="p">(</span><span class="n">m_a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">k</span><span class="p">);</span> <span class="c1">// 将m_a第i行中从第k列开始的四个连续元素装入src1
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>那如果我想把矩阵<code>m_b</code>第<code>j</code>列中从第<code>k</code>行开始的四个连续元素装入<code>src2</code>怎么写呢？</p>
+<p>当然，用<code>vsetq_lane_f32</code>来写是可行的：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">src2</span> <span class="o">=</span> <span class="n">vsetq_lane_f32</span><span class="p">(</span><span class="n">m_b</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="err">，</span><span class="n">src2</span><span class="err">，</span><span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">src2</span> <span class="o">=</span> <span class="n">vsetq_lane_f32</span><span class="p">(</span><span class="n">m_b</span><span class="p">[</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">],</span><span class="n">src2</span><span class="err">，</span><span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">src2</span> <span class="o">=</span> <span class="n">vsetq_lane_f32</span><span class="p">(</span><span class="n">m_b</span><span class="p">[</span><span class="n">k</span> <span class="o">+</span> <span class="mi">2</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="err">，</span><span class="n">src2</span><span class="err">，</span><span class="mi">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">src2</span> <span class="o">=</span> <span class="n">vsetq_lane_f32</span><span class="p">(</span><span class="n">m_b</span><span class="p">[</span><span class="n">k</span> <span class="o">+</span> <span class="mi">3</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="err">，</span><span class="n">src2</span><span class="p">,</span><span class="mi">3</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>或者写成一行：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">src2</span> <span class="o">=</span> <span class="n">vsetq_lane_f32</span><span class="p">(</span><span class="n">m_b</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">vsetq_lane_f32</span><span class="p">(</span><span class="n">m_b</span><span class="p">[</span><span class="n">k</span> <span class="o">+</span> <span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">vsetq_lane_f32</span><span class="p">(</span><span class="n">m_b</span><span class="p">[</span><span class="n">k</span> <span class="o">+</span> <span class="mi">2</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">vsetq_lane_f32</span><span class="p">(</span><span class="n">m_b</span><span class="p">[</span><span class="n">k</span> <span class="o">+</span> <span class="mi">3</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">accum</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">1</span><span class="p">),</span> <span class="mi">0</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>怎么看怎么蠢，优化掉的那点<span class="rka">儿</span>时间全拿来寻址了。</p>
+<p>经测试，两个$1300$阶方阵相乘，用上面这种写法“优化”过的代码，总是比普通的三重循环要慢。</p>
+<p>你是懂负优化的。</p>
+<p>所以应该怎么写呢？</p>
+<p>观察一下就能发现，算$\boldsymbol{A}\times\boldsymbol{B}$需要取列耗时长，取行的话倒是很方便算，自然想到$\boldsymbol{A}\times\boldsymbol{B}^{\mathrm T}$很好算，$\boldsymbol{A}$和$\boldsymbol{B}$都只需要取一行中的连续元素，于是自然想到可以算$\boldsymbol{A}\times\left(\boldsymbol{B}^{\mathrm T}\right)^{\mathrm T}=\boldsymbol{A}\times\boldsymbol{B}$，于是终极解法是：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span><span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">        <span class="n">tmp</span> <span class="o">=</span> <span class="n">m_b</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="n">m_b</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">m_b</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">i</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="n">m_b</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>
 </section>
 <footer class="article-footer">
+<section class="article-tags">
+<a href="/tags/%E6%B1%87%E7%BC%96/">汇编</a>
+<a href="/tags/c/c++/">C/C++</a>
+</section>
 </footer>
 <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.css" integrity="sha256-J+iAE0sgH8QSz9hpcDxXIftnj65JEZgNhGcgReTTK9s=" rel="stylesheet"/><script crossorigin="anonymous" defer="" integrity="sha256-InsNdER1b2xUewP+pKCUJpkhiqwHgqiPXDlIk7GzBu4=" src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.js">
 </script><script crossorigin="anonymous" defer="" integrity="sha256-y39Mpg7V3D4lhBX4x6O0bUqTV4pSrfgwEfGKfxkOdgI=" src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/contrib/auto-render.min.js">
@@ -237,106 +320,68 @@
         });})
 </script>
 </article>
-<div class="article-list--compact links">
-<article>
-<a href="/2048iang" rel="noopener" target="_blank">
-<div class="article-details">
-<h2 class="article-title">🟨 二千四十𰻞 🟧</h2>
-<footer class="article-time">
-                        
-                            2048iang
-                        
-                    </footer>
-</div>
+<aside class="related-content--wrapper">
+<h2 class="section-title">相关文章</h2>
+<div class="related-content">
+<div class="flex article-list--tile">
+<article class="has-image">
+<a href="/p/masm32-assembly-make/">
 <div class="article-image">
-<img loading="lazy" src="https://s1.ax1x.com/2023/01/15/pSQsqIA.png"/>
+<img data-hash="https://s1.ax1x.com/2023/03/13/ppMqhl9.png" data-key="" loading="lazy" src="https://s1.ax1x.com/2023/03/13/ppMqhl9.png"/>
+</div>
+<div class="article-details">
+<h2 class="article-title">Windows下一键编译运行汇编的make文件</h2>
 </div>
 </a>
 </article>
-<article>
-<a href="/DNC-Simulator" rel="noopener" target="_blank">
-<div class="article-details">
-<h2 class="article-title">💃 踊り子シミュレーター ☸️</h2>
-<footer class="article-time">
-                        
-                            DNC-Simulator
-                        
-                    </footer>
-</div>
+<article class="has-image">
+<a href="/p/cpp-mariadb-link/">
 <div class="article-image">
-<img loading="lazy" src="https://gcore.jsdelivr.net/gh/Honoka55/DNC-Simulator/static/image/ClickBefore.png"/>
+<img data-hash="https://s1.ax1x.com/2023/01/12/pSuG5DO.png" data-key="" loading="lazy" src="https://s1.ax1x.com/2023/01/12/pSuG5DO.png"/>
 </div>
-</a>
-</article>
-<article>
-<a href="/erjian-convert" rel="noopener" target="_blank">
 <div class="article-details">
-<h2 class="article-title">🍊 二簡字変換ツール 🛑</h2>
-<footer class="article-time">
-                        
-                            erjian-convert
-                        
-                    </footer>
+<h2 class="article-title">C++连接到MariaDB数据库</h2>
 </div>
 </a>
 </article>
-<article>
-<a href="https://github.com/Honoka55/donghua-database" rel="noopener" target="_blank">
+<article class="">
+<a href="/p/abuse-regex/">
 <div class="article-details">
-<h2 class="article-title">📺 中国アニメデータベース 🐏</h2>
-<footer class="article-time">
-                        
-                            donghua-database
-                        
-                    </footer>
+<h2 class="article-title">防滥用过滤器用的正则表达式</h2>
 </div>
 </a>
 </article>
-<article>
-<a href="/ja/font-level" rel="noopener" target="_blank">
+<article class="has-image">
+<a href="/p/chatgpt-2048iang/">
+<div class="article-image">
+<img data-hash="https://s1.ax1x.com/2023/01/15/pSQgGzq.png" data-key="" loading="lazy" src="https://s1.ax1x.com/2023/01/15/pSQgGzq.png"/>
+</div>
 <div class="article-details">
-<h2 class="article-title">💻 漢字表示検定 🀄</h2>
-<footer class="article-time">
-                        
-                            font-level
-                        
-                    </footer>
+<h2 class="article-title">利用ChatGPT开发一例</h2>
 </div>
 </a>
 </article>
-<article>
-<a href="https://raw.githubusercontent.com/Honoka55/hrbeu-credit-statistics/main/%e5%ad%a6%e5%88%86%e7%bb%9f%e8%ae%a1.user.js" rel="noopener" target="_blank">
+<article class="has-image">
+<a href="/p/php-distpicker/">
+<div class="article-image">
+<img data-hash="https://s1.ax1x.com/2023/01/13/pSMpPIJ.png" data-key="" loading="lazy" src="https://s1.ax1x.com/2023/01/13/pSMpPIJ.png"/>
+</div>
 <div class="article-details">
-<h2 class="article-title">📚 修得単位カウント 💯</h2>
-<footer class="article-time">
-                        
-                            hrbeu-credit-statistics
-                        
-                    </footer>
-</div>
-</a>
-</article>
-<article>
-<a href="/xiv-triple-triad" rel="noopener" target="_blank">
-<div class="article-details">
-<h2 class="article-title">🅰 カードバトルルーム 5️⃣</h2>
-<footer class="article-time">
-                        
-                            xiv-triple-triad
-                        
-                    </footer>
+<h2 class="article-title">PHP与MariaDB数据库实现的省市区三级联动下拉选择器</h2>
 </div>
 </a>
 </article>
 </div>
+</div>
+</aside>
 <div id="gitalk-container"></div>
 <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.18.0/js/md5.min.js"></script>
 <script>
-    if ("ja" == "zh-cn"){
+    if ("zh-cn" == "zh-cn"){
         lang = "zh-CN"
     }else{
-        lang = "ja"
+        lang = "zh-cn"
     }
     gitalk = new Gitalk({
         clientID: "4c243dc52ffe119cd15f",
@@ -362,7 +407,7 @@
 <footer class="site-footer">
 <section class="copyright">
 <a href="/LICENSE.txt" rel="noopener" target="_blank">CC BY 4.0</a>
-        🄯 2019-2023 焔華Honoka55
+        🄯 2019-2023 焰华Honoka55
     </section>
 <section class="powerby">
         Built with <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo</a> <br/>

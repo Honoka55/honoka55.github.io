@@ -6,7 +6,15 @@
         <description>Recent content in Posts on 焰色升空，华樱落尘</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Thu, 06 Apr 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://honoka55.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Thu, 04 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://honoka55.github.io/post/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>怎么把矩阵一列的连续四个元素装入一个NEON寄存器</title>
+        <link>https://honoka55.github.io/p/neon-load-column/</link>
+        <pubDate>Thu, 04 May 2023 00:00:00 +0000</pubDate>
+        
+        <guid>https://honoka55.github.io/p/neon-load-column/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>锐🍎国标第十平面</title>
         <link>https://honoka55.github.io/p/apple-18030/</link>
         <pubDate>Thu, 06 Apr 2023 00:00:00 +0000</pubDate>
