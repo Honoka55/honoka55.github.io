@@ -6,7 +6,15 @@
         <description>Recent content on 焔色昇空、華桜落塵</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Thu, 04 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://honoka55.github.io/ja/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 27 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://honoka55.github.io/ja/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Multisimにおける一部のデジタル論理部品の描画方法</title>
+        <link>https://honoka55.github.io/ja/p/multisim-logic-components/</link>
+        <pubDate>Sat, 27 May 2023 00:00:00 +0000</pubDate>
+        
+        <guid>https://honoka55.github.io/ja/p/multisim-logic-components/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>どうやって行列の列から4つの連続要素をNEONレジスタに格納するの？</title>
         <link>https://honoka55.github.io/ja/p/neon-load-column/</link>
         <pubDate>Thu, 04 May 2023 00:00:00 +0000</pubDate>

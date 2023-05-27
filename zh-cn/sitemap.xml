@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://honoka55.github.io/</loc>
-    <lastmod>2023-05-04T00:00:00+00:00</lastmod>
+    <lastmod>2023-05-27T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -16,7 +16,7 @@
                 />
   </url><url>
     <loc>https://honoka55.github.io/categories/</loc>
-    <lastmod>2023-05-04T00:00:00+00:00</lastmod>
+    <lastmod>2023-05-27T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -28,8 +28,21 @@
                 href="https://honoka55.github.io/categories/"
                 />
   </url><url>
+    <loc>https://honoka55.github.io/p/multisim-logic-components/</loc>
+    <lastmod>2023-05-27T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://honoka55.github.io/ja/p/multisim-logic-components/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://honoka55.github.io/p/multisim-logic-components/"
+                />
+  </url><url>
     <loc>https://honoka55.github.io/post/</loc>
-    <lastmod>2023-05-04T00:00:00+00:00</lastmod>
+    <lastmod>2023-05-27T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -42,7 +55,7 @@
                 />
   </url><url>
     <loc>https://honoka55.github.io/tags/</loc>
-    <lastmod>2023-05-04T00:00:00+00:00</lastmod>
+    <lastmod>2023-05-27T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -55,7 +68,10 @@
                 />
   </url><url>
     <loc>https://honoka55.github.io/categories/%E4%BB%A3%E7%A0%81/</loc>
-    <lastmod>2023-05-04T00:00:00+00:00</lastmod>
+    <lastmod>2023-05-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://honoka55.github.io/tags/%E7%A1%AC%E4%BB%B6/</loc>
+    <lastmod>2023-05-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://honoka55.github.io/tags/%E6%B1%87%E7%BC%96/</loc>
     <lastmod>2023-05-04T00:00:00+00:00</lastmod>

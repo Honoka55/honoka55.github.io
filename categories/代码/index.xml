@@ -6,7 +6,15 @@
         <description>Recent content in 代码 on 焰色升空，华樱落尘</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
-        <lastBuildDate>Thu, 04 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://honoka55.github.io/categories/%E4%BB%A3%E7%A0%81/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Sat, 27 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://honoka55.github.io/categories/%E4%BB%A3%E7%A0%81/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Multisim中一些常见数字逻辑部件的画法</title>
+        <link>https://honoka55.github.io/p/multisim-logic-components/</link>
+        <pubDate>Sat, 27 May 2023 00:00:00 +0000</pubDate>
+        
+        <guid>https://honoka55.github.io/p/multisim-logic-components/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>怎么把矩阵一列的连续四个元素装入一个NEON寄存器</title>
         <link>https://honoka55.github.io/p/neon-load-column/</link>
         <pubDate>Thu, 04 May 2023 00:00:00 +0000</pubDate>
