@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="zh-cn">
 <head><meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="" name="description"/><title>防滥用过滤器用的正则表达式 | 焰色升空，华樱落尘</title>
-<link href="https://honoka55.github.io/p/abuse-regex/" rel="canonical"/>
-<link href="/scss/style.min.1e6a20d3af2ff2a48d565a5b7cb1eb64880e27e2f2304daf2c46cdcdbe611b23.css" rel="stylesheet"/><meta content="防滥用过滤器用的正则表达式" property="og:title"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="" name="description"/><title>Web Serial API使用方法 | 焰色升空，华樱落尘</title>
+<link href="https://honoka55.github.io/p/web-serial/" rel="canonical"/>
+<link href="/scss/style.min.1e6a20d3af2ff2a48d565a5b7cb1eb64880e27e2f2304daf2c46cdcdbe611b23.css" rel="stylesheet"/><meta content="Web Serial API使用方法" property="og:title"/>
 <meta content="" property="og:description"/>
-<meta content="https://honoka55.github.io/p/abuse-regex/" property="og:url"/>
+<meta content="https://honoka55.github.io/p/web-serial/" property="og:url"/>
 <meta content="焰色升空，华樱落尘" property="og:site_name"/>
-<meta content="article" property="og:type"/><meta content="Post" property="article:section"/><meta content="字体" property="article:tag"/><meta content="2023-02-15T00:00:00+00:00" property="article:published_time"/><meta content="2023-02-15T00:00:00+00:00" property="article:modified_time"/>
-<meta content="防滥用过滤器用的正则表达式" name="twitter:title"/>
+<meta content="article" property="og:type"/><meta content="Post" property="article:section"/><meta content="硬件" property="article:tag"/><meta content="2023-11-11T00:00:00+00:00" property="article:published_time"/><meta content="2023-11-11T00:00:00+00:00" property="article:modified_time"/>
+<meta content="Web Serial API使用方法" name="twitter:title"/>
 <meta content="" name="twitter:description"/>
 </head>
 <body class="article-page">
@@ -206,7 +206,7 @@
 </header>
 <div class="article-title-wrapper">
 <h2 class="article-title">
-<a href="/p/abuse-regex/">防滥用过滤器用的正则表达式</a>
+<a href="/p/web-serial/">Web Serial API使用方法</a>
 </h2>
 </div>
 <footer class="article-time">
@@ -220,7 +220,7 @@
 <path d="M3 11h16"></path>
 <path d="M18 16.496v1.504l1 1"></path>
 </svg>
-<time class="article-time--published">2023年2月15号</time>
+<time class="article-time--published">2023年11月11号</time>
 </div>
 </footer>
 <footer class="article-translations">
@@ -233,14 +233,18 @@
 <path d="M19.1 18h-6.2"></path>
 </svg>
 <div>
-<a class="link" href="https://honoka55.github.io/ja/p/abuse-regex/" lang="ja">日本語</a>
+<a class="link" href="https://honoka55.github.io/ja/p/web-serial/" lang="ja">日本語</a>
 </div>
 </footer>
 </div>
 </header>
 <section class="article-content">
-<h2 id="题目描述">题目描述</h2>
-<p>某网站的防滥用过滤器用正则表达式来检测并匹配某字体以后可能需要制作的字符：</p>
+<p>简言之，利用Web Serial API可以在Web端纯JavaScript实现双向串口通信。当然可以用来做嵌入式<ruby>开发<rp>（</rp><rt>课程设计</rt><rp>）</rp></ruby>。</p>
+<p>详细用法可参考<a class="link" href="https://developer.chrome.com/articles/serial/" rel="noopener" target="_blank">官方文档</a>。本文只介绍基础用法。</p>
+<h2 id="环境需求">环境需求</h2>
+<p>需要Chromium内核版本89以上的桌面平台。</p>
+<p>可以使用最新版的Chrome或Edge等。IE和Firefox不支持。国产浏览器请注意检查Chromium内核版本号，已知最新版的星愿浏览器、360极速浏览器X都是支持的。</p>
+<p>可以用以下代码测试浏览器是否支持Web Serial API：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma" tabindex="0"><code><span class="lnt">1
@@ -248,63 +252,217 @@
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma" tabindex="0"><code class="language-perl" data-lang="perl"><span class="line"><span class="cl"><span class="p">(</span><span class="n">action</span> <span class="o">==</span> <span class="s">"edit"</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl"><span class="o">&amp;</span>
-</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="n">added_lines</span> <span class="n">rlike</span> <span class="s">"[龦-鿼䶶-䶿𠀀-𱍊]"</span><span class="p">)</span>
+<pre class="chroma" tabindex="0"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="k">if</span> <span class="p">(</span><span class="s1">'serial'</span> <span class="k">in</span> <span class="nx">navigator</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'支持Web Serial API'</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>如上过滤器匹配了加入CJK统一表意文字中基本区补充（早期部分）、扩展A区补充及扩展B到G区的全部文字（当然，也包含了空码位和兼容补充）的编辑。对于高频字，即便在字体中已经包括，仍然会在编辑时触发过滤器，不便于制作字体时作为参考。现要对该正则表达式进行修改，即匹配Unicode新版汉字但去掉已经制作完成的部分，避免重复触发。每次字体更新后，该过滤器的正则表达式也需要相应更新，从需要匹配的文字中减去本次更新中已经制作好的部分。</p>
-<h2 id="输入格式">输入格式</h2>
-<p>一行，包含两个字符串，即可以匹配单字的正则表达式$a, b$，它们能匹配到的文字集合分别为$A,B$。</p>
-<h2 id="输出格式">输出格式</h2>
-<p>输出一个字符串，为最短的可以匹配$A-B$的正则表达式，且其中出现的<code>-[]</code>以外的字符按Unicode码位从小到大排列。</p>
-<h2 id="输入输出样例">输入输出样例</h2>
-<p><strong>输入 #1</strong></p>
+</div><p>若控制台成功打印<code>支持Web Serial API</code>，说明浏览器支持Web Serial API。</p>
+<p>关于Web Serial API的使用还有以下需要注意：</p>
+<ul>
+<li>Web Serial API在设计上是异步的。</li>
+<li>若部署项目到线上，则必须使用https协议。本地环境则无此限制。</li>
+<li>通信必须绑定事件由用户主动触发，不允许自动开始通信。</li>
+</ul>
+<p>确认这些信息后，可以进入后续步骤。</p>
+<h2 id="启动串口连接">启动串口连接</h2>
+<p>首先需要请求串口权限。以下代码在按下按钮时弹出窗口让用户选择一个串口：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">connectButton</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'click'</span><span class="p">,</span> <span class="kr">async</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="kr">const</span> <span class="nx">port</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">navigator</span><span class="p">.</span><span class="nx">serial</span><span class="p">.</span><span class="nx">requestPort</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>选择完成后即可打开串口连接：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma" tabindex="0"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma" tabindex="0"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[𰀀-𱍊] [𰻞]
+<pre class="chroma" tabindex="0"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kr">await</span> <span class="nx">port</span><span class="p">.</span><span class="nx">open</span><span class="p">({</span> <span class="nx">baudRate</span><span class="o">:</span> <span class="mi">9600</span> <span class="p">});</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><strong>输出 #1</strong></p>
+</div><p>此方法还可以指定停止位、数据位、奇偶校验等参数，不在此赘述。</p>
+<h2 id="发送与接收数据">发送与接收数据</h2>
+<p>发送与接收数据可以使用以下代码：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma" tabindex="0"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma" tabindex="0"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="c1">// 发送数据data
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">writer</span> <span class="o">=</span> <span class="nx">port</span><span class="p">.</span><span class="nx">writable</span><span class="p">.</span><span class="nx">getWriter</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="kr">await</span> <span class="nx">writer</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="kr">await</span> <span class="nx">writer</span><span class="p">.</span><span class="nx">close</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 接收数据value并打印到控制台
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">reader</span> <span class="o">=</span> <span class="nx">port</span><span class="p">.</span><span class="nx">readable</span><span class="p">.</span><span class="nx">getReader</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="p">{</span> <span class="nx">value</span><span class="p">,</span> <span class="nx">done</span> <span class="p">}</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">reader</span><span class="p">.</span><span class="nx">read</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="nx">done</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">reader</span><span class="p">.</span><span class="nx">releaseLock</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>上面的代码只能发送或接受Uint8数组。如果想发送或接收字符串，可以使用TextEncoder和TextDecoder，它们可以可以进行字符串到UTF-8编码的编解码。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma" tabindex="0"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma" tabindex="0"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[𰀀-𰻝𰻟-𱍊]
-</span></span></code></pre></td></tr></table>
+<pre class="chroma" tabindex="0"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="c1">// 将字符串编码为Uint8数组
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">encoder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TextEncoder</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">encoder</span><span class="p">.</span><span class="nx">encode</span><span class="p">(</span><span class="s1">'Hello, world!'</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span> <span class="c1">// Uint8Array(13) [72, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100, 33]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 将Uint8数组解码为字符串
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">decoder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TextDecoder</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">value</span> <span class="o">=</span> <span class="nx">decoder</span><span class="p">.</span><span class="nx">decode</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span> <span class="c1">// 'Hello, world!'
+</span></span></span></code></pre></td></tr></table>
 </div>
-</div><p><strong>输入 #2</strong></p>
+</div><p>为确保数据接收的次序，需要在代码中添加防抖。此外，一般需隔零点几秒就将接收到的数据打印出来一次。</p>
+<p>最终的代码示例如下，注意此代码未做任何意外情况的处理。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma" tabindex="0"><code><span class="lnt">1
+<pre class="chroma" tabindex="0"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma" tabindex="0"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[龦-鿿] [龲龵鿏鿔鿭鿬鿫]
+<pre class="chroma" tabindex="0"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">let</span> <span class="nx">port</span><span class="p">;</span> <span class="c1">// 串口对象
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">let</span> <span class="nx">debounceTimeout</span><span class="p">;</span> <span class="c1">// 防抖延迟定时器
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">let</span> <span class="nx">delayTime</span> <span class="o">=</span> <span class="mi">500</span><span class="p">;</span> <span class="c1">// 延迟时间
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl"><span class="nx">connectButton</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'click'</span><span class="p">,</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 清除之前的防抖延迟定时器
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">clearTimeout</span><span class="p">(</span><span class="nx">debounceTimeout</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// 创建新的防抖延迟定时器
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">debounceTimeout</span> <span class="o">=</span> <span class="nx">setTimeout</span><span class="p">(</span><span class="kr">async</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// 连接串口
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="nx">port</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">navigator</span><span class="p">.</span><span class="nx">serial</span><span class="p">.</span><span class="nx">requestPort</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">await</span> <span class="nx">port</span><span class="p">.</span><span class="nx">open</span><span class="p">({</span> <span class="nx">baudRate</span><span class="o">:</span> <span class="mi">9600</span> <span class="p">});</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Serial port connected'</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1">// 监听串口数据
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="kr">const</span> <span class="nx">reader</span> <span class="o">=</span> <span class="nx">port</span><span class="p">.</span><span class="nx">readable</span><span class="p">.</span><span class="nx">getReader</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">const</span> <span class="nx">decoder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TextDecoder</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="kd">let</span> <span class="nx">receivedData</span> <span class="o">=</span> <span class="p">[];</span> <span class="c1">// 用于存储接收到的数据
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="kr">const</span> <span class="p">{</span> <span class="nx">value</span><span class="p">,</span> <span class="nx">done</span> <span class="p">}</span> <span class="o">=</span> <span class="kr">await</span> <span class="nx">reader</span><span class="p">.</span><span class="nx">read</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="nx">done</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">reader</span><span class="p">.</span><span class="nx">releaseLock</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">                <span class="k">break</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="nx">receivedData</span> <span class="o">=</span> <span class="nx">receivedData</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nb">Array</span><span class="p">.</span><span class="nx">from</span><span class="p">(</span><span class="nx">value</span><span class="p">));</span> <span class="c1">// 将接收到的字节添加到数组中
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>
+</span></span><span class="line"><span class="cl">            <span class="c1">// 打印一次接收到的数据
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="nx">setTimeout</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">                <span class="kr">const</span> <span class="nx">text</span> <span class="o">=</span> <span class="nx">decoder</span><span class="p">.</span><span class="nx">decode</span><span class="p">(</span><span class="k">new</span> <span class="nx">Uint8Array</span><span class="p">(</span><span class="nx">receivedData</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">text</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">                <span class="nx">receivedData</span> <span class="o">=</span> <span class="p">[];</span> <span class="c1">// 清空接收到的数据
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>            <span class="p">},</span> <span class="nx">delayTime</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span> <span class="nx">delayTime</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 发送数据
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">sendButton</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'click'</span><span class="p">,</span> <span class="kr">async</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">writer</span> <span class="o">=</span> <span class="nx">port</span><span class="p">.</span><span class="nx">writable</span><span class="p">.</span><span class="nx">getWriter</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">encoder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TextEncoder</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">encoder</span><span class="p">.</span><span class="nx">encode</span><span class="p">(</span><span class="s1">'Hello, world!'</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">await</span> <span class="nx">writer</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">await</span> <span class="nx">writer</span><span class="p">.</span><span class="nx">close</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><strong>输出 #2</strong></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma" tabindex="0"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma" tabindex="0"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[龦-龱龳龴龶-鿎鿐-鿓鿕-鿪鿮-鿿]
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="说明提示">说明/提示</h2>
-<ol>
-<li>$a,b$均以<code>[</code>开头，以<code>]</code>结尾，其余字符只含CJK统一表意文字与<code>-</code>。</li>
-<li>$B \subseteq A$，且$\mathrm{card}(A) &lt; 3 \times 10^5$。</li>
-<li>若要匹配三个码位连续的字符，如<code>abc</code>，使用<code>[a-c]</code>而不是<code>[abc]</code>。</li>
-</ol>
+</div><h2 id="进阶应用">进阶应用</h2>
+<p>更复杂的应用可以参考<a class="link" href="https://developer.chrome.com/articles/serial/" rel="noopener" target="_blank">官方文档</a>。</p>
+<p>博主基于Web Serial API实现了编写了一个简单的<a class="link" href="https://github.com/Honoka55/web-serial-debugger" rel="noopener" target="_blank">Web串口调试工具</a>。如果要配置更多参数、使用UTF-8以外的其他编码、进行意外处理等，其中的代码也可供参考。</p>
 </section>
 <footer class="article-footer">
 <section class="article-tags">
-<a href="/tags/%E5%AD%97%E4%BD%93/">字体</a>
+<a href="/tags/%E7%A1%AC%E4%BB%B6/">硬件</a>
 </section>
 </footer>
 <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.css" integrity="sha256-J+iAE0sgH8QSz9hpcDxXIftnj65JEZgNhGcgReTTK9s=" rel="stylesheet"/><script crossorigin="anonymous" defer="" integrity="sha256-InsNdER1b2xUewP+pKCUJpkhiqwHgqiPXDlIk7GzBu4=" src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.js">
@@ -326,13 +484,6 @@
 <div class="related-content">
 <div class="flex article-list--tile">
 <article class="">
-<a href="/p/web-serial/">
-<div class="article-details">
-<h2 class="article-title">Web Serial API使用方法</h2>
-</div>
-</a>
-</article>
-<article class="">
 <a href="/p/multisim-logic-components/">
 <div class="article-details">
 <h2 class="article-title">Multisim中一些常见数字逻辑部件的画法</h2>
@@ -353,6 +504,13 @@
 </div>
 <div class="article-details">
 <h2 class="article-title">Windows下一键编译运行汇编的make文件</h2>
+</div>
+</a>
+</article>
+<article class="">
+<a href="/p/abuse-regex/">
+<div class="article-details">
+<h2 class="article-title">防滥用过滤器用的正则表达式</h2>
 </div>
 </a>
 </article>
@@ -464,11 +622,10 @@
 <div class="widget--toc">
 <nav id="TableOfContents">
 <ol>
-<li><a href="#题目描述">题目描述</a></li>
-<li><a href="#输入格式">输入格式</a></li>
-<li><a href="#输出格式">输出格式</a></li>
-<li><a href="#输入输出样例">输入输出样例</a></li>
-<li><a href="#说明提示">说明/提示</a></li>
+<li><a href="#环境需求">环境需求</a></li>
+<li><a href="#启动串口连接">启动串口连接</a></li>
+<li><a href="#发送与接收数据">发送与接收数据</a></li>
+<li><a href="#进阶应用">进阶应用</a></li>
 </ol>
 </nav>
 </div>

@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://honoka55.github.io/ja/</loc>
-    <lastmod>2023-05-27T00:00:00+00:00</lastmod>
+    <lastmod>2023-11-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -16,7 +16,7 @@
                 />
   </url><url>
     <loc>https://honoka55.github.io/ja/categories/</loc>
-    <lastmod>2023-05-27T00:00:00+00:00</lastmod>
+    <lastmod>2023-11-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -27,6 +27,51 @@
                 hreflang="ja"
                 href="https://honoka55.github.io/ja/categories/"
                 />
+  </url><url>
+    <loc>https://honoka55.github.io/ja/post/</loc>
+    <lastmod>2023-11-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://honoka55.github.io/post/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://honoka55.github.io/ja/post/"
+                />
+  </url><url>
+    <loc>https://honoka55.github.io/ja/tags/</loc>
+    <lastmod>2023-11-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://honoka55.github.io/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://honoka55.github.io/ja/tags/"
+                />
+  </url><url>
+    <loc>https://honoka55.github.io/ja/p/web-serial/</loc>
+    <lastmod>2023-11-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://honoka55.github.io/p/web-serial/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://honoka55.github.io/ja/p/web-serial/"
+                />
+  </url><url>
+    <loc>https://honoka55.github.io/ja/tags/%E3%83%8F%E3%83%BC%E3%83%89%E3%82%A6%E3%82%A7%E3%82%A2/</loc>
+    <lastmod>2023-11-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://honoka55.github.io/ja/categories/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0/</loc>
+    <lastmod>2023-11-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://honoka55.github.io/ja/p/multisim-logic-components/</loc>
     <lastmod>2023-05-27T00:00:00+00:00</lastmod>
@@ -40,38 +85,6 @@
                 hreflang="ja"
                 href="https://honoka55.github.io/ja/p/multisim-logic-components/"
                 />
-  </url><url>
-    <loc>https://honoka55.github.io/ja/post/</loc>
-    <lastmod>2023-05-27T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://honoka55.github.io/post/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://honoka55.github.io/ja/post/"
-                />
-  </url><url>
-    <loc>https://honoka55.github.io/ja/tags/</loc>
-    <lastmod>2023-05-27T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://honoka55.github.io/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="ja"
-                href="https://honoka55.github.io/ja/tags/"
-                />
-  </url><url>
-    <loc>https://honoka55.github.io/ja/tags/%E3%83%8F%E3%83%BC%E3%83%89%E3%82%A6%E3%82%A7%E3%82%A2/</loc>
-    <lastmod>2023-05-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://honoka55.github.io/ja/categories/%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0/</loc>
-    <lastmod>2023-05-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://honoka55.github.io/ja/tags/%E3%82%A2%E3%82%BB%E3%83%B3%E3%83%96%E3%83%AA/</loc>
     <lastmod>2023-05-04T00:00:00+00:00</lastmod>
