@@ -1,19 +1,15 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="zh-cn">
 <head><meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="没有JavaScript基础也可以借助AI改出来的小游戏——2048iáng。
-" name="description"/><title>利用ChatGPT开发一例 | 焰色升空，华樱落尘</title>
-<link href="https://honoka55.github.io/p/chatgpt-2048iang/" rel="canonical"/>
-<link href="/scss/style.min.1e6a20d3af2ff2a48d565a5b7cb1eb64880e27e2f2304daf2c46cdcdbe611b23.css" rel="stylesheet"/><meta content="利用ChatGPT开发一例" property="og:title"/>
-<meta content="没有JavaScript基础也可以借助AI改出来的小游戏——2048iáng。
-" property="og:description"/>
-<meta content="https://honoka55.github.io/p/chatgpt-2048iang/" property="og:url"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="" name="description"/><title>哪些字体支持GB 18030-2022实现级别3？ | 焰色升空，华樱落尘</title>
+<link href="https://honoka55.github.io/p/l3-fonts/" rel="canonical"/>
+<link href="/scss/style.min.1e6a20d3af2ff2a48d565a5b7cb1eb64880e27e2f2304daf2c46cdcdbe611b23.css" rel="stylesheet"/><meta content="哪些字体支持GB 18030-2022实现级别3？" property="og:title"/>
+<meta content="" property="og:description"/>
+<meta content="https://honoka55.github.io/p/l3-fonts/" property="og:url"/>
 <meta content="焰色升空，华樱落尘" property="og:site_name"/>
-<meta content="article" property="og:type"/><meta content="Post" property="article:section"/><meta content="ChatGPT" property="article:tag"/><meta content="2023-01-15T00:00:00+00:00" property="article:published_time"/><meta content="2023-01-15T00:00:00+00:00" property="article:modified_time"/><meta content="https://s1.ax1x.com/2023/01/15/pSQgGzq.png" property="og:image"/>
-<meta content="利用ChatGPT开发一例" name="twitter:title"/>
-<meta content="没有JavaScript基础也可以借助AI改出来的小游戏——2048iáng。
-" name="twitter:description"/><meta content="summary_large_image" name="twitter:card"/>
-<meta content="https://s1.ax1x.com/2023/01/15/pSQgGzq.png" name="twitter:image"/>
+<meta content="article" property="og:type"/><meta content="Post" property="article:section"/><meta content="字体" property="article:tag"/><meta content="2023-11-14T00:00:00+00:00" property="article:published_time"/><meta content="2023-11-14T00:00:00+00:00" property="article:modified_time"/>
+<meta content="哪些字体支持GB 18030-2022实现级别3？" name="twitter:title"/>
+<meta content="" name="twitter:description"/>
 </head>
 <body class="article-page">
 <script>
@@ -200,22 +196,17 @@
 </ol>
 </aside>
 <main class="main full-width">
-<article class="has-image main-article">
+<article class="main-article">
 <header class="article-header">
-<div class="article-image">
-<a href="/p/chatgpt-2048iang/">
-<img alt="Featured image of post 利用ChatGPT开发一例" loading="lazy" src="https://s1.ax1x.com/2023/01/15/pSQgGzq.png"/>
-</a>
-</div>
 <div class="article-details">
 <header class="article-category">
-<a href="/categories/%E4%BB%A3%E7%A0%81/">
-                代码
+<a href="/categories/%E6%B1%89%E5%AD%97/">
+                汉字
             </a>
 </header>
 <div class="article-title-wrapper">
 <h2 class="article-title">
-<a href="/p/chatgpt-2048iang/">利用ChatGPT开发一例</a>
+<a href="/p/l3-fonts/">哪些字体支持GB 18030-2022实现级别3？</a>
 </h2>
 </div>
 <footer class="article-time">
@@ -229,163 +220,108 @@
 <path d="M3 11h16"></path>
 <path d="M18 16.496v1.504l1 1"></path>
 </svg>
-<time class="article-time--published">2023年1月15号</time>
+<time class="article-time--published">2023年11月14号</time>
 </div>
 </footer>
 </div>
 </header>
 <section class="article-content">
-<p>没有JavaScript基础也可以借助AI改出来的小游戏——<a class="link" href="https://honoka55.github.io/2048iang/" rel="noopener" target="_blank">2048iáng</a>。</p>
-<p>因为实在很闲所以做了，之前就想过做这个。基于<a class="link" href="https://github.com/gabrielecirulli/2048" rel="noopener" target="_blank">Gabriele Cirulli的2048源码</a>，基本靠ChatGPT完成了代码部分的修改。</p>
-<p>下面简要记录开发的过程。</p>
-<p>首先，把GameManager喂给AI，我甚至不知道这是什么，AI告诉我这是用于2048游戏的类。类就类吧，我让它给我解释了每一部分代码都是干什么的，之后我才发现，甚至这一步都是多余的。</p>
-<p>接下来我开始提需求了。我还是先对我要实现的游戏进行了简单的抽象化的：我让1～9分别代表“幺”“言”“长”“马”“月”“刂”“穴”“心”“辶”，然后比如55，是两个5，就代表“朋”。这样“𰻝”就可以表示成75121343689（问就是按笔顺排列的）。</p>
-<blockquote>
-<p><strong>我：</strong> 假设我现在要设计一种新型的2048，它是这样的：会随机产生1～9这9种不同的方块，两个1可以合并成11，两个2可以合并成22，两个3可以合并成33，但是两个4不能合并成44。此外，1和2可以合并成12，3和4可以合并成34，1和12可以合并成121，3和34可以合并成343，121和343可以合并成121343，121343和5可以合并成5121343，121343和6可以合并成1213436，5121343和6或者5和1213436都可以合并成51213436，51213436和7可以合并成751213436，51213436和8可以合并成512134368，512134368和7或者751213436和8都可以合并成7512134368，最后，7512134368和9可以合并成75121343689。除了我提到的方块种类之外不存在其他种类的方块，除了我提到的合并方法之外的方块都不可以合并，这个代码需要进行怎样的改动？<br/>
-<strong>ChatGPT：</strong> 为了实现这种新型的2048游戏，需要在整个游戏的代码中进行一些修改。<br/>
-1.首先要在Tile类中增加一个新属性，用来存储方块的种类。<br/>
-2.修改随机生成新方块的代码，使得生成的方块可以是1~9这9种不同的方块。<br/>
-3.修改合并方块的代码，使得只有满足新的合并规则的方块才能进行合并。<br/>
-4.修改判断游戏结束的代码，使得当没有可移动或可合并的方块时，游戏才结束。<br/>
-5.最后需要对游戏的UI部分进行修改，使得游戏界面能够展示新的方块种类以及新的合并规则。<br/>
-这些修改都需要对代码进行大量的更改，并且需要具备较为丰富的javascript开发经验。</p>
-</blockquote>
-<p>开发经验？不需要！既然它已经把需求分解好了，我一个一个问就是了。</p>
-<blockquote>
-<p><strong>我：</strong> 请告诉我怎么在Tile类中增加一个新属性，用来存储方块的种类</p>
-</blockquote>
-<p>我不会，但是它当然能给出来：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma" tabindex="0"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma" tabindex="0"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">Tile</span><span class="p">(</span><span class="nx">position</span><span class="p">,</span> <span class="nx">value</span><span class="p">,</span> <span class="nx">type</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">  <span class="k">this</span><span class="p">.</span><span class="nx">x</span>                <span class="o">=</span> <span class="nx">position</span><span class="p">.</span><span class="nx">x</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="k">this</span><span class="p">.</span><span class="nx">y</span>                <span class="o">=</span> <span class="nx">position</span><span class="p">.</span><span class="nx">y</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="k">this</span><span class="p">.</span><span class="nx">value</span>            <span class="o">=</span> <span class="nx">value</span> <span class="o">||</span> <span class="mi">2</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">  <span class="k">this</span><span class="p">.</span><span class="nx">type</span>             <span class="o">=</span> <span class="nx">type</span><span class="p">;</span><span class="c1">//新增的属性
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>不过我突然想到，为什么要加新的type属性，我不能利用value属性吗？可惜，ChatGPT对此的回答是，不可以，我必须新增一个属性来存储这些1～9、11等数字。我让它思考值是否仍有意义，它说是有意义的，可以用于计算分数，这一点倒是启发了我。我暂时跳过这条，仍然打算把方块的种类存在value中。它还提到了胜利条件，当然是拼出“𰻝”字。由此我想到了新的问题，也是它提出的第二点需求。</p>
-<blockquote>
-<p><strong>我：</strong> 根据我的合并规则与胜利条件，随机生成1～9的概率分别是多大能使得游戏难度适中？</p>
-</blockquote>
-<p>经过反复调教，它最终给我的概率是：</p>
-<ul>
-<li>1: 0.1</li>
-<li>2: 0.2</li>
-<li>3: 0.1</li>
-<li>4: 0.2</li>
-<li>5: 0.1</li>
-<li>6: 0.1</li>
-<li>7: 0.05</li>
-<li>8: 0.05</li>
-<li>9: 0.01</li>
-</ul>
-<p>加起来不到1也是意料之中的，它一直没给出过加和为1的概率，不过大致可以参考这个比例了。</p>
-<blockquote>
-<p><strong>我：</strong> 现在请你修改随机生成新方块的代码（addRandomTile），使得生成的方块可以是1~9这9种不同的方块且概率如你所说</p>
-</blockquote>
-<p>它给我的写法我没看懂，我让它换一种写法，令数组直接存储概率，它也做到了。接下来让它继续实现需求。</p>
-<blockquote>
-<p><strong>我：</strong> 谢谢你，我改好了。接下来，如何修改合并方块的代码，使得只有满足新的合并规则的方块才能进行合并？</p>
-</blockquote>
-<p>几下引导后，它给出了判断能否合并的方法：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma" tabindex="0"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma" tabindex="0"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">GameManager</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">canMerge</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">first</span><span class="p">,</span> <span class="nx">second</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="c1">// 判断两个方块的类型是否允许合并
-</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kd">var</span> <span class="nx">firstType</span> <span class="o">=</span> <span class="nx">first</span><span class="p">.</span><span class="nx">type</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="nx">secondType</span> <span class="o">=</span> <span class="nx">second</span><span class="p">.</span><span class="nx">type</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="nx">pattern</span> <span class="o">=</span> <span class="nx">firstType</span> <span class="o">+</span> <span class="nx">secondType</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="k">if</span><span class="p">(</span><span class="sr">/^(11|22|33|12|34|121|343|5121343|1213436|51213436|751213436|512134368|7512134368|75121343689)$/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">pattern</span><span class="p">)){</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span><span class="k">else</span><span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>当然，它还惦记它那type，我打算value存。而且if(x) return true; else return false;的写法也很蠢。这些都是小问题，我甩出了代码中明显存在的错误：</p>
-<blockquote>
-<p><strong>我：</strong> 万一first是1，second是12，1和12是可以合并成121的，你这样就按112判断不能合并了<br/>
-<strong>ChatGPT：</strong> 我错了，应该用判断firstType在secondType中出现的位置来确定是否可以合并。这样就可以避免上面提到的问题了。我会修改代码。</p>
-</blockquote>
-<p>结果它给出的修改居然是：</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma" tabindex="0"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma" tabindex="0"><code class="language-js" data-lang="js"><span class="line"><span class="cl"> <span class="k">if</span><span class="p">(</span><span class="nx">firstType</span> <span class="o">===</span> <span class="mi">1</span> <span class="o">&amp;&amp;</span> <span class="nx">secondType</span> <span class="o">===</span> <span class="mi">2</span> <span class="o">||</span> <span class="nx">firstType</span> <span class="o">===</span> <span class="mi">2</span> <span class="o">&amp;&amp;</span> <span class="nx">secondType</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="s1">'12'</span><span class="p">;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="c1">// 下略
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><p>还没等写完就被我叫停了。不过它刚才的判断方法也给了我新的思路。部件一样不就能合并嘛，只需要给出哪些合并结果是合法的就行了。问题就转化成了</p>
-<blockquote>
-<p><strong>我：</strong> 怎么把数字改成各位从小到大排列，如1432改成1234，7512134368改成1123345679</p>
-</blockquote>
-<p>我懒死，有AI用决不去百度。它给我了一段代码，直接就能用了。在它刚才写的正则匹配的判定基础上修改，比如1213436就改成1123346，匹配的就可以合并。不过没想到，接下来这个问题难住它了。</p>
-<blockquote>
-<p><strong>我：</strong> 原来的2048中，相等的方块即可合并。现在我写了canMerge函数，原来代码中哪些部分需要用这个函数替换？</p>
-</blockquote>
-<p>它列举了六七处用<code>===</code>连接的地方，告诉我改成用canMerge。可是，整个代码中都没有这么多处判断能否合并！闹鬼的是，它列举的代码在最开始喂给它的代码里根本不存在！也许是达到它的记忆token上限忘记了？我感觉又不想。最终还是靠我人工找到两处判断了能否合并的地方，自己替换成了canMerge。</p>
-<p>进行测试，我想要的功能基本全部实现。还差的地方一个是计分，一个是要把数字显示成对应的汉字。原本的2048计分是加上合并出的方块的值。现在合并出的值不能直接反应难度，2的值的位数次幂才是原来的分数记法。</p>
-<blockquote>
-<p><strong>我：</strong> value为整数，如何知道它有几位数？<br/>
-<strong>ChatGPT：</strong> 可以使用JavaScript中的内置函数toString()将value转换为字符串，然后计算字符串长度，即可得到value有几位数：<code>var valueLength = value.toString().length;</code><br/>
-<strong>我：</strong> 求2的这个长度次幂怎么算<br/>
-<strong>ChatGPT：</strong> 2的n次幂可以使用 Math.pow(2, n) 来计算.</p>
-</blockquote>
-<p>计分也改好了，接下来只需要把数字显示成对应的汉字，再补一下字体调一下样式，这就算完工了。</p>
-<blockquote>
-<p><strong>我：</strong> 现在我要更改数字的显示，比如1显示为啊，2显示为啦，12显示为去，121343显示为你，应该怎么做</p>
-</blockquote>
-<p>它又告诉我给Tile加属性……可以有没有一种可能就是同样的数字就是会显示同样的汉字？好在它同时给出，也可以在渲染时直接打印值。我让它帮我写了这个把值转换成汉字的函数，就是一个简单的switch，不过我是真的不懂JavaScript语法。它给一个样子我就能照猫画虎了。</p>
-<p>现在我需求中的游戏完全成形了，而我还没完整地写过一行代码。太神奇了！</p>
-<p>我进行了简单的测试，发现很难。仔细想想这个游戏的话，前半段的目标是拼成“⿱⿲幺言幺⿲长马长”，接下来才是给“⿱⿲幺言幺⿲长马长”依次加月字旁、立刀旁、穴字头、心字底、走之。所以我打算为前后两部分设置不同的概率。当然，我不会自己出手。</p>
-<blockquote>
-<p><strong>我：</strong> 帮我写一个返回当前网格中最大数值格子的数值的函数</p>
-</blockquote>
-<p>它写出来了个<code>Grid.prototype.getMaxValue</code>，当然也是直接粘贴进去就能用。if我也懒得自己写，于是</p>
-<blockquote>
-<p><strong>我：</strong> 帮我把addRandomTile改成先getMaxValue到最大值，若最大值小于112334，则不会产生方块5-9，最大值大于等于112334时1-9都会产生</p>
-</blockquote>
-<p>它把if也帮我写好了。</p>
-<p>剩下的是一点我自己能做的工作了。UI方面，与计分类似，用数字的位数当指数求2的幂，原版2048的样式直接就能用。字体我选择了以LINE Seed的ExtraBold字重为底板来制作，很快也拼好了。因为是日文字体嘛，懒得拼简化字部件所以偷懒把“马”“长”等都换成了“馬”“長”，“𰻝”也换成了繁体的“𰻞”。</p>
-<p>真可惜，怎么AI不能帮我拼字体呢？</p>
-<p>接下来就是发布了。可是我懒啊。</p>
-<blockquote>
-<p><strong>我：</strong> 谢谢你，我已经完成了这个新型2048的开发，UI界面之类的也全都写好了。我将一次性commit以上所有工作，请帮我用约定式提交来写本次提交的commit message</p>
-</blockquote>
-<p>懒死我得了。总之结论就是，ChatGPT太强了，真的很适合我这种啥也不会的懒狗。</p>
+<p>本文所称实现级别3是指GB 18030-2022（不包含修改单）的实现级别3与实现级别2的差集，含义等同于</p>
+<p><span id="formula">$\{扩B,扩C,扩D,扩E,扩F,康熙部首\}-(\{通规\}\cap\{扩B,扩C,扩D,扩E\})-\{扩B+,扩C+\}$</span></p>
+<script>document.getElementById('formula').parentElement.style.textAlign = 'center';</script>
+<h2>早见表</h2>
+<p>如有遗漏或更新，欢迎留言。</p>
+<div class="table-wrapper"><table>
+<thead>
+<tr>
+<th>字体名</th>
+<th>字体风格</th>
+<th>字重数</th>
+<th>发布时间</th>
+<th>授权协议/说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="link" href="https://glyphwiki.org/hanazono/" rel="noopener" target="_blank">HanaMinB</a></td>
+<td>明朝体</td>
+<td>1字重</td>
+<td>2017-09-04</td>
+<td><a class="link" href="https://glyphwiki.org/hanazono/" rel="noopener" target="_blank">独自许可</a>与SIL Open Font License双重许可<br/>额外支持实现级别2，汉字以J源写法优先</td>
+</tr>
+<tr>
+<td><a class="link" href="https://ancientbooks.cn/helpcore?font" rel="noopener" target="_blank">中华书局宋体02平面</a></td>
+<td>宋体</td>
+<td>1字重</td>
+<td>2017-??-??</td>
+<td><a class="link" href="https://ancientbooks.cn/helpcore?font" rel="noopener" target="_blank">权利声明</a><br/>额外支持实现级别2</td>
+</tr>
+<tr>
+<td><a class="link" href="https://github.com/Fitzgerald-Porthmouth-Koenigsegg/Plangothic-Project" rel="noopener" target="_blank">Plangothic P1</a>（allideo版）</td>
+<td>黑体、明朝体杂糅</td>
+<td>1字重</td>
+<td>2022-02-05</td>
+<td>SIL Open Font License<br/>基于思源黑体与GlyphWiki，负责人素质堪忧<sup id="ref-1"><a class="themed-link" href="#note-1">[1]</a></sup>。额外支持实现级别2、扩I等</td>
+</tr>
+<tr>
+<td>知春宋体</td>
+<td>宋体</td>
+<td>1字重</td>
+<td>2022-09-13</td>
+<td>私有版权<br/>基于GlyphWiki。额外支持实现级别2、扩B+、扩C+、扩G、扩H</td>
+</tr>
+<tr>
+<td>汉仪中黑TS</td>
+<td>黑体</td>
+<td>1字重</td>
+<td>2022-11-11</td>
+<td><a class="link" href="https://mp.weixin.qq.com/s/neVgDvB75W9Hr5B76Yad5w" rel="noopener" target="_blank">面向社会开放</a><br/>部分版本额外支持汉字“⿹㇯鸟一甲”，映射于<code>U+A003A</code><br/>搜狗输入法特供版本<code>HYZhongHeiTi-ExtBCDEFG</code>支持少量扩G、扩H字符<br/>Color OS特供版本名为<code>HYZhongHei L3</code></td>
+</tr>
+<tr>
+<td>国标宋体-超大字符集</td>
+<td>宋体</td>
+<td>1字重</td>
+<td>2023-04-06</td>
+<td>未知<br/>附于统信UOS桌面操作系统V20发行。额外支持实现级别2</td>
+</tr>
+<tr>
+<td><a class="link" href="https://fonts.alibabagroup.com/#/font" rel="noopener" target="_blank">阿里巴巴普惠体 3.0 55 Regular L3</a></td>
+<td>黑体</td>
+<td>1字重</td>
+<td>2023-06-01</td>
+<td><a class="link" href="https://www.yuque.com/yiguang-wkqc2/puhuiti/nus9wiinq4aeiegy" rel="noopener" target="_blank">《阿里巴巴普惠体3.0版》法律声明</a></td>
+</tr>
+<tr>
+<td>SimSun-ExtB</td>
+<td>宋体</td>
+<td>1字重</td>
+<td>2023-06-27</td>
+<td><a class="link" href="https://learn.microsoft.com/zh-cn/typography/fonts/font-faq" rel="noopener" target="_blank">Windows 字体重新分配的常见问题</a><br/>不支持康熙部首，额外支持实现级别2</td>
+</tr>
+<tr>
+<td><a class="link" href="https://kamichikoichi.github.io/jigmo/" rel="noopener" target="_blank">Jigmo2</a></td>
+<td>明朝体</td>
+<td>1字重</td>
+<td>2023-08-16</td>
+<td>CC0<br/>汉字以J源写法优先，额外支持实现级别2、扩B+、扩C+、扩I</td>
+</tr>
+<tr>
+<td><a class="link" href="https://hyperos.mi.com/font/rare-word" rel="noopener" target="_blank">MiSans L3</a></td>
+<td>黑体</td>
+<td>1字重</td>
+<td>2023-10-30</td>
+<td><a class="link" href="https://hyperos.mi.com/font-download/MiSans%E5%AD%97%E4%BD%93%E7%9F%A5%E8%AF%86%E4%BA%A7%E6%9D%83%E8%AE%B8%E5%8F%AF%E5%8D%8F%E8%AE%AE.pdf" rel="noopener" target="_blank">MiSans字体知识产权许可协议</a><br/>额外支持𰻝、𰻞</td>
+</tr>
+</tbody>
+</table></div>
+<h3>参考资料</h3>
+<ol>
+<li id="note-1"><a class="themed-link" href="#ref-1">↑</a>匿名用户.如何评价遍黑体?[EB/OL].(2020-10-15)[2023-11-14].<a class="link" href="https://www.zhihu.com/question/550295319/answer/2716220183">https://www.zhihu.com/question/550295319/answer/2716220183</a>.</li>
+</ol>
 </section>
 <footer class="article-footer">
 <section class="article-tags">
-<a href="/tags/chatgpt/">ChatGPT</a>
+<a href="/tags/%E5%AD%97%E4%BD%93/">字体</a>
 </section>
 </footer>
 <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.css" integrity="sha256-J+iAE0sgH8QSz9hpcDxXIftnj65JEZgNhGcgReTTK9s=" rel="stylesheet"/><script crossorigin="anonymous" defer="" integrity="sha256-InsNdER1b2xUewP+pKCUJpkhiqwHgqiPXDlIk7GzBu4=" src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.js">
@@ -406,41 +342,50 @@
 <h2 class="section-title">相关文章</h2>
 <div class="related-content">
 <div class="flex article-list--tile">
-<article class="">
-<a href="/p/web-serial/">
-<div class="article-details">
-<h2 class="article-title">Web Serial API使用方法</h2>
+<article class="has-image">
+<a href="/p/cjk-font-fazhan/">
+<div class="article-image">
+<img data-hash="https://p1.meituan.net/dpplatform/a5896969007eda46462f83569a1ed46d24627.png" data-key="" loading="lazy" src="https://p1.meituan.net/dpplatform/a5896969007eda46462f83569a1ed46d24627.png"/>
 </div>
-</a>
-</article>
-<article class="">
-<a href="/p/multisim-logic-components/">
 <div class="article-details">
-<h2 class="article-title">Multisim中一些常见数字逻辑部件的画法</h2>
-</div>
-</a>
-</article>
-<article class="">
-<a href="/p/neon-load-column/">
-<div class="article-details">
-<h2 class="article-title">怎么把矩阵一列的连续四个元素装入一个NEON寄存器</h2>
+<h2 class="article-title">关于开源CJK字体发展方向的设想</h2>
 </div>
 </a>
 </article>
 <article class="has-image">
-<a href="/p/masm32-assembly-make/">
+<a href="/p/apple-18030/">
 <div class="article-image">
-<img data-hash="https://s1.ax1x.com/2023/03/13/ppMqhl9.png" data-key="" loading="lazy" src="https://s1.ax1x.com/2023/03/13/ppMqhl9.png"/>
+<img data-hash="https://s1.ax1x.com/2023/04/06/ppTpoTS.png" data-key="" loading="lazy" src="https://s1.ax1x.com/2023/04/06/ppTpoTS.png"/>
 </div>
 <div class="article-details">
-<h2 class="article-title">Windows下一键编译运行汇编的make文件</h2>
+<h2 class="article-title">锐🍎国标第十平面</h2>
+</div>
+</a>
+</article>
+<article class="has-image">
+<a href="/p/yuurei-1/">
+<div class="article-image">
+<img data-hash="https://p1.meituan.net/dpplatform/7ea3f32d7c9ff4b26bd3a4fcba7716c8131467.png" data-key="" loading="lazy" src="https://p1.meituan.net/dpplatform/7ea3f32d7c9ff4b26bd3a4fcba7716c8131467.png"/>
+</div>
+<div class="article-details">
+<h2 class="article-title">“幽灵汉字”考释（一）</h2>
 </div>
 </a>
 </article>
 <article class="">
-<a href="/p/abuse-regex/">
+<a href="/p/hao-niancha-di-zir/">
 <div class="article-details">
-<h2 class="article-title">防滥用过滤器用的正则表达式</h2>
+<h2 class="article-title">好念差的字儿</h2>
+</div>
+</a>
+</article>
+<article class="has-image">
+<a href="/p/copy-budui/">
+<div class="article-image">
+<img data-hash="https://i.328888.xyz/2023/03/15/JIslQ.jpeg" data-key="" loading="lazy" src="https://i.328888.xyz/2023/03/15/JIslQ.jpeg"/>
+</div>
+<div class="article-details">
+<h2 class="article-title">󰅪着抄，就一定能抄对吗？——再寻《〈第二次汉字简化方案修订草案〉征求意见表》</h2>
 </div>
 </a>
 </article>

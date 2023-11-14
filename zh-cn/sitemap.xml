@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://honoka55.github.io/</loc>
-    <lastmod>2023-11-11T00:00:00+00:00</lastmod>
+    <lastmod>2023-11-14T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -16,7 +16,7 @@
                 />
   </url><url>
     <loc>https://honoka55.github.io/categories/</loc>
-    <lastmod>2023-11-11T00:00:00+00:00</lastmod>
+    <lastmod>2023-11-14T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -29,7 +29,7 @@
                 />
   </url><url>
     <loc>https://honoka55.github.io/post/</loc>
-    <lastmod>2023-11-11T00:00:00+00:00</lastmod>
+    <lastmod>2023-11-14T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -42,7 +42,7 @@
                 />
   </url><url>
     <loc>https://honoka55.github.io/tags/</loc>
-    <lastmod>2023-11-11T00:00:00+00:00</lastmod>
+    <lastmod>2023-11-14T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -53,6 +53,15 @@
                 hreflang="zh-cn"
                 href="https://honoka55.github.io/tags/"
                 />
+  </url><url>
+    <loc>https://honoka55.github.io/categories/%E6%B1%89%E5%AD%97/</loc>
+    <lastmod>2023-11-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://honoka55.github.io/p/l3-fonts/</loc>
+    <lastmod>2023-11-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://honoka55.github.io/tags/%E5%AD%97%E4%BD%93/</loc>
+    <lastmod>2023-11-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://honoka55.github.io/p/web-serial/</loc>
     <lastmod>2023-11-11T00:00:00+00:00</lastmod>
@@ -105,9 +114,6 @@
     <loc>https://honoka55.github.io/tags/%E7%BC%96%E7%A0%81/</loc>
     <lastmod>2023-04-06T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://honoka55.github.io/categories/%E6%B1%89%E5%AD%97/</loc>
-    <lastmod>2023-04-06T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://honoka55.github.io/p/apple-18030/</loc>
     <lastmod>2023-04-06T00:00:00+00:00</lastmod>
   </url><url>
@@ -157,9 +163,6 @@
                 hreflang="zh-cn"
                 href="https://honoka55.github.io/p/abuse-regex/"
                 />
-  </url><url>
-    <loc>https://honoka55.github.io/tags/%E5%AD%97%E4%BD%93/</loc>
-    <lastmod>2023-02-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://honoka55.github.io/tags/chatgpt/</loc>
     <lastmod>2023-01-15T00:00:00+00:00</lastmod>
