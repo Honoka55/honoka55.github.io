@@ -7,7 +7,7 @@
 <meta content="" property="og:description"/>
 <meta content="https://honoka55.github.io/ja/p/web-serial/" property="og:url"/>
 <meta content="焔色昇空、華桜落塵" property="og:site_name"/>
-<meta content="article" property="og:type"/><meta content="Post" property="article:section"/><meta content="ハードウェア" property="article:tag"/><meta content="2023-11-11T00:00:00+00:00" property="article:published_time"/><meta content="2023-11-11T00:00:00+00:00" property="article:modified_time"/>
+<meta content="article" property="og:type"/><meta content="Post" property="article:section"/><meta content="ハードウェア" property="article:tag"/><meta content="2023-11-11T00:00:00+00:00" property="article:published_time"/><meta content="2023-11-18T00:00:00+00:00" property="article:modified_time"/>
 <meta content="WebシリアルAPIの使用方法" name="twitter:title"/>
 <meta content="" name="twitter:description"/>
 </head>
@@ -242,7 +242,7 @@
 <p>要するに、WebシリアルAPIを使用すると、ウェブ上で純粋なJavaScriptを使用して双方向のシリアル通信を実現できます。もちろん、組み込みシステムの<ruby>開発<rp>（</rp><rt>かだい</rt><rp>）</rp></ruby>等にも使用できます。</p>
 <p>詳細な使用法は<a class="link" href="https://developer.chrome.com/ja/articles/serial/" rel="noopener" target="_blank">公式ドキュメント</a>を参照してください。この記事では基本的な使用法のみを紹介します。</p>
 <h2 id="環境要件">環境要件</h2>
-<p>デスクトッププラットフォームでChromiumのバージョン89以上が必要です。</p>
+<p>デスクトップ向けのChromiumのバージョン89以上が必要です。</p>
 <p>最新版のChromeやEdge等を使用できます。IEやFirefoxはサポートされていません。</p>
 <p>以下のコードを使用して、ブラウザがWebシリアルAPIをサポートしているかどうかをテストできます。</p>
 <div class="highlight"><div class="chroma">
@@ -266,7 +266,7 @@
 </ul>
 <p>これらを確認したら、次の手順に進みましょう。</p>
 <h2 id="シリアル接続の開始">シリアル接続の開始</h2>
-<p>まず、シリアル権限を取得する必要があります。以下のコードはボタンが押された時にユーザープロンプトを表示し、ユーザーがシリアルポートを選択するようにします。</p>
+<p>先ず、シリアル権限を取得する必要があります。以下のコードはボタンが押された時にユーザープロンプトを表示し、ユーザーがシリアルポートを選択するようにします。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma" tabindex="0"><code><span class="lnt">1
@@ -279,7 +279,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">});</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>選択が完了したら、シリアル接続を開くことができます。</p>
+</div><p>選択が完了したら、シリアルポートに接続することができます。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma" tabindex="0"><code><span class="lnt">1
@@ -327,7 +327,7 @@
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>上記のコードではUint8配列の送受信のみを扱います。文字列の送受信を行いたい場合は、TextEncoderおよびTextDecoderを使用することができます。これらは文字列をUTF-8エンコードおよびデコードできます。</p>
+</div><p>上記のコードではUint8配列の送受信のみを扱います。文字列の送受信を行いたい場合は、TextEncoderおよびTextDecoderを使用することができます。これらは文字列をUTF-8符号化および復号できます。</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma" tabindex="0"><code><span class="lnt">1
@@ -341,12 +341,12 @@
 </span><span class="lnt">9
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma" tabindex="0"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="c1">// 文字列をUint8配列にエンコード
+<pre class="chroma" tabindex="0"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="c1">// 文字列をUint8配列に符号化
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">encoder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TextEncoder</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">data</span> <span class="o">=</span> <span class="nx">encoder</span><span class="p">.</span><span class="nx">encode</span><span class="p">(</span><span class="s1">'Hello, world!'</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span> <span class="c1">// Uint8Array(13) [72, 101, 108, 108, 111, 44, 32, 119, 111, 114, 108, 100, 33]
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span>
-</span></span><span class="line"><span class="cl"><span class="c1">// Uint8配列を文字列にデコード
+</span></span><span class="line"><span class="cl"><span class="c1">// Uint8配列を文字列に復号
 </span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kr">const</span> <span class="nx">decoder</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">TextDecoder</span><span class="p">();</span>
 </span></span><span class="line"><span class="cl"><span class="kr">const</span> <span class="nx">value</span> <span class="o">=</span> <span class="nx">decoder</span><span class="p">.</span><span class="nx">decode</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
 </span></span><span class="line"><span class="cl"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span> <span class="c1">// 'Hello, world!'
@@ -458,13 +458,22 @@
 </div>
 </div><h2 id="一歩前進">一歩前進</h2>
 <p>より複雑な使用法については、ぜひ<a class="link" href="https://developer.chrome.com/ja/articles/serial/" rel="noopener" target="_blank">公式ドキュメント</a>を参照してください。</p>
-<p>筆者はWebシリアルAPIを基にして、簡単な<a class="link" href="https://github.com/Honoka55/web-serial-debugger" rel="noopener" target="_blank">Webシリアルデバッグツール</a>を作成しました。より多くのオプションを設定したり、UTF-8以外のエンコーディングを使用したり、予期せぬ状況に対処したりする等の場合には、そのコードも参考にできます。</p>
+<p>筆者はWebシリアルAPIを基にして、簡単な<a class="link" href="https://github.com/Honoka55/web-serial-debugger" rel="noopener" target="_blank">Webシリアルデバッグツール</a>を作成しました。より多くのオプションを設定したり、UTF-8以外の符号化方式を使用したり、予期せぬ状況に対処したりする等の場合には、そのコードも参考にできます。</p>
 </section>
 <footer class="article-footer">
 <section class="article-tags">
 <a href="/ja/tags/%E3%83%8F%E3%83%BC%E3%83%89%E3%82%A6%E3%82%A7%E3%82%A2/">ハードウェア</a>
 </section>
-</footer>
+<section class="article-lastmod">
+<svg class="icon icon-tabler icon-tabler-clock" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 0h24v24H0z" stroke="none"></path>
+<circle cx="12" cy="12" r="9"></circle>
+<polyline points="12 7 12 12 15 15"></polyline>
+</svg>
+<span>
+            最終更新 2023年11月18号
+        </span>
+</section></footer>
 <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.css" integrity="sha256-J+iAE0sgH8QSz9hpcDxXIftnj65JEZgNhGcgReTTK9s=" rel="stylesheet"/><script crossorigin="anonymous" defer="" integrity="sha256-InsNdER1b2xUewP+pKCUJpkhiqwHgqiPXDlIk7GzBu4=" src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.js">
 </script><script crossorigin="anonymous" defer="" integrity="sha256-y39Mpg7V3D4lhBX4x6O0bUqTV4pSrfgwEfGKfxkOdgI=" src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/contrib/auto-render.min.js">
 </script><script>
