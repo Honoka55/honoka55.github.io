@@ -271,13 +271,46 @@
 </script><script crossorigin="anonymous" defer="" integrity="sha256-y39Mpg7V3D4lhBX4x6O0bUqTV4pSrfgwEfGKfxkOdgI=" src="https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/contrib/auto-render.min.js">
 </script><script>
     window.addEventListener("DOMContentLoaded", () => {
+        
         renderMathInElement(document.querySelector(`.article-content`), {
             delimiters: [
                 { left: "$$", right: "$$", display: true },
                 { left: "$", right: "$", display: false },
                 { left: "\\(", right: "\\)", display: false },
                 { left: "\\[", right: "\\]", display: true }
-            ]
+            ],
+            macros: {
+                "\\upalpha": "\\text{α}",
+                "\\upbeta": "\\text{β}",
+                "\\upgamma": "\\text{γ}",
+                "\\updelta": "\\text{δ}",
+                "\\upepsilon": "\\text{ϵ}",
+                "\\upvarepsilon": "\\text{ε}",
+                "\\upzeta": "\\text{ζ}",
+                "\\upeta": "\\text{η}",
+                "\\uptheta": "\\text{θ}",
+                "\\upvartheta": "\\text{ϑ}",
+                "\\upiota": "\\text{ι}",
+                "\\upkappa": "\\text{κ}",
+                "\\uplambda": "\\text{λ}",
+                "\\upmu": "\\text{μ}",
+                "\\upnu": "\\text{ν}",
+                "\\upxi": "\\text{ξ}",
+                "\\upomicron": "\\text{ο}",
+                "\\uppi": "\\text{π}",
+                "\\uprho": "\\text{ρ}",
+                "\\upvarrho": "\\text{ϱ}",
+                "\\upsigma": "\\text{σ}",
+                "\\upvarsigma": "\\text{ς}",
+                "\\uptau": "\\text{τ}",
+                "\\upupsilon": "\\text{υ}",
+                "\\upphi": "\\text{ϕ}",
+                "\\upvarphi": "\\text{φ}",
+                "\\upchi": "\\text{χ}",
+                "\\uppsi": "\\text{ψ}",
+                "\\upomega": "\\text{ω}",
+                "\\uppartial": "\\text{∂}"
+            }
         });})
 </script>
 </article>
