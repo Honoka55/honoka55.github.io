@@ -3,7 +3,7 @@
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="" name="description"/><title>Python获取Nemenyi检验临界值杂记 | 焰色升空，华樱落尘</title>
 <link href="https://honoka55.github.io/p/python-nemenyi-quantile/" rel="canonical"/>
-<link href="/scss/style.min.1e6a20d3af2ff2a48d565a5b7cb1eb64880e27e2f2304daf2c46cdcdbe611b23.css" rel="stylesheet"/><meta content="Python获取Nemenyi检验临界值杂记" property="og:title"/>
+<link href="/scss/style.min.007a5141ca8ee5990776723ddcd8f699b3c1d06aa555c88592e34a08f0dc2876.css" rel="stylesheet"/><meta content="Python获取Nemenyi检验临界值杂记" property="og:title"/>
 <meta content="" property="og:description"/>
 <meta content="https://honoka55.github.io/p/python-nemenyi-quantile/" property="og:url"/>
 <meta content="焰色升空，华樱落尘" property="og:site_name"/>
@@ -390,7 +390,7 @@
 <p>考虑到可能三者的实现方法不同。阅读<code>qtukey()</code>函数的文档<sup id="ref-3"><a class="themed-link" href="#note-3">[3]</a></sup>、<code>studentized_range</code>模块的文档<sup id="ref-4"><a class="themed-link" href="#note-4">[4]</a></sup>和<code>qsturng()</code>方法的源代码<sup id="ref-2.1"><a class="themed-link" href="#note-2">[2]</a></sup>，发现确实如此：R中<code>qtukey()</code>函数的实现基于Copenhaver和Holland（1988）<sup id="ref-5"><a class="themed-link" href="#note-5">[5]</a></sup>的方法，<code>scipy</code>库中<code>studentized_range.ppf()</code>方法的实现基于Lund和Lund（1983）<sup id="ref-6"><a class="themed-link" href="#note-6">[6]</a></sup>的方法，而<code>statsmodels</code>库中<code>qsturng()</code>方法的实现基于Gleason（1999）<sup id="ref-7"><a class="themed-link" href="#note-7">[7]</a></sup>的方法。[7]认为自己提出的计算方法比[6]更简单、更准确。关于三者具体有何不同、何者更优，已偏离“机器学习”的主题甚远，本文不再深入讨论。</p>
 <p>至于[1]中为何给出了异于以上任何一种实现算得的临界值，在该章末尾的参考文献<sup id="ref-8"><a class="themed-link" href="#note-8">[8]</a></sup>中可以找到答案。[8]中表5(a)与[1]中表2.7所给数据完全相同，[8]也是博主目前能找到的最早给出$\alpha=0.05,k=7$时临界值$q_\alpha=2.949$的文献，可能也是最早提出将Nemenyi方法用于模型比较的。[8]中只提及$q_\alpha$的计算方法是学生化极差的数据除以$\sqrt2$，并未提及具体如何计算学生化极差的临界值，或许是采用的数据来源有舍入而损失了精度吧。</p>
 <h3>参考资料</h3>
-<ol>
+<ol class="reflist-ol">
 <li id="note-1"><a class="themed-link" href="#ref-1">↑</a>周志华.机器学习[M].北京:清华大学出版社.2016:42-44.</li>
 <li id="note-2"><a class="themed-link" href="#ref-2">↑</a><a class="themed-link" href="#ref-2.1">↑</a>statsmodels.<wbr>qsturng_.py<wbr>[CP/OL].<wbr>[2024-02-02].<wbr><a class="themed-link" href="https://github.com/statsmodels/statsmodels/blob/main/statsmodels/stats/libqsturng/qsturng_.py">https://<wbr>github.com/<wbr>statsmodels/<wbr>statsmodels/<wbr>blob/<wbr>main/<wbr>statsmodels/<wbr>stats/<wbr>libqsturng/<wbr>qsturng_.py</wbr></wbr></wbr></wbr></wbr></wbr></wbr></wbr></wbr></a>.</wbr></wbr></wbr></wbr></li>
 <li id="note-3"><a class="themed-link" href="#ref-3">↑</a>DataCamp.<wbr>Tukey function<wbr>[EB/OL]//<wbr>RDocumentation<wbr>[2024-02-03].<wbr><a class="themed-link" href="https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/Tukey">https://<wbr>www.rdocumentation.org/<wbr>packages/<wbr>stats/<wbr>versions/<wbr>3.6.2/<wbr>topics/<wbr>Tukey</wbr></wbr></wbr></wbr></wbr></wbr></wbr></a>.</wbr></wbr></wbr></wbr></wbr></li>
