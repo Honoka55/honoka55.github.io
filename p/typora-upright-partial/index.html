@@ -16,8 +16,11 @@
 <meta content="字体" property="article:tag"/>
 <meta content="2024-02-03T00:00:00+00:00" property="article:published_time"/>
 <meta content="2024-02-03T00:00:00+00:00" property="article:modified_time"/>
+<meta content="https://honoka55.github.io/p/typora-upright-partial/typora-uppartial.png" property="og:image"/>
 <meta content="在Typora中输入正体偏微分号的方法" name="twitter:title"/>
 <meta content="" name="twitter:description"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://honoka55.github.io/p/typora-upright-partial/typora-uppartial.png" name="twitter:image"/>
 </head>
 <body class="article-page">
 <script>!function(){const e="StackColorScheme";localStorage.getItem(e)||localStorage.setItem(e,"auto")}();</script><script>!function(){const e=localStorage.getItem("StackColorScheme"),t=!0===window.matchMedia("(prefers-color-scheme: dark)").matches;document.documentElement.dataset.scheme="dark"==e||"auto"===e&&t?"dark":"light"}();</script>
@@ -60,8 +63,11 @@
 </ol>
 </aside>
 <main class="main full-width">
-<article class="main-article">
+<article class="has-image main-article">
 <header class="article-header">
+<div class="article-image">
+<a href="/p/typora-upright-partial/"><img alt="Featured image of post 在Typora中输入正体偏微分号的方法" height="321" loading="lazy" src="/p/typora-upright-partial/typora-uppartial_hu91ae26ebf17f02c78c7d9423587d69ad_38540_800x0_resize_box_3.png" srcset="/p/typora-upright-partial/typora-uppartial_hu91ae26ebf17f02c78c7d9423587d69ad_38540_800x0_resize_box_3.png 800w, /p/typora-upright-partial/typora-uppartial_hu91ae26ebf17f02c78c7d9423587d69ad_38540_1600x0_resize_box_3.png 1600w" width="800"/></a>
+</div>
 <div class="article-details">
 <header class="article-category">
 <a href="/categories/%E9%9D%9E%E6%B1%89%E5%AD%97/">非汉字</a>
@@ -97,8 +103,8 @@
     }
 </style>
 <p>但对于偏微分符号<span class="uppartial uppartial-math">∂</span>，LaTeX环境中可以使用<code>newtx</code>宏包中的<code>\uppartial</code>命令。但是对于不能导入宏包的Typora来说，如何将其显示为正体呢？</p>
-<p>既然Typora的公式渲染基于MathJax，那么可以考虑在MathJax中寻找答案。考虑到偏微分符号与希腊字母类似，观察<code>upgreek</code>的实现。Typora中默认启用了<code>upgreek</code>，理论上例如<code>\uppi</code>就可以得到正体的字母<span class="uppartial uppartial-math">π</span>。可是实际测试发现，<code>\uppi</code>并未显示为正体，而是显示为一种不同字体的斜体。经观察，显示的字体是游明朝，即博主所用日文Windows操作系统下默认的衬线体，把希腊字母做成全角斜体也是日文字体的传统艺能了。</p>
-<p>既然如此，也就知道了<code>upgreek</code>的实现原理：调用系统默认衬线体。若调用到Times New Roman字体，便可得到正体的希腊字母$\uppi$。我有点不敢继续想下去：若是简体中文操作系统、调用到中易宋体，这时的希腊字母将会是怎样一番绮丽景象呢？</p>
+<p>既然Typora的公式渲染基于MathJax，那么可以考虑在MathJax中寻找答案。考虑到偏微分符号与希腊字母类似，观察<code>upgreek</code>的实现。Typora中默认启用了<code>upgreek</code>，理论上例如<code>\upbeta</code>就可以得到正体的字母$\upbeta$。可是实际测试发现，<code>\upbeta</code>得到的字母$\beta$并未显示为正体，而是显示为一种不同字体的斜体。经观察，显示的字体是游明朝，即博主所用日文Windows操作系统下默认的衬线体，把希腊字母做成全角斜体也是日文字体的传统艺能了。</p>
+<p>既然如此，也就知道了<code>upgreek</code>的实现原理：调用系统默认衬线体。若调用到Times New Roman字体，便可得到正体的希腊字母$\upbeta$。我有点不敢继续想下去：若是简体中文操作系统、调用到中易宋体，这时的希腊字母将会是怎样一番绮丽景象呢？</p>
 <p>既然知晓了<code>upgreek</code>简单粗暴的实现原理，那么要打出正体的偏微分符号（以及修改正体希腊字母的渲染字体）也就不难了。</p>
 <p>首先修改公式文字的渲染字体：打开主题文件夹<code>%AppData%\Typora\themes</code>，编辑当前使用主题的css，在末尾添加：</p>
 <div class="highlight"><div class="chroma">
@@ -124,7 +130,7 @@
 <pre class="chroma" tabindex="0"><code class="language-markdown" data-lang="markdown"><span class="line"><span class="cl">$\def\dif{\mathop{}\!\mathrm{d}}\def\uppartial{\mathop{}\!\unicode{x2202}}$
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>这样就将正体的微分符号定义成了<code>$\dif$</code>、偏微分符号定义成了<code>$\uppartial$</code>，整篇文档后续中都可以再次调用。</p>
+</div><p>这样就将正体的微分符号定义成了<code>\dif</code>、偏微分符号定义成了<code>\uppartial</code>，整篇文档后续中都可以再次调用。</p>
 </section>
 <footer class="article-footer">
 <section class="article-tags">
