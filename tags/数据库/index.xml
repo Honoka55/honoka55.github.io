@@ -12,7 +12,7 @@
         <pubDate>Wed, 14 Dec 2022 00:00:00 +0000</pubDate>
         
         <guid>https://honoka55.github.io/p/php-distpicker/</guid>
-        <description>&lt;img src="https://s1.ax1x.com/2023/01/13/pSMpPIJ.png" alt="Featured image of post PHP与MariaDB数据库实现的省市区三级联动下拉选择器" /&gt;&lt;p&gt;我的&lt;a class=&#34;link&#34; href=&#34;https://github.com/Honoka55/distpicker-php&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+        <description>&lt;img src="https://honoka55.github.io/p/php-distpicker/distpicker-1.png" alt="Featured image of post PHP与MariaDB数据库实现的省市区三级联动下拉选择器" /&gt;&lt;p&gt;我的&lt;a class=&#34;link&#34; href=&#34;https://github.com/Honoka55/distpicker-php&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;省市区三级联动下拉选择器&lt;/a&gt;的思路或者说一些相关的碎碎念。&lt;/p&gt;</description>
         </item>
         <item>
@@ -21,7 +21,7 @@
         <pubDate>Sun, 11 Dec 2022 00:00:00 +0000</pubDate>
         
         <guid>https://honoka55.github.io/p/cpp-mariadb-link/</guid>
-        <description>&lt;img src="https://s1.ax1x.com/2023/01/12/pSuG5DO.png" alt="Featured image of post C&#43;&#43;连接到MariaDB数据库" /&gt;&lt;p&gt;提供了C++连接到MariaDB数据库的一种简单方法。也可以进行简单修改以适用于MySQL。&lt;/p&gt;</description>
+        <description>&lt;img src="https://honoka55.github.io/p/cpp-mariadb-link/cppmysql-1.png" alt="Featured image of post C&#43;&#43;连接到MariaDB数据库" /&gt;&lt;p&gt;提供了C++连接到MariaDB数据库的一种简单方法。也可以进行简单修改以适用于MySQL。&lt;/p&gt;</description>
         </item>
         
     </channel>

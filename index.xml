@@ -53,7 +53,7 @@
 <link>https://honoka55.github.io/p/apple-18030/</link>
 <pubDate>Thu, 06 Apr 2023 00:00:00 +0000</pubDate>
 <guid>https://honoka55.github.io/p/apple-18030/</guid>
-<description>&lt;img src="https://s1.ax1x.com/2023/04/06/ppTpoTS.png" alt="Featured image of post 锐🍎国标第十平面" /&gt;&lt;p&gt;日前，GB 18030-2022的1号修改单发布了&lt;a class="link" href="https://mp.weixin.qq.com/s/BREmqwcZ5kE9UXX_v2fT7Q"  target="_blank" rel="noopener"
+<description>&lt;img src="https://honoka55.github.io/p/apple-18030/apple-1.png" alt="Featured image of post 锐🍎国标第十平面" /&gt;&lt;p&gt;日前，GB 18030-2022的1号修改单发布了&lt;a class="link" href="https://mp.weixin.qq.com/s/BREmqwcZ5kE9UXX_v2fT7Q"  target="_blank" rel="noopener"
     &gt;第二次征求意见稿&lt;/a&gt;，&lt;/p&gt;</description>
 </item>
 <item>
@@ -61,7 +61,7 @@
 <link>https://honoka55.github.io/p/masm32-assembly-make/</link>
 <pubDate>Mon, 13 Mar 2023 00:00:00 +0000</pubDate>
 <guid>https://honoka55.github.io/p/masm32-assembly-make/</guid>
-<description>&lt;img src="https://s1.ax1x.com/2023/03/13/ppMqhl9.png" alt="Featured image of post Windows下一键编译运行汇编的make文件" /&gt;&lt;p&gt;本文利用MASM32 SDK中的编译器和链接器编译汇编语言，适用于单文件的情况。&lt;/p&gt;</description>
+<description>&lt;img src="https://honoka55.github.io/p/masm32-assembly-make/assembly-1.png" alt="Featured image of post Windows下一键编译运行汇编的make文件" /&gt;&lt;p&gt;本文利用MASM32 SDK中的编译器和链接器编译汇编语言，适用于单文件的情况。&lt;/p&gt;</description>
 </item>
 <item>
 <title>新纪元的英雄与战舞</title>
@@ -89,7 +89,7 @@
 <link>https://honoka55.github.io/p/chatgpt-2048iang/</link>
 <pubDate>Sun, 15 Jan 2023 00:00:00 +0000</pubDate>
 <guid>https://honoka55.github.io/p/chatgpt-2048iang/</guid>
-<description>&lt;img src="https://s1.ax1x.com/2023/01/15/pSQgGzq.png" alt="Featured image of post 利用ChatGPT开发一例" /&gt;&lt;p&gt;没有JavaScript基础也可以借助AI改出来的小游戏——&lt;a class="link" href="https://honoka55.github.io/2048iang/"  target="_blank" rel="noopener"
+<description>&lt;img src="https://honoka55.github.io/p/chatgpt-2048iang/gptdev-1.png" alt="Featured image of post 利用ChatGPT开发一例" /&gt;&lt;p&gt;没有JavaScript基础也可以借助AI改出来的小游戏——&lt;a class="link" href="https://honoka55.github.io/2048iang/"  target="_blank" rel="noopener"
     &gt;2048iáng&lt;/a&gt;。&lt;/p&gt;</description>
 </item>
 <item>
@@ -104,7 +104,7 @@
 <link>https://honoka55.github.io/p/php-distpicker/</link>
 <pubDate>Wed, 14 Dec 2022 00:00:00 +0000</pubDate>
 <guid>https://honoka55.github.io/p/php-distpicker/</guid>
-<description>&lt;img src="https://s1.ax1x.com/2023/01/13/pSMpPIJ.png" alt="Featured image of post PHP与MariaDB数据库实现的省市区三级联动下拉选择器" /&gt;&lt;p&gt;我的&lt;a class="link" href="https://github.com/Honoka55/distpicker-php"  target="_blank" rel="noopener"
+<description>&lt;img src="https://honoka55.github.io/p/php-distpicker/distpicker-1.png" alt="Featured image of post PHP与MariaDB数据库实现的省市区三级联动下拉选择器" /&gt;&lt;p&gt;我的&lt;a class="link" href="https://github.com/Honoka55/distpicker-php"  target="_blank" rel="noopener"
     &gt;省市区三级联动下拉选择器&lt;/a&gt;的思路或者说一些相关的碎碎念。&lt;/p&gt;</description>
 </item>
 <item>
@@ -112,14 +112,14 @@
 <link>https://honoka55.github.io/p/php-mb-ext/</link>
 <pubDate>Tue, 13 Dec 2022 00:00:00 +0000</pubDate>
 <guid>https://honoka55.github.io/p/php-mb-ext/</guid>
-<description>&lt;img src="https://s1.ax1x.com/2023/01/12/pSuXeXQ.png" alt="Featured image of post PHP多字节函数的一些补充" /&gt;&lt;p&gt;本文补充一些PHP中不自带的多字节函数。&lt;/p&gt;</description>
+<description>&lt;img src="https://honoka55.github.io/p/php-mb-ext/phpmb-1g.png" alt="Featured image of post PHP多字节函数的一些补充" /&gt;&lt;p&gt;本文补充一些PHP中不自带的多字节函数。&lt;/p&gt;</description>
 </item>
 <item>
 <title>C++连接到MariaDB数据库</title>
 <link>https://honoka55.github.io/p/cpp-mariadb-link/</link>
 <pubDate>Sun, 11 Dec 2022 00:00:00 +0000</pubDate>
 <guid>https://honoka55.github.io/p/cpp-mariadb-link/</guid>
-<description>&lt;img src="https://s1.ax1x.com/2023/01/12/pSuG5DO.png" alt="Featured image of post C++连接到MariaDB数据库" /&gt;&lt;p&gt;提供了C++连接到MariaDB数据库的一种简单方法。也可以进行简单修改以适用于MySQL。&lt;/p&gt;</description>
+<description>&lt;img src="https://honoka55.github.io/p/cpp-mariadb-link/cppmysql-1.png" alt="Featured image of post C++连接到MariaDB数据库" /&gt;&lt;p&gt;提供了C++连接到MariaDB数据库的一种简单方法。也可以进行简单修改以适用于MySQL。&lt;/p&gt;</description>
 </item>
 <item>
 <title>“幽灵汉字”考释（一）</title>
@@ -161,7 +161,7 @@
 <link>https://honoka55.github.io/p/nyushu-zhouqibiao/</link>
 <pubDate>Wed, 03 Aug 2022 00:00:00 +0000</pubDate>
 <guid>https://honoka55.github.io/p/nyushu-zhouqibiao/</guid>
-<description>&lt;img src="https://s1.ax1x.com/2023/01/12/pSu86pt.jpg" alt="Featured image of post 女书元素周期表试制" /&gt;&lt;p&gt;我制作了用江永女书书写的元素周期表，分享如下：&lt;/p&gt;</description>
+<description>&lt;img src="https://img.vistudium.top/%E9%81%A0%E8%A6%8B%E9%BD%8B%E5%9C%96%E7%89%87%E5%82%99%E4%BB%BD/%E5%B7%B2%E5%AE%8C%E6%88%90/%E5%B0%81%E9%9D%A2%E9%9B%86/nushu.webp" alt="Featured image of post 女书元素周期表试制" /&gt;&lt;p&gt;我制作了用江永女书书写的元素周期表，分享如下：&lt;/p&gt;</description>
 </item>
 <item>
 <title>汉语拼音字母儿</title>
@@ -182,7 +182,7 @@
 <link>https://honoka55.github.io/p/copy-budui/</link>
 <pubDate>Tue, 02 Mar 2021 00:00:00 +0000</pubDate>
 <guid>https://honoka55.github.io/p/copy-budui/</guid>
-<description>&lt;img src="https://i.328888.xyz/2023/03/15/JIslQ.jpeg" alt="Featured image of post 󰅪着抄，就一定能抄对吗？——再寻《〈第二次汉字简化方案修订草案〉征求意见表》" /&gt;&lt;blockquote&gt;
+<description>&lt;img src="https://pic2.zhimg.com/v2-0949c136e8ef663c0854a121ef1f78ea_720w.png?source=d16d100b" alt="Featured image of post 󰅪着抄，就一定能抄对吗？——再寻《〈第二次汉字简化方案修订草案〉征求意见表》" /&gt;&lt;blockquote&gt;
 &lt;p&gt;本文原载&lt;a class="link" href="https://zhuanlan.zhihu.com/p/353974146"  target="_blank" rel="noopener"
     &gt;知乎&lt;/a&gt;及&lt;a class="link" href="https://vistudium.top/2021/03/02/copy-budui"  target="_blank" rel="noopener"
     &gt;远见斋&lt;/a&gt;。后续本文件一份原件已由王谢杨购得，我已重新电子化，本文内容未做更新。&lt;/p&gt;
@@ -202,14 +202,14 @@
 <link>https://honoka55.github.io/p/forgotten-simplification/</link>
 <pubDate>Sat, 01 Aug 2020 00:00:00 +0000</pubDate>
 <guid>https://honoka55.github.io/p/forgotten-simplification/</guid>
-<description>&lt;img src="https://i.328888.xyz/2023/03/15/Jcczc.png" alt="Featured image of post 在现行规范字和二简字中都被遗忘的字" /&gt;</description>
+<description/>
 </item>
 <item>
 <title>元素旧名</title>
 <link>https://honoka55.github.io/p/yuansu-jiuming/</link>
 <pubDate>Fri, 31 Jul 2020 00:00:00 +0000</pubDate>
 <guid>https://honoka55.github.io/p/yuansu-jiuming/</guid>
-<description>&lt;img src="https://s1.ax1x.com/2023/01/12/pSu8sfI.jpg" alt="Featured image of post 元素旧名" /&gt;&lt;center&gt;&lt;big&gt;&lt;big&gt;&lt;strong&gt;元素旧名&lt;span class="rka"&gt;儿&lt;/span&gt;&lt;/strong&gt;&lt;/big&gt;&lt;/big&gt;&lt;br /&gt;（此页面最终更新于2020年7月31号&lt;span class="rka"&gt;儿&lt;/span&gt;）</description>
+<description>&lt;img src="https://img.vistudium.top/%E9%81%A0%E8%A6%8B%E9%BD%8B%E5%9C%96%E7%89%87%E5%82%99%E4%BB%BD/%E5%B7%B2%E5%AE%8C%E6%88%90/%E5%B0%81%E9%9D%A2%E9%9B%86/elementsvar.webp" alt="Featured image of post 元素旧名" /&gt;&lt;center&gt;&lt;big&gt;&lt;big&gt;&lt;strong&gt;元素旧名&lt;span class="rka"&gt;儿&lt;/span&gt;&lt;/strong&gt;&lt;/big&gt;&lt;/big&gt;&lt;br /&gt;（此页面最终更新于2020年7月31号&lt;span class="rka"&gt;儿&lt;/span&gt;）</description>
 </item>
 <item>
 <title>元素谜题</title>
@@ -252,21 +252,21 @@
 <link>https://honoka55.github.io/p/bafu/</link>
 <pubDate>Fri, 28 Dec 2001 00:00:00 +0000</pubDate>
 <guid>https://honoka55.github.io/p/bafu/</guid>
-<description>&lt;img src="https://s1.ax1x.com/2023/01/13/pSKaz0x.png" alt="Featured image of post 信息技术 信息交换用汉字编码字符集 第八辅助集" /&gt;&lt;center&gt;&lt;big&gt;&lt;big&gt;&lt;strong&gt;信息技术 信息交换用汉字编码字符集&lt;br /&gt;第八辅助集&lt;/strong&gt;&lt;/big&gt;&lt;/big&gt;&lt;br /&gt;电子化｜焰华Honoka55&lt;/center&gt;</description>
+<description>&lt;img src="https://honoka55.github.io/p/bafu/bafu-1.png" alt="Featured image of post 信息技术 信息交换用汉字编码字符集 第八辅助集" /&gt;&lt;center&gt;&lt;big&gt;&lt;big&gt;&lt;strong&gt;信息技术 信息交换用汉字编码字符集&lt;br /&gt;第八辅助集&lt;/strong&gt;&lt;/big&gt;&lt;/big&gt;&lt;br /&gt;电子化｜焰华Honoka55&lt;/center&gt;</description>
 </item>
 <item>
 <title>第二次汉字简化方案修订草案征求意见表</title>
 <link>https://honoka55.github.io/p/erjian-xiuding-cao/</link>
 <pubDate>Sat, 01 Aug 1981 00:00:00 +0000</pubDate>
 <guid>https://honoka55.github.io/p/erjian-xiuding-cao/</guid>
-<description>&lt;img src="https://s1.ax1x.com/2023/01/12/pSu8Dkd.jpg" alt="Featured image of post 第二次汉字简化方案修订草案征求意见表" /&gt;&lt;center&gt;&lt;big&gt;&lt;big&gt;&lt;strong&gt;第二次汉字简化方案修订草案&lt;/strong&gt;&lt;br /&gt;&lt;/big&gt;征求意见表&lt;/strong&gt;&lt;/big&gt;&lt;br /&gt;电子化｜焰华Honoka55&lt;/center&gt;</description>
+<description>&lt;img src="https://honoka55.github.io/p/erjian-xiuding-cao/erjianx-1.jpg" alt="Featured image of post 第二次汉字简化方案修订草案征求意见表" /&gt;&lt;center&gt;&lt;big&gt;&lt;big&gt;&lt;strong&gt;第二次汉字简化方案修订草案&lt;/strong&gt;&lt;br /&gt;&lt;/big&gt;征求意见表&lt;/strong&gt;&lt;/big&gt;&lt;br /&gt;电子化｜焰华Honoka55&lt;/center&gt;</description>
 </item>
 <item>
 <title>标准电码本</title>
 <link>https://honoka55.github.io/p/dianma-ben/</link>
 <pubDate>Mon, 01 Jun 1981 00:00:00 +0000</pubDate>
 <guid>https://honoka55.github.io/p/dianma-ben/</guid>
-<description>&lt;img src="https://s1.ax1x.com/2023/01/13/pSKabhF.png" alt="Featured image of post 标准电码本" /&gt;&lt;center&gt;&lt;big&gt;&lt;big&gt;&lt;strong&gt;标准电码本&lt;/strong&gt;&lt;br /&gt;&lt;/big&gt;（修订本）&lt;/strong&gt;&lt;/big&gt;&lt;br /&gt;电子化｜焰华Honoka55
+<description>&lt;img src="https://honoka55.github.io/p/dianma-ben/dmb-1.png" alt="Featured image of post 标准电码本" /&gt;&lt;center&gt;&lt;big&gt;&lt;big&gt;&lt;strong&gt;标准电码本&lt;/strong&gt;&lt;br /&gt;&lt;/big&gt;（修订本）&lt;/strong&gt;&lt;/big&gt;&lt;br /&gt;电子化｜焰华Honoka55
 &lt;hr /&gt;&lt;/center&gt;</description>
 </item>
 <item>
@@ -274,7 +274,7 @@
 <link>https://honoka55.github.io/p/erjian-cao/</link>
 <pubDate>Sun, 01 May 1977 00:00:00 +0000</pubDate>
 <guid>https://honoka55.github.io/p/erjian-cao/</guid>
-<description>&lt;img src="https://s1.ax1x.com/2023/01/13/pSKajXR.png" alt="Featured image of post 第二次汉字简化方案（草案）" /&gt;&lt;center&gt;&lt;big&gt;&lt;big&gt;&lt;strong&gt;第二次汉字简化方案&lt;/strong&gt;&lt;br /&gt;&lt;/big&gt;（草案）&lt;/strong&gt;&lt;/big&gt;&lt;br /&gt;电子化｜焰华Honoka55
+<description>&lt;img src="https://honoka55.github.io/p/erjian-cao/erjian-1.png" alt="Featured image of post 第二次汉字简化方案（草案）" /&gt;&lt;center&gt;&lt;big&gt;&lt;big&gt;&lt;strong&gt;第二次汉字简化方案&lt;/strong&gt;&lt;br /&gt;&lt;/big&gt;（草案）&lt;/strong&gt;&lt;/big&gt;&lt;br /&gt;电子化｜焰华Honoka55
 &lt;hr /&gt;&lt;/center&gt;</description>
 </item>
 <item>

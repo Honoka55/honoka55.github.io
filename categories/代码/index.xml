@@ -44,7 +44,7 @@
         <pubDate>Mon, 13 Mar 2023 00:00:00 +0000</pubDate>
         
         <guid>https://honoka55.github.io/p/masm32-assembly-make/</guid>
-        <description>&lt;img src="https://s1.ax1x.com/2023/03/13/ppMqhl9.png" alt="Featured image of post Windows下一键编译运行汇编的make文件" /&gt;&lt;p&gt;本文利用MASM32 SDK中的编译器和链接器编译汇编语言，适用于单文件的情况。&lt;/p&gt;</description>
+        <description>&lt;img src="https://honoka55.github.io/p/masm32-assembly-make/assembly-1.png" alt="Featured image of post Windows下一键编译运行汇编的make文件" /&gt;&lt;p&gt;本文利用MASM32 SDK中的编译器和链接器编译汇编语言，适用于单文件的情况。&lt;/p&gt;</description>
         </item>
         <item>
         <title>防滥用过滤器用的正则表达式</title>
@@ -60,7 +60,7 @@
         <pubDate>Sun, 15 Jan 2023 00:00:00 +0000</pubDate>
         
         <guid>https://honoka55.github.io/p/chatgpt-2048iang/</guid>
-        <description>&lt;img src="https://s1.ax1x.com/2023/01/15/pSQgGzq.png" alt="Featured image of post 利用ChatGPT开发一例" /&gt;&lt;p&gt;没有JavaScript基础也可以借助AI改出来的小游戏——&lt;a class=&#34;link&#34; href=&#34;https://honoka55.github.io/2048iang/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+        <description>&lt;img src="https://honoka55.github.io/p/chatgpt-2048iang/gptdev-1.png" alt="Featured image of post 利用ChatGPT开发一例" /&gt;&lt;p&gt;没有JavaScript基础也可以借助AI改出来的小游戏——&lt;a class=&#34;link&#34; href=&#34;https://honoka55.github.io/2048iang/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;2048iáng&lt;/a&gt;。&lt;/p&gt;</description>
         </item>
         <item>
@@ -69,7 +69,7 @@
         <pubDate>Wed, 14 Dec 2022 00:00:00 +0000</pubDate>
         
         <guid>https://honoka55.github.io/p/php-distpicker/</guid>
-        <description>&lt;img src="https://s1.ax1x.com/2023/01/13/pSMpPIJ.png" alt="Featured image of post PHP与MariaDB数据库实现的省市区三级联动下拉选择器" /&gt;&lt;p&gt;我的&lt;a class=&#34;link&#34; href=&#34;https://github.com/Honoka55/distpicker-php&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+        <description>&lt;img src="https://honoka55.github.io/p/php-distpicker/distpicker-1.png" alt="Featured image of post PHP与MariaDB数据库实现的省市区三级联动下拉选择器" /&gt;&lt;p&gt;我的&lt;a class=&#34;link&#34; href=&#34;https://github.com/Honoka55/distpicker-php&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
     &gt;省市区三级联动下拉选择器&lt;/a&gt;的思路或者说一些相关的碎碎念。&lt;/p&gt;</description>
         </item>
         <item>
@@ -78,7 +78,7 @@
         <pubDate>Tue, 13 Dec 2022 00:00:00 +0000</pubDate>
         
         <guid>https://honoka55.github.io/p/php-mb-ext/</guid>
-        <description>&lt;img src="https://s1.ax1x.com/2023/01/12/pSuXeXQ.png" alt="Featured image of post PHP多字节函数的一些补充" /&gt;&lt;p&gt;本文补充一些PHP中不自带的多字节函数。&lt;/p&gt;</description>
+        <description>&lt;img src="https://honoka55.github.io/p/php-mb-ext/phpmb-1g.png" alt="Featured image of post PHP多字节函数的一些补充" /&gt;&lt;p&gt;本文补充一些PHP中不自带的多字节函数。&lt;/p&gt;</description>
         </item>
         <item>
         <title>C&#43;&#43;连接到MariaDB数据库</title>
@@ -86,7 +86,7 @@
         <pubDate>Sun, 11 Dec 2022 00:00:00 +0000</pubDate>
         
         <guid>https://honoka55.github.io/p/cpp-mariadb-link/</guid>
-        <description>&lt;img src="https://s1.ax1x.com/2023/01/12/pSuG5DO.png" alt="Featured image of post C&#43;&#43;连接到MariaDB数据库" /&gt;&lt;p&gt;提供了C++连接到MariaDB数据库的一种简单方法。也可以进行简单修改以适用于MySQL。&lt;/p&gt;</description>
+        <description>&lt;img src="https://honoka55.github.io/p/cpp-mariadb-link/cppmysql-1.png" alt="Featured image of post C&#43;&#43;连接到MariaDB数据库" /&gt;&lt;p&gt;提供了C++连接到MariaDB数据库的一种简单方法。也可以进行简单修改以适用于MySQL。&lt;/p&gt;</description>
         </item>
         
     </channel>
