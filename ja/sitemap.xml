@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://honoka55.github.io/ja/</loc>
-    <lastmod>2024-03-24T00:00:00+00:00</lastmod>
+    <lastmod>2024-04-16T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -16,7 +16,7 @@
                 />
   </url><url>
     <loc>https://honoka55.github.io/ja/categories/</loc>
-    <lastmod>2023-11-18T00:00:00+00:00</lastmod>
+    <lastmod>2024-04-16T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -29,7 +29,7 @@
                 />
   </url><url>
     <loc>https://honoka55.github.io/ja/post/</loc>
-    <lastmod>2023-11-18T00:00:00+00:00</lastmod>
+    <lastmod>2024-04-16T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -42,7 +42,7 @@
                 />
   </url><url>
     <loc>https://honoka55.github.io/ja/tags/</loc>
-    <lastmod>2023-11-18T00:00:00+00:00</lastmod>
+    <lastmod>2024-04-16T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
@@ -53,6 +53,25 @@
                 hreflang="ja"
                 href="https://honoka55.github.io/ja/tags/"
                 />
+  </url><url>
+    <loc>https://honoka55.github.io/ja/p/ligature-times-new-roman/</loc>
+    <lastmod>2024-04-16T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://honoka55.github.io/p/ligature-times-new-roman/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://honoka55.github.io/ja/p/ligature-times-new-roman/"
+                />
+  </url><url>
+    <loc>https://honoka55.github.io/ja/tags/%E3%83%95%E3%82%A9%E3%83%B3%E3%83%88/</loc>
+    <lastmod>2024-04-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://honoka55.github.io/ja/categories/%E9%9D%9E%E6%BC%A2%E5%AD%97/</loc>
+    <lastmod>2024-04-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://honoka55.github.io/ja/p/web-serial/</loc>
     <lastmod>2023-11-18T00:00:00+00:00</lastmod>
@@ -134,9 +153,6 @@
     <loc>https://honoka55.github.io/ja/tags/%E3%82%B2%E3%83%BC%E3%83%A0/</loc>
     <lastmod>2023-02-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://honoka55.github.io/ja/tags/%E3%83%95%E3%82%A9%E3%83%B3%E3%83%88/</loc>
-    <lastmod>2023-02-15T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://honoka55.github.io/ja/p/abuse-regex/</loc>
     <lastmod>2023-02-15T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -217,9 +233,6 @@
                 hreflang="ja"
                 href="https://honoka55.github.io/ja/p/nyushu-zhouqibiao/"
                 />
-  </url><url>
-    <loc>https://honoka55.github.io/ja/categories/%E9%9D%9E%E6%BC%A2%E5%AD%97/</loc>
-    <lastmod>2022-10-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://honoka55.github.io/ja/page/</loc>
     <lastmod>2024-03-24T00:00:00+00:00</lastmod>

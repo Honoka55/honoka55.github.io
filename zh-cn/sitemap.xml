@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://honoka55.github.io/</loc>
-    <lastmod>2024-04-10T00:00:00+00:00</lastmod>
+    <lastmod>2024-04-16T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -16,7 +16,7 @@
                 />
   </url><url>
     <loc>https://honoka55.github.io/categories/</loc>
-    <lastmod>2024-04-10T00:00:00+00:00</lastmod>
+    <lastmod>2024-04-16T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -29,7 +29,7 @@
                 />
   </url><url>
     <loc>https://honoka55.github.io/post/</loc>
-    <lastmod>2024-04-10T00:00:00+00:00</lastmod>
+    <lastmod>2024-04-16T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -42,7 +42,7 @@
                 />
   </url><url>
     <loc>https://honoka55.github.io/tags/</loc>
-    <lastmod>2024-02-03T00:00:00+00:00</lastmod>
+    <lastmod>2024-04-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
@@ -55,13 +55,26 @@
                 />
   </url><url>
     <loc>https://honoka55.github.io/categories/%E9%9D%9E%E6%B1%89%E5%AD%97/</loc>
-    <lastmod>2024-02-03T00:00:00+00:00</lastmod>
+    <lastmod>2024-04-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://honoka55.github.io/p/typora-upright-partial/</loc>
-    <lastmod>2024-02-03T00:00:00+00:00</lastmod>
+    <loc>https://honoka55.github.io/p/ligature-times-new-roman/</loc>
+    <lastmod>2024-04-11T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="ja"
+                href="https://honoka55.github.io/ja/p/ligature-times-new-roman/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://honoka55.github.io/p/ligature-times-new-roman/"
+                />
   </url><url>
     <loc>https://honoka55.github.io/tags/%E5%AD%97%E4%BD%93/</loc>
-    <lastmod>2024-02-03T00:00:00+00:00</lastmod>
+    <lastmod>2024-04-11T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://honoka55.github.io/p/typora-upright-partial/</loc>
+    <lastmod>2024-04-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://honoka55.github.io/tags/python/</loc>
     <lastmod>2024-02-03T00:00:00+00:00</lastmod>
@@ -315,10 +328,10 @@
     <lastmod>2019-05-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://honoka55.github.io/categories/%E6%9D%82%E9%A1%B9/</loc>
-    <lastmod>2024-04-10T00:00:00+00:00</lastmod>
+    <lastmod>2024-04-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://honoka55.github.io/p/anime-time/</loc>
-    <lastmod>2024-04-10T00:00:00+00:00</lastmod>
+    <lastmod>2024-04-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://honoka55.github.io/p/woyaochiyang/</loc>
     <lastmod>2011-07-13T00:00:00+00:00</lastmod>
