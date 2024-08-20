@@ -546,42 +546,24 @@
 </div>
 </div><p>这是一个显示实例（基于当前设备时间换算）：</p>
 <div style="text-align:center"><span class="xivpua"></span> <span id="lt"></span> <span class="xivpua"></span> <span id="st"></span> <span class="xivpua"></span> <span id="et"></span></div>
-<script>
-
-    function updateTime() {
-
-        var lt = new Date();
-
-        var et = new Date(Math.floor((lt * 144) / 7));
-
-        var ltHours = lt.getHours().toString().padStart(2, '0');
-
-        var stHours = lt.getUTCHours().toString().padStart(2, '0');
-
-        var ltMinutes = lt.getMinutes().toString().padStart(2, '0');
-
-        var etBells = et.getUTCHours().toString().padStart(2, '0');
-
-        var etMinutes = et.getUTCMinutes().toString().padStart(2, '0');
-
-        var ltString = ltHours + ':' + ltMinutes;
-
-        var stString = stHours + ':' + ltMinutes;
-
-        var etString = etBells + ':' + etMinutes;
-
-        document.getElementById('lt').innerHTML = ltString;
-
-        document.getElementById('st').innerHTML = stString;
-
-        document.getElementById('et').innerHTML = etString;
-
-    }
-
-    updateTime();
-
-    setInterval(updateTime, 83);
-
+<script>
+    function updateTime() {
+        var lt = new Date();
+        var et = new Date(Math.floor((lt * 144) / 7));
+        var ltHours = lt.getHours().toString().padStart(2, '0');
+        var stHours = lt.getUTCHours().toString().padStart(2, '0');
+        var ltMinutes = lt.getMinutes().toString().padStart(2, '0');
+        var etBells = et.getUTCHours().toString().padStart(2, '0');
+        var etMinutes = et.getUTCMinutes().toString().padStart(2, '0');
+        var ltString = ltHours + ':' + ltMinutes;
+        var stString = stHours + ':' + ltMinutes;
+        var etString = etBells + ':' + etMinutes;
+        document.getElementById('lt').innerHTML = ltString;
+        document.getElementById('st').innerHTML = stString;
+        document.getElementById('et').innerHTML = etString;
+    }
+    updateTime();
+    setInterval(updateTime, 83);
 </script>
 <p>那么是否存在哪一天的本地（北京）时间$0$点整，恰为艾欧泽亚时间$0$点整？</p>
 <p>由换算比例，注意到</p>
@@ -606,74 +588,40 @@
 </div>
 </div><p>经检验月相符合。那么可以写出一个简单的月相时钟（仅供参考，略有误差）：</p>
 <div style="text-align:center">当前日期：<span id="sun"></span><br/>当前月相：<span id="moon-phase"></span><br/>距离新月：<span id="newmoon-countdown"></span><br/>距离满月：<span id="fullmoon-countdown"></span></div>
-<script>
-
-        function updateMoon() {
-
-            var lt = new Date();
-
-            var et = new Date(Math.floor(lt * 144 / 7));
-
-            var etSun = Math.floor(lt * 144 / 7 / 86400000) % 32 + 1;
-
-            var moonPhase;
-
-            switch (Math.floor((etSun - 1) / 4) ) {
-
-                case 0: moonPhase = '🌑'; break;
-
-                case 1: moonPhase = '🌘'; break;
-
-                case 2: moonPhase = '🌗'; break;
-
-                case 3: moonPhase = '🌖'; break;
-
-                case 4: moonPhase = '🌕'; break;
-
-                case 5: moonPhase = '🌔'; break;
-
-                case 6: moonPhase = '🌓'; break;
-
-                case 7: moonPhase = '🌒'; break;
-
-            }
-
-            var todayLeft = (new Date(`${lt.toDateString()} 23:59:59`) - new Date(`${lt.toDateString()} ${et.toTimeString()}`) + 1000) * 7 / 144;
-
-            var timeLeft = (32 - etSun) * 4200000 + todayLeft;
-
-            var hoursLeft = Math.floor(timeLeft / 3600000).toString().padStart(2, '0');
-
-            var minutesLeft = Math.floor((timeLeft % 3600000) / 60000).toString().padStart(2, '0');
-
-            var secondsLeft = Math.floor((timeLeft % 60000) / 1000).toString().padStart(2, '0');
-
-            var newmoonCountdown = hoursLeft + ':' + minutesLeft + ':' + secondsLeft;
-
-            var timeLeft2 = (timeLeft + 67200000) % 134400000;
-
-            var hoursLeft2 = Math.floor(timeLeft2 / 3600000).toString().padStart(2, '0');
-
-            var minutesLeft2 = Math.floor((timeLeft2 % 3600000) / 60000).toString().padStart(2, '0');
-
-            var secondsLeft2 = Math.floor((timeLeft2 % 60000) / 1000).toString().padStart(2, '0');
-
-            var fullmoonCountdown = hoursLeft2 + ':' + minutesLeft2 + ':' + secondsLeft2;
-
-            document.getElementById('sun').innerHTML = etSun + '日';
-
-            document.getElementById('moon-phase').innerHTML = moonPhase;
-
-            document.getElementById("newmoon-countdown").innerHTML = newmoonCountdown;
-
-            document.getElementById("fullmoon-countdown").innerHTML = fullmoonCountdown;
-
-        }
-
-        updateMoon();
-
-        setInterval(updateMoon, 1000);
-
+<script>
+        function updateMoon() {
+            var lt = new Date();
+            var et = new Date(Math.floor(lt * 144 / 7));
+            var etSun = Math.floor(lt * 144 / 7 / 86400000) % 32 + 1;
+            var moonPhase;
+            switch (Math.floor((etSun - 1) / 4) ) {
+                case 0: moonPhase = '🌑'; break;
+                case 1: moonPhase = '🌘'; break;
+                case 2: moonPhase = '🌗'; break;
+                case 3: moonPhase = '🌖'; break;
+                case 4: moonPhase = '🌕'; break;
+                case 5: moonPhase = '🌔'; break;
+                case 6: moonPhase = '🌓'; break;
+                case 7: moonPhase = '🌒'; break;
+            }
+            var todayLeft = (new Date(`${lt.toDateString()} 23:59:59`) - new Date(`${lt.toDateString()} ${et.toTimeString()}`) + 1000) * 7 / 144;
+            var timeLeft = (32 - etSun) * 4200000 + todayLeft;
+            var hoursLeft = Math.floor(timeLeft / 3600000).toString().padStart(2, '0');
+            var minutesLeft = Math.floor((timeLeft % 3600000) / 60000).toString().padStart(2, '0');
+            var secondsLeft = Math.floor((timeLeft % 60000) / 1000).toString().padStart(2, '0');
+            var newmoonCountdown = hoursLeft + ':' + minutesLeft + ':' + secondsLeft;
+            var timeLeft2 = (timeLeft + 67200000) % 134400000;
+            var hoursLeft2 = Math.floor(timeLeft2 / 3600000).toString().padStart(2, '0');
+            var minutesLeft2 = Math.floor((timeLeft2 % 3600000) / 60000).toString().padStart(2, '0');
+            var secondsLeft2 = Math.floor((timeLeft2 % 60000) / 1000).toString().padStart(2, '0');
+            var fullmoonCountdown = hoursLeft2 + ':' + minutesLeft2 + ':' + secondsLeft2;
+            document.getElementById('sun').innerHTML = etSun + '日';
+            document.getElementById('moon-phase').innerHTML = moonPhase;
+            document.getElementById("newmoon-countdown").innerHTML = newmoonCountdown;
+            document.getElementById("fullmoon-countdown").innerHTML = fullmoonCountdown;
+        }
+        updateMoon();
+        setInterval(updateMoon, 1000);
 </script>
 <h3 id="日期的换算">日期的换算</h3>
 <p>毕竟按照游戏内时间流速来计算年份就太混乱了。剧情上来讲，从2.0一直到6.x都没有交代过年份变化，那就应该一直处于第六星历1577年$=$第七星历元年。</p>
@@ -685,68 +633,37 @@
 </ul>
 <p>假定对应五纪历日期有两天的地球日上午为前一天，下午为后一天，公历平年的灵1月32日忽略不计，给出一个简单的换算实例：</p>
 <div style="text-align:center">今天是公历<span id="lt-date"></span>，对应<span id="et-date"></span></div>
-<script>
-
-    function updateDate() {
-
-        var lt = new Date();
-
-        var ltMonth = lt.getMonth() + 1;
-
-        var ltDate = lt.getDate();
-
-        var ltPM = lt.getHours() >= 12;
-
-        const moonList = ['星1月', '灵1月', '星2月', '灵2月', '星3月', '灵3月', '星4月', '灵4月', '星5月', '灵5月', '星6月', '灵6月'];
-
-        var etMoon = moonList[ltMonth - 1];
-
-        var etSun;
-
-        if (ltMonth === 2 && ltDate >= 7) {
-
-            if (ltDate < 14) etSun = ltDate + 1;
-
-            else if (ltDate < 21) etSun = ltDate + 2;
-
-            else etSun = ltDate + 3;
-
-            if ([7, 14, 21].includes(ltDate) && !ltPM) etSun--;
-
-        } else if ([4, 6, 9, 11].includes(ltMonth) && ltDate >= 7) {
-
-            if (ltDate < 28) etSun = ltDate + 1;
-
-            else etSun = ltDate + 2;
-
-            if ([7, 28].includes(ltDate) && !ltPM) etSun--;
-
-        } else if (ltDate >= 28) {
-
-            etSun = ltDate + 1;
-
-            if (ltDate === 28 && !ltPM) etSun--;
-
-        } else {
-
-            etSun = ltDate;
-
-        }
-
-        const weekList = ['风属日', '雷属日', '火属日', '土属日', '冰属日', '水属日', '星极日', '灵极日'];
-
-        var etWeek = weekList[(etSun - 1) % 8];
-
-        document.getElementById('lt-date').innerHTML = ltMonth + '月' + ltDate + '日';
-
-        document.getElementById('et-date').innerHTML = etMoon + etSun + '日 '+ etWeek;
-
-    }
-
-    updateDate();
-
-    setInterval(updateDate, 1000);
-
+<script>
+    function updateDate() {
+        var lt = new Date();
+        var ltMonth = lt.getMonth() + 1;
+        var ltDate = lt.getDate();
+        var ltPM = lt.getHours() >= 12;
+        const moonList = ['星1月', '灵1月', '星2月', '灵2月', '星3月', '灵3月', '星4月', '灵4月', '星5月', '灵5月', '星6月', '灵6月'];
+        var etMoon = moonList[ltMonth - 1];
+        var etSun;
+        if (ltMonth === 2 && ltDate >= 7) {
+            if (ltDate < 14) etSun = ltDate + 1;
+            else if (ltDate < 21) etSun = ltDate + 2;
+            else etSun = ltDate + 3;
+            if ([7, 14, 21].includes(ltDate) && !ltPM) etSun--;
+        } else if ([4, 6, 9, 11].includes(ltMonth) && ltDate >= 7) {
+            if (ltDate < 28) etSun = ltDate + 1;
+            else etSun = ltDate + 2;
+            if ([7, 28].includes(ltDate) && !ltPM) etSun--;
+        } else if (ltDate >= 28) {
+            etSun = ltDate + 1;
+            if (ltDate === 28 && !ltPM) etSun--;
+        } else {
+            etSun = ltDate;
+        }
+        const weekList = ['风属日', '雷属日', '火属日', '土属日', '冰属日', '水属日', '星极日', '灵极日'];
+        var etWeek = weekList[(etSun - 1) % 8];
+        document.getElementById('lt-date').innerHTML = ltMonth + '月' + ltDate + '日';
+        document.getElementById('et-date').innerHTML = etMoon + etSun + '日 '+ etWeek;
+    }
+    updateDate();
+    setInterval(updateDate, 1000);
 </script>
 <p>当然，这种换算方法肯定和游戏内的月相之类的是对不上的。不过至少让季节活动看起来合理了许多，毕竟现实经过一年也没看到艾欧泽亚过了二十甚至十九次降神节。</p>
 <h3 id="人历推算追记">人历推算追记</h3>
